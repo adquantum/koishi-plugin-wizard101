@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-wizard101",
-  "version": "0.1.1",
-  "description": "Wizard101 中文百科机器人：Wizard404 只读查询与 UTF-16LE 汉化词典",
+  "version": "0.2.0",
+  "description": "Wizard101 中文图鉴：QQ 官方 Bot / Discord 图示卡、本地游戏资料、Wiki 查询与伤害估算",
   "main": "lib/index.cjs",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "docs",
     "data/README.md",
     "data/locale-example.json",
+    "data/catalog-example.json",
     "README.md",
     "LICENSE",
     "THIRD_PARTY_NOTICES.md",
@@ -25,19 +26,24 @@
     "test": "node --test test/*.test.cjs",
     "import:locale": "node tools/locale/import.cjs",
     "probe": "node tools/probe-api.cjs",
-    "check": "node --check lib/index.cjs && node --check lib/controller.cjs && node --check lib/format.cjs",
+    "check": "node tools/check-syntax.cjs",
     "check:public": "node tools/check-public-package.cjs",
-    "prepack": "node tools/check-public-package.cjs"
+    "prepack": "node tools/check-public-package.cjs",
+    "import:icons": "python tools/icons/import.py",
+    "import:catalog": "python tools/catalog/from-sqlite.py"
   },
   "peerDependencies": {
     "koishi": "^4.18.11"
   },
   "dependencies": {
+    "@resvg/resvg-js": "2.6.2",
     "opencc-js": "1.4.2"
   },
   "devDependencies": {
-    "koishi": "4.18.11",
-    "@koishijs/plugin-mock": "2.6.6"
+    "@koishijs/plugin-mock": "2.6.6",
+    "@satorijs/adapter-discord": "4.6.2",
+    "@satorijs/adapter-qq": "4.14.0",
+    "koishi": "4.18.11"
   },
   "keywords": [
     "koishi",
@@ -45,11 +51,14 @@
     "wizard101",
     "wizard404",
     "wiki",
-    "chinese"
+    "chinese",
+    "qq",
+    "discord",
+    "cards"
   ],
   "koishi": {
     "description": {
-      "zh": "Wizard101 中文百科与汉化词典；在线接口需要只读 API Key。"
+      "zh": "Wizard101 中文图鉴；QQ 官方 Bot/Discord 图卡、本地资料、Wiki 查询与伤害估算。"
     }
   },
   "homepage": "https://github.com/adquantum/koishi-plugin-wizard101#readme",

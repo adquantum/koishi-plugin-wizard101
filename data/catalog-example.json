@@ -1,0 +1,11 @@
+{
+  "kind": "wizard101.catalog",
+  "schemaVersion": 1,
+  "source": { "name": "人工合成示例资料", "version": "example-1", "synthetic": true },
+  "entries": [
+    { "type": "item", "id": "10001", "name": "Example Ember Hat", "zh": "示例余烬帽", "school": "fire", "kind": "hat", "level": 170, "stats": { "health": 500, "fire": { "damage_percent": 20, "pierce_percent": 5 } }, "notes": "仅演示资料包格式，不是游戏中的真实装备。" },
+    { "type": "pet", "id": "20001", "name": "Example Ember Companion", "zh": "示例余烬伙伴", "school": "fire", "wow_factor": 5, "exclusive": false, "strength": 250, "intellect": 240, "agility": 245, "will": 250, "power": 240, "talents": [{ "name": "Example Talent" }], "notes": "合成宠物示例，不含真实游戏属性。" },
+    { "type": "fish", "id": "30001", "name": "Example Frost Fish", "zh": "示例寒霜鱼", "school": "ice", "rank": 2, "is_sentinel": false, "notes": "合成鱼类示例，不代表游戏数据。" },
+    { "type": "statcaps", "id": "402170", "name": "Example Fire Level 170 Caps", "school": "fire", "level": 170, "stats": { "health": 999, "fire": { "damage_percent": 42 } }, "notes": "数字仅用于格式演示，不能作为配装上限依据。" }
+  ]
+}

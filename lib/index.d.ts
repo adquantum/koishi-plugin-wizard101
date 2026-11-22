@@ -6,6 +6,11 @@ export interface Config {
   enableChineseAliases?: boolean;
   localePath?: string;
   aliases?: Record<string, string | string[]>;
+  catalogPath?: string;
+  dataSource?: 'hybrid' | 'local' | 'api';
+  replyMode?: 'auto' | 'text' | 'image';
+  iconPath?: string;
+  fontPath?: string;
   apiKey?: string;
   authMode?: 'bearer' | 'x-api-key';
   baseUrl?: string;

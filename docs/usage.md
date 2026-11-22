@@ -2,7 +2,7 @@
 
 [返回项目首页](../README.md)
 
-本文对应 `koishi-plugin-wizard101` 0.1.1。运行环境为 Node.js ≥22、Koishi `^4.18.11`。公开源码不含完整本地化词典，需要自行导入；在线接口仍需在部署端完成有效 Key 联调。
+本文对应 `koishi-plugin-wizard101` 0.2.0。运行环境为 Node.js ≥22、Koishi `^4.18.11`。公开源码不含完整本地化词典，需要自行导入；在线接口仍需在部署端完成有效 Key 联调。
 
 ## 安装与本地化文件
 
@@ -56,7 +56,69 @@ plugins:
     maxQueue: 12
 ```
 
-首次保持 `onlineSearchEnabled: false`。导入词典后即可离线查询；数字 ID 查询由 API 提供，不受名称搜索开关影响，但需要有效 Key 和 User-Agent。
+首次保持 `onlineSearchEnabled: false`。导入词典后即可离线查词，导入游戏资料包后可按名称或 ID 查询已收录条目。该开关只控制 API 按名搜索；数字 ID 查询按 `dataSource` 选择来源，进入 API 流程时需要有效 Key 和 User-Agent。
+
+## 本地图鉴、图卡与平台
+
+0.2.0 增加三种相互独立的输入：`localePath` 是中文译名/对话；`catalogPath` 是游戏实体与数值；`iconPath` 是图标清单。图标与译名都不会生成游戏数值。
+
+```yaml
+catalogPath: data/wizard101/catalog.json.gz
+dataSource: hybrid
+replyMode: auto
+iconPath: data/wizard101/icons/manifest.json
+fontPath: ''
+```
+
+`catalogPath` / `iconPath` 留空时，使用上述 Koishi 应用数据目录下的默认位置。资料包为 `wizard101.catalog` v1，支持 JSON 与 JSON.gz，最大解压后 64 MiB、100000 个实体；部署前请按实际数据量留出内存。
+
+`dataSource` 可选 `hybrid`、`local`、`api`：
+
+| 模式 | 名称与 ID 查询来源 |
+| --- | --- |
+| `hybrid` | 按名查询优先本地已收录类别，缺类别时进入 API 流程；已收录类别的本地搜索无结果时返回空结果。按 ID 查询先找本地条目，未收录该 ID 时可查询 API。 |
+| `local` | 只查本地资料；缺类别或条目时返回提示，不访问 API。 |
+| `api` | 常规百科类别走 API；本地专用类别仍查询本地资料。 |
+
+`pet`、`fish`、`statcaps` 没有已确认的远程端点，始终需要本地资料。`wiz.list` 始终列出本地资料，不受 `dataSource` 影响。支持 `--remote` 的查询指令可显式绕过本地物品、法术等条目，但该选项不覆盖 `local` 模式，也不适用于本地专用类别。
+
+`onlineSearchEnabled` 只控制进入 API 流程后的按名搜索，不影响本地检索、离线词典或按 ID 查询。关闭时，进入 API 名称流程的请求返回词典结果或提示；在线按名搜索仍须由部署端核实接口参数和响应结构后再开启。`where` 在 `hybrid` 下优先查询已收录的本地区域，按大小写敏感的内部路径精确匹配；缺区域类别时可进入 API 流程。
+
+`replyMode` 可选 auto、text、image。auto 在 QQ / Discord 的结构化详情等回复尝试 PNG，其他平台保守使用文字；缺字体或渲染器时回退文字。原版图标缺失时仍可生成带文字标签的卡片。图卡是当前资料的可视化，不是上游法术卡原画。
+
+资料导入见 [SQLite 导入器](../tools/catalog/README.md)，图标和中文字体见 [图标导入器](../tools/icons/README.md)。QQ 官方 Bot 的 AppID/AppSecret、Discord Bot Token、Intent 和附件权限见[平台部署](platforms.md)。机器人运行时只需 Node；Python 用于一次性资源导入。
+
+### 本地筛选与分页
+
+```text
+wiz.list -t item -s fire -k hat -l 170
+wiz.pet -s fire --wow 5 --exclusive false 宠物名称
+wiz.fish -s ice -r 2 --sentinel false 鱼名
+wiz.item --object 内部Object名
+wiz.statcaps fire 170
+wiz.pick 1
+wiz.prev
+wiz.first
+wiz.last
+wiz.page 2
+```
+
+学校 `-s` 接受常见中文或英文；等级 `-l`、阶级 `-r` 是精确匹配，不是最大等级或范围。`--exclusive` / `--sentinel` 明确输入 true 或 false。筛选作用于本地收录数据，不向尚未验证的 API 发送猜测参数。
+
+`first/prev/next/last` 翻查询列表，`page N` 翻当前详情或长回复。两类页码用途不同。读取详情不会丢掉原来的搜索候选；每人每频道状态独立，有效期约10分钟。远程接口未确认总页数时不能跳末页。
+
+### 单段伤害估算
+
+```text
+wiz.calc 1000 -d 100 -b 40,35 -t 30 --shields 50 -r 20 -p 30 -c 1.8
+wiz.mobcalc 怪物ID 1000 -s fire -d 100
+```
+
+顺序为基础伤害、面板百分比、固定增伤、刃、虚弱、陷阱、盾、抗性、固定减伤，最后向下取整。暴击在最终未取整值上乘手动倍率后独立取整。穿透按输入顺序削盾，再削非负抗性，不影响虚弱或固定减伤，不产生额外易伤。负抗性保留易伤。
+
+刃/陷阱用正增伤百分比；虚弱 `-w` 和盾 `--shields` 用正减伤百分比。逗号表示多个合法不同来源的状态，程序不替玩家判断同来源叠加规则。`--flat-damage` / `--flat-resist` 为固定值。面板百分比应已处理游戏曲线，`-c` 为1–10的手动暴击倍率；不从rating推算暴击概率或倍率。
+
+这是明确假设的单段估算器，不覆盖DoT、多段、吸收、转换、PvP特殊规则及游戏各阶段舍入。mobcalc只采用明确的百分比抗性，拒绝把未汇总装备的怪物本体属性当完整目标属性。
 
 ## 服务端鉴权
 
@@ -76,14 +138,14 @@ Linux / Bash：
 
 ```bash
 export W404_API_KEY='REPLACE_LOCALLY_WITH_YOUR_PRIVATE_KEY'
-export W404_USER_AGENT='MyWizardWiki/0.1.1 (replace-with-your-contact@example.com)'
+export W404_USER_AGENT='MyWizardWiki/0.2.0 (replace-with-your-contact@example.com)'
 ```
 
 Windows PowerShell：
 
 ```powershell
 $env:W404_API_KEY = 'REPLACE_LOCALLY_WITH_YOUR_PRIVATE_KEY'
-$env:W404_USER_AGENT = 'MyWizardWiki/0.1.1 (replace-with-your-contact@example.com)'
+$env:W404_USER_AGENT = 'MyWizardWiki/0.2.0 (replace-with-your-contact@example.com)'
 ```
 
 占位内容需在自己的服务器上替换。联系方式应为实际邮箱或项目网址。环境变量必须对运行 Koishi 的进程可见：服务、容器或启动器未必继承另一终端设置的变量，应在对应启动环境中设置后重启。
@@ -109,16 +171,20 @@ wiz.dict -f 关键词
 | `wiz -t 类别 名称` | 临时指定类别 |
 | `wiz.dict 名称` | 离线中英名称、短文本或引用查询 |
 | `wiz.dict -f 关键词` | 显式扫描长对话全文 |
-| `wiz.search -t 类别 名称` | 按名称查询相应 API；可在名称前使用 `-p 页码` |
+| `wiz.search -t 类别 名称` | 按数据来源策略检索；可在名称前使用 `-p 页码`，仅 API 按名搜索受在线搜索开关控制 |
 | `wiz.item 名称或ID` | 物品 |
+| `wiz.gear 名称或ID` | 装备查询，同 `item` |
 | `wiz.spell 名称或ID` | 法术 |
 | `wiz.mob 名称或ID` | 怪物 |
+| `wiz.pet 名称或ID` / `wiz.fish 名称或ID` | 本地宠物 / 鱼类资料 |
+| `wiz.list -t 类别` | 本地资料列表，可组合名称、学派、类型等筛选 |
+| `wiz.statcaps 学派 等级` | 本地已收录的精确等级属性上限 |
 | `wiz.zone 名称或ID` | 区域 |
 | `wiz.npc 名称或ID` | NPC |
 | `wiz.quest 名称或ID` | 任务 |
 | `wiz.talent 名称或ID` | 天赋 |
 | `wiz.event 名称或ID` | 活动条目，不代表实时开放状态 |
-| `wiz.recipe 配方ID` | 配方预览；没有配方按名搜索 |
+| `wiz.recipe 配方ID` | 配方预览；API 仅支持 ID 查询，自备本地配方记录可按名检索 |
 | `wiz.detail 类别 ID` | 指定类型与 ID 查询详情 |
 | `wiz.drops 怪物ID` | 已知掉落及关联来源 |
 | `wiz.cheats 怪物ID` | 来源的机制说明；英文原文不会自动变成中文攻略 |
@@ -127,9 +193,14 @@ wiz.dict -f 关键词
 | `wiz.compare 物品ID_A 物品ID_B` | 对比同路径的数值属性 |
 | `wiz.pick 序号` | 选择本次搜索结果、名称候选或词典条目 |
 | `wiz.next` | 当前查询下一页 |
+| `wiz.prev` / `wiz.first` / `wiz.last` | 当前查询上一页 / 首页 / 末页；远程总页数未知时不能跳末页 |
+| `wiz.page 页码` | 当前详情或长回复的指定页 |
+| `wiz.calc 基础伤害` / `wiz.mobcalc 怪物ID 基础伤害` | 单段伤害估算；参数与模型限制见上文 |
 | `wiz.status` | 显示可公开的加载、配置与缓存状态 |
 
-支持的类型为 `item`、`spell`、`mob`、`zone`、`npc`、`quest`、`talent`、`event`、`recipe`，以及代码内列出的常见中文别名。数字 ID 会直接查询 API；在线名称搜索关闭时，名称查询返回本地词典。
+可用于 `-t` 或 `detail` 的类型为 `item`、`spell`、`mob`、`pet`、`fish`、`statcaps`、`zone`、`npc`、`quest`、`talent`、`event`、`recipe`，另支持 `gear`（同 `item`）及代码内列出的常见别名。`defaultType` 配置当前可选 `item`、`spell`、`mob`、`zone`、`npc`、`quest`、`talent`、`event`；宠物、鱼类和上限可通过专用指令或 `-t` 查询。
+
+数字 ID 会直接进入该类别的详情流程，按 `dataSource` 选择本地或 API 来源；它不需要开启在线名称搜索。本地名称查询同样不受该开关影响。只有进入 API 名称流程的查询，才在开关关闭时返回词典结果或提示。
 
 中文命令别名 `巫师百科`、`巫师词典` 默认启用。与其它插件冲突时可关闭 `enableChineseAliases`。
 
@@ -224,7 +295,12 @@ pageSizeParam: limit
 | 配置项 | 默认值 | 说明 |
 | --- | --- | --- |
 | `command` | `wiz` | 小写字母开头，可含数字和连字符 |
-| `defaultType` | `item` | 默认查询类别 |
+| `defaultType` | `item` | 默认查询类别；可选 item、spell、mob、zone、npc、quest、talent、event |
+| `catalogPath` | 空 | 默认应用数据目录 `data/wizard101/catalog.json.gz` |
+| `dataSource` | `hybrid` | 本地优先 / 只查本地 / 常规类别走 API；详见上文来源规则 |
+| `replyMode` | `auto` | auto / text / image |
+| `iconPath` | 空 | 默认 `data/wizard101/icons/manifest.json` |
+| `fontPath` | 空 | 自动发现CJK字体；也可填TTF/OTF/TTC |
 | `enableChineseAliases` | `true` | 启用两个中文命令别名 |
 | `localePath` | 空 | 空值读取 Koishi 数据目录 `data/wizard101/locale-zh.json.gz`；也可指定自己的路径 |
 | `aliases` | `{}` | 俗称到英文全名的映射 |
@@ -232,7 +308,7 @@ pageSizeParam: limit
 | `userAgent` | 空 | 留空读取 `W404_USER_AGENT` |
 | `authMode` | `bearer` | 或 `x-api-key` |
 | `baseUrl` | `https://wizard404.com/api/v1` | 建议保持官方地址，仅向可信服务发送密钥 |
-| `onlineSearchEnabled` | `false` | 完成名称接口联调后开启 |
+| `onlineSearchEnabled` | `false` | 只控制 API 按名搜索，需部署端完成联调后开启；不影响本地检索或按 ID 查询 |
 | `searchParam` | `q` | 待验证的名称参数 |
 | `pageParam` | `page` | 待验证的页码参数 |
 | `pageSizeParam` | `limit` | 待验证的条数参数，空字符串表示省略 |
@@ -252,7 +328,7 @@ pageSizeParam: limit
 | --- | --- |
 | 安装后找不到插件 | 确认包安装在实际 Koishi 应用目录，并按原部署方式重新加载 |
 | 没有中文词条 | 公开仓库不附完整词典；导入自己的文件并检查 `localePath` |
-| 可以查词典但按名字不联网 | 默认行为；先完成接口验证再开启 `onlineSearchEnabled` |
+| 可以查词典但按名字不联网 | 检查 `dataSource`：local 只查本地，hybrid 对已导入类别优先本地；进入 API 名称流程还需验证后开启 `onlineSearchEnabled` |
 | 提示 Key 或 User-Agent 缺失 | 检查配置值和运行进程的环境变量，替换占位内容 |
 | 401 | 检查 Key 是否有效、是否被撤销或复制错误 |
 | 403 / Cloudflare | 向服务方确认访问权限或限制，避免反复盲目请求 |
