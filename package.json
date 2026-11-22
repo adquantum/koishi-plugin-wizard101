@@ -10,7 +10,9 @@
   },
   "files": [
     "lib",
-    "tools",
+    "tools/**/*.cjs",
+    "tools/**/*.py",
+    "tools/**/README.md",
     "test/*.test.cjs",
     "examples",
     "docs",
