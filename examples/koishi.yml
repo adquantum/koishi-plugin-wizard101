@@ -1,0 +1,33 @@
+# 合并到现有 Koishi 配置的 plugins 下；不要覆盖原有适配器配置。
+# 推荐通过服务器环境变量 W404_API_KEY 与 W404_USER_AGENT 提供密钥和联系方式。
+# 使用控制台配置时，把真正密钥填入 apiKey 的密码字段，不要上传配置文件。
+plugins:
+  wizard101:
+    command: wiz
+    defaultType: item
+    enableChineseAliases: true
+    localePath: ''
+    apiKey: ''
+    authMode: bearer
+    userAgent: ''
+    baseUrl: https://wizard404.com/api/v1
+    onlineSearchEnabled: false
+    searchParam: q
+    pageParam: page
+    pageSizeParam: limit
+    pageSize: 8
+    minIntervalMs: 1200
+    cooldownMs: 1500
+    timeoutMs: 10000
+    cacheTtlMs: 900000
+    maxCacheEntries: 128
+    maxCacheBytes: 16777216
+    maxResponseBytes: 4194304
+    maxQueue: 12
+    # 这些是可选的、已按对应词条核对过的社区别名。
+    # 删除此部分后，机器人会按汉化包的全部上下文列出多义候选。
+    aliases:
+      火猫: Fire Cat
+      天铁哈斯塔: Sky Iron Hasta
+      木须: MooShu
+      自来水厂: Waterworks

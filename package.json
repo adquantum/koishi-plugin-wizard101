@@ -1,0 +1,63 @@
+{
+  "name": "koishi-plugin-wizard101",
+  "version": "0.1.1",
+  "description": "Wizard101 中文百科机器人：Wizard404 只读查询与 UTF-16LE 汉化词典",
+  "main": "lib/index.cjs",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "lib",
+    "tools",
+    "test/*.test.cjs",
+    "examples",
+    "docs",
+    "data/README.md",
+    "data/locale-example.json",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "CONTRIBUTING.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.cjs",
+    "import:locale": "node tools/locale/import.cjs",
+    "probe": "node tools/probe-api.cjs",
+    "check": "node --check lib/index.cjs && node --check lib/controller.cjs && node --check lib/format.cjs",
+    "check:public": "node tools/check-public-package.cjs",
+    "prepack": "node tools/check-public-package.cjs"
+  },
+  "peerDependencies": {
+    "koishi": "^4.18.11"
+  },
+  "dependencies": {
+    "opencc-js": "1.4.2"
+  },
+  "devDependencies": {
+    "koishi": "4.18.11",
+    "@koishijs/plugin-mock": "2.6.6"
+  },
+  "keywords": [
+    "koishi",
+    "plugin",
+    "wizard101",
+    "wizard404",
+    "wiki",
+    "chinese"
+  ],
+  "koishi": {
+    "description": {
+      "zh": "Wizard101 中文百科与汉化词典；在线接口需要只读 API Key。"
+    }
+  },
+  "homepage": "https://github.com/adquantum/koishi-plugin-wizard101#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adquantum/koishi-plugin-wizard101.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adquantum/koishi-plugin-wizard101/issues"
+  }
+}
