@@ -1,38 +1,93 @@
 # 与 Kimerith-WindHammer 的功能对照
 
-参考：[MajorPain1/Kimerith-WindHammer](https://github.com/MajorPain1/Kimerith-WindHammer)，核对提交 `3c24847d111387fc0b34772b548f74e80089599f`。本插件版本 0.2.0。
+本插件 **0.3.0** 以 [MajorPain1/Kimerith-WindHammer](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f) 的提交 **`3c24847d111387fc0b34772b548f74e80089599f`** 为固定参考。该提交的 15 条公开命令路由均已在 Koishi 文字指令和 Discord 原生命令中实现，原有词典、Wizard404 与 QQ 官方机器人支持继续保留。
 
-参考项目是 Python Discord Bot，依赖本地 `items.db`、`decks.db` 及游戏图片。本插件保留 Koishi、中文词典和 Wizard404，并增加本地资料与双端 PNG。
+本版直接移植、翻译并适配上游的部分算法与数据映射，整包使用 **GPL-3.0-only**；不是此前 0.2 版“仅独立实现相似能力”的许可和实现范围。原作者、移植文件与修改说明见 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)。
 
-| 范围 | 参考项目 | 本插件 0.2.0 |
+## 15 条公开路由
+
+这里的“已实现”表示代码路径、参数映射、相应导入与展示已接通。查询结果仍需要自己的数据库；不能据此宣称所有真实游戏条目都经过核验。
+
+| 上游路由 | Koishi 指令 | 0.3 实现 |
 | --- | --- | --- |
-| 物品 find/list | 名称、Object、ID、学派/种类/等级 | `item/gear/list` 本地同类检索与筛选 |
-| 法术 find/list | 基本参数与底层效果树 | `spell/list` 的已有字段与描述；未移植完整效果树解释器 |
-| 怪物 find/list/deck | 基础属性、AI、牌组 | `mob/list/deck` 本地或 API；完整装备总属性尚未汇总 |
-| 宠物 find/list | 五维、蛋、天赋、卡、Wow、专属 | `pet/list`，需要本地数据库；不猜未标分类的普通/竞速天赋 |
-| 鱼类 find/list | 学派/阶级/哨兵与参数 | `fish/list`，同类本地筛选 |
-| statcaps | 学派等级查表、十级向下取整 | 精确等级查表，缺记录时列出已收录等级 |
-| calc | 参考实现的暴击/评级/buff公式 | 独立单段估算，手动暴击倍率，逐步说明假设 |
-| mob calc | 汇总怪物与装备再算 | 仅使用明确百分比抗性；缺完整值时要求手动输入 |
-| 图示 | Discord Embed、emoji、缩略图 | 原版图标 PNG 资料卡，两端共用 |
-| 分页 | 四按钮、编辑原消息、发起者隔离 | first/prev/next/last/pick 与 page；用户/频道隔离 |
-| 平台 | Discord | QQ 官方群/单聊、QQ频道、Discord 普通文字指令 |
-| Wiki 扩展 | 未见完整掉落/配方/任务/区域命令 | 保留 Wizard404 适配，真实Key联调待完成 |
+| `item.find` | `wiz.item.find` | 名称 / Object / ID，学派、部位、等级；135 属性映射、限制、插槽、套装、卡片、Maycast、牌组信息 |
+| `item.list` | `wiz.item.list` | 关键词和相同筛选，去重名称列表 |
+| `spell.find` | `wiz.spell.find` | 基础资料、中文描述、特殊类别、用途标记、完整已知效果树、目标数 |
+| `spell.list` | `wiz.spell.list` | 关键词、学派、种类、豆数 |
+| `mob.find` | `wiz.mob.find` | 怪物资料、AI、怪物学标记、本体与全部关联装备属性 |
+| `mob.list` | `wiz.mob.list` | 关键词、学派、难度类别、阶级 |
+| `mob.deck` | `wiz.mob.deck` | 按上游规则组合装备牌组、备用牌组及怪物自身牌组 |
+| `mob.calc` | `wiz.mob.calc` | 从完整本体 / 装备汇总中选取攻击学派抗性、格挡，再运行参考算法 |
+| `pet.find` | `wiz.pet.find` | 五维、蛋、Wow、专属、套装、自带卡、普通与竞速天赋 |
+| `pet.list` | `wiz.pet.list` | 关键词、学派、Wow、专属筛选 |
+| `fish.find` | `wiz.fish.find` | 基础参数、长度范围、哨兵标记 |
+| `fish.list` | `wiz.fish.list` | 关键词、学派、阶级、哨兵筛选，可使用 Object 名 |
+| `statcaps.find` | `wiz.statcaps.find` | 七大学派查表；等级先取十级档位，范围 10–190 |
+| `calc` | `wiz.calc` | 有序 Buff、穿透、抗性、暴击 / 格挡评级，PvP / PvE 两种倍率 |
+| `help` | `wiz.help` | 中文帮助 |
 
-## 数据条件
+Discord 默认使用上游的八个根命令 `/item`、`/spell`、`/mob`、`/pet`、`/fish`、`/statcaps`、`/calc`、`/help`，也可用一个 `/wiz` 命名空间。全部参数见[使用手册](usage.md#完整指令)与[原生命令文档](native-interactions.md#完整参数)。机读参数契约在 [upstream-command-contract.json](upstream-command-contract.json)，运行时实现位于 [kimerith-controller.cjs](../lib/kimerith-controller.cjs)。
 
-WAD / LANG 本地化文件包含名称、对话和界面文字；Icons.zip 包含小图标。它们不能补齐宠物天赋池、鱼类参数、装备数值和等级上限。需要自己的 [wizdb](https://github.com/MajorPain1/wizdb) 导出或标准化 JSON 资料包，使用[只读导入器](../tools/catalog/README.md)。
+## 法术解释的实际覆盖
 
-当前自动化使用合成数据库验证公开 schema，尚未拿到真实 items.db 做全量导入验收。未知属性明确标记；不上网下载游戏数据库，不把合成样例作为正式游戏记录。
+`tools/catalog/spell_effects.py` 移植上游的 `get_string_from_effect`、`recursive_generate_effect_string` 和 `parse_description` 处理逻辑，并移除运行时 Discord 依赖。数据库导入时生成中文效果，机器人查询时选择相应目标数的结果。
 
-## 当前交互差异
+- 效果枚举共 **152** 个；上游对其中 **119** 个有专门解释，共 **112 组主分支**。这些分支均已移植。其余 33 个枚举不擅自补充游戏语义，显示枚举名和原始字段。
+- 处理 8 个效果类的普通递归、RandomSpell、X 豆变量、条件包装、条件分支、目标数包装、挂饰转换和暗影契约，以及 21 类目标。
+- 保留效果层级、条件、回合数、保护、学派、治疗修正等信息；包含彩色学派合并、伤害 / 治疗转换、挂饰互换、随机法术与引用解析。
+- 默认导出目标数 `0、1、2、3、4` 及数据库实际出现的其他目标数。`0` 只包含通用行；查询未预编译的目标数时选用通用变体，不假定为 1 个目标。
+- `--locale` 可先翻译原始说明模板，再替换效果参数和图标占位符。找不到唯一译文时保留原文；结构性效果文本有中文术语。
+- 未知效果、未解析条件、缺引用及不完整表都有明确说明，相关原值保留在资料包中。循环和孤立节点会报告，不无限递归。
 
-同名检索列候选，不自动认定模糊分数最高的对象。API 未确认的过滤参数不会猜测发送，因此复杂组合筛选用于本地资料包。
+有意修复了上游几个可确认的实现问题：被前一分支遮蔽的百分比治疗、变异法术显示 SQL 元组、重复同学派被误合并为彩色、缺失占位符越界。原版固定 `eAMul=50` 等模板假设仍说明来源。这里的覆盖统计是静态分支 / 枚举范围，不是实战效果准确率。
 
-原生 Discord Slash Commands、按钮编辑、QQ Markdown 模板与后台菜单注册尚未实现。玩家两端使用同一套 `wiz` 指令；详细发送、被动回复与附件配置见[平台文档](platforms.md)。
+## 属性、怪物、宠物与鱼类
 
-## 参考与授权
+装备和怪物使用上游 **135 个 Canonical 属性哈希**及展示顺序，扩展到精通、眩晕抵抗、采集、免疫、评级等原有字段。未知哈希保留 ID 与数值。百分比、固定值、评级和无法确认单位的导出评级分开记录，不把所有数字都当百分比。
 
-参考仓库根 LICENSE 为 GPL-3.0，包元数据又写 ISC，存在不一致。本项目独立实现同类功能，不移植参考源码。公开数据库字段、文件格式与通用协议用于兼容设计；用户的游戏资源也不因导入而获得 MIT 许可。
+怪物导入从 `mob_stats` 读取本体，再遍历 `mob_items` 的**全部关联装备**读取 `item_stats`，使用上游合并顺序形成 `combat.raw_stats`、展示属性和各攻击学派的目标属性。缺表、缺物品引用等使 `combat.complete` 为 `false`，`mob.calc` 拒绝使用。完整标记只表示固定参考算法所需的数据关系已读到，并不证明当前服务器资料完整。旧 `stats` / `stats_scope: base_only` 继续保留用于兼容旧消费者，完整汇总位于 `combat`。
 
-核对入口：[命令帮助](https://github.com/MajorPain1/Kimerith-WindHammer/blob/main/bot/extensions/help.py)、[分页实现](https://github.com/MajorPain1/Kimerith-WindHammer/blob/main/bot/menus/items.py)、[wizdb schema](https://github.com/MajorPain1/wizdb/blob/main/wizdb/db.py)。
+牌组按上游整体优先级：先取 `items.db` 中所有装备牌组；这组完全为空时才改取 `decks.db` 的装备牌组，最后追加 `items.db` 中怪物自身的牌组。不是逐张卡片从备用库补洞，也不把相同来源反复追加。
+
+宠物按上游契约，以原始顺序的前 10 条为普通天赋，其余为竞速天赋，两组各自按 `priority` 排序。这是参考机器人的数据布局假设；`talents` 表本身没有通用分类字段，不能把该约定宣称为任意版本数据库的语义保证。
+
+鱼类同时保留基础长度、最小 / 最大尺寸倍率，并生成 `round(base_length × size_multiplier, 2)` 的长度范围。未知概率和速度参数保留原值，不推断其单位或游戏时序。
+
+## 检索和计算行为
+
+`find` 首先匹配名称；中文可通过本地词典、简繁归一化和已配置别名得到候选。没有精确名称时，按参考的 token-set 相似度与序列相似度选择相近名称，并在结果开头明确说明原查询和匹配名。一个精确英文名对应多条记录时全部保留。`Object` 与 `ID` 查询精确匹配，不进行相近替换；按上游行为，这两种模式不再应用名称筛选条件。`list` 为关键词包含匹配，按名称去重排序；鱼类可按内部名列出。
+
+这与旧 `wiz.search` 的候选选择流程不同：旧在线中文查询仍要求可靠的精确英文映射，不用词典模糊建议擅自请求 API。
+
+新 `wiz.calc` / `wiz.mob.calc` 使用 [kimerith-math.cjs](../lib/kimerith-math.cjs) 的固定参考算法。保留有序 Buff、逐步向零截断、PvP 系数 5 / PvE 系数 3、正负 `P` 后缀、怪物负抗性等行为。也保留并提示以下兼容差异：
+
+| 情况 | 固定参考行为 |
+| --- | --- |
+| PvE 面板伤害 | `calc_damage` 不自动调用 PvE 伤害曲线；输入者需要确认伤害百分比 |
+| 通用 `calc` 负抗性 | 按上游增加余穿透；与 `mob.calc` 的易伤乘法不同 |
+| 本体重复同 `order` 属性 | 保留上游首条写入 / 末条引用行为并提示，不伪称普通求和 |
+| `polymorph` 怪物 | 详情展示属性减半并截断；伤害计算使用未减半的汇总 |
+| `ReduceDamageRating` | 参考模式和上游一样将其计入抗性，同时保留其导出评级单位和提示 |
+| 多余空格 / 非有限数值 | 修复空 Buff 崩溃，拒绝 NaN / Infinity；无效普通 token 按上游忽略并报告 |
+
+这套算法是参考机器人的单段计算复现，不提供暴击概率，也不模拟持续伤害、多段、吸收、同源叠加合法性或完整战斗状态。旧简化算法保留为 `wiz.estimate`，旧 `wiz.mobcalc` 仍只接受来源明确的完整百分比抗性并拒绝 `base_only`。
+
+## 平台交互和展示
+
+| 范围 | 0.3 行为 |
+| --- | --- |
+| Discord Slash | 8 根命令 / 15 路由，中文命令与选项；默认关闭，管理员 `wiz.sync` 显式同步 |
+| 命令归属 | 仅更新本插件登记的命令 ID；碰撞预检，不 bulk overwrite，不接管其他插件命令 |
+| Discord 分页 | 首 / 前 / 后 / 末四按钮，编辑原回复，绑定发起用户、频道、服务器和消息；180 秒有效 |
+| QQ 群 / 单聊 | 文字指令与 PNG；有权限时选用输入按钮，由玩家发送新指令翻页 |
+| QQ 频道 | 文字分页与官方适配器支持的图片发送 |
+| 卡片与原图 | 两端共享中文 PNG、原版小图标、可选本地 `portraitPath` 原图；失败回退文字 |
+| 长内容 | 数据页与文字分段均可到达；长列表按需读取，末页直接定位 |
+
+Discord 原生交互的归属、超时、ACK 与版本条件见[原生命令文档](native-interactions.md)。QQ 输入按钮不等同于 Discord 原消息按钮回调，也不会自动申请平台权限或创建后台审核菜单。
+
+## 数据与验证边界
+
+WAD / LANG 提供文本，小图标资源提供展示素材；它们不能代替法术效果表、装备数值、宠物天赋池或鱼类参数。请使用自己的 `items.db`，按需提供 `decks.db` 和中文词典重新导入，见[只读导入器](../tools/catalog/README.md)。0.2 词典、图标和 catalog 格式可继续读入；新增字段需要 0.3 重导出。
+
+已具备合成数据库、效果分支矩阵、计算对照、完整路由及官方适配器本地测试。未使用完整真实 `items.db` 做全量验收，未使用真人机器人账号向平台注册和发消息，也未完成有效 Wizard404 Key 的远程联调。说明中的“兼容”针对固定参考提交及已核对适配器代码，不宣称追随上游或游戏实时最新版本。

@@ -1,89 +1,44 @@
 # Wizard101 中文图鉴机器人
 
-**Koishi 插件 · QQ 官方 Bot / Discord · 原版图标资料卡 · 本地游戏资料与 Wiki 查询**
+**Koishi 插件 · Kimerith 中文兼容实现 · QQ 官方 Bot / Discord · 原版图标资料卡**
 
-将 Wizard101 本地化文本转换成中英词典，从自己的 `wizdb` 数据库导入装备、法术、怪物、宠物、鱼类和等级属性上限，再通过 Wizard404 查询在线百科资料。两端共享带原版学派、魔豆、属性图标的 PNG 资料卡；长内容可翻页，图片不可用时回退文字。
+从自己的 Wizard101 汉化 WAD / UTF-16LE LANG 建立中英词典，从 `wizdb` 数据库导入装备、法术、怪物、宠物、鱼类和属性上限。玩家可用中文或英文查询，查看中文法术效果、怪物本体与全部关联装备的属性，以及带原版图标和可选原图的 PNG 资料卡。另保留 Wizard404 在线百科查询。
 
-**当前为 0.2.0 开发版。** 本地查询、导入、PNG 渲染、计算器和 Koishi 交互已有自动化测试；QQ / Discord 使用实际官方消息编码器做本地验证。尚未使用真实机器人账号做群聊验收，也未使用有效 API Key 完成 Wizard404 远程联调。在线按名搜索默认关闭。
+**当前为 0.3.0，提供源码和本地打包安装流程，尚未发布到 npm 或 Koishi 插件市场。** 已实现 [Kimerith-WindHammer 固定提交 `3c24847d`](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f) 的全部 15 条公开命令路由，并移植、适配相关算法；代码采用 **GPL-3.0-only**。这里的“全部”指该提交的命令和已定义处理分支，不表示已经取得完整游戏数据库或验证当前游戏服务器的所有行为。
 
-公开仓库提供代码、导入工具和合成测试样例。**游戏 WAD、原版图标、完整词典、游戏数据库、字体文件及密钥不随仓库分发**；部署者导入自己有权使用的数据。
+自动化使用合成 SQLite、合成资料和实际官方适配器的本地替身。**尚未使用真实机器人账号完成 QQ / Discord 在线验收，也未使用有效 API Key 完成 Wizard404 远程联调；完整真实游戏数据库尚待部署者导入验收。** 在线按名搜索与 Discord 原生命令默认关闭。
 
-[快速开始](#快速开始) · [常用指令](#常用指令) · [完整使用手册](docs/usage.md) · [本地化导入](tools/locale/README.md)
+公开仓库及本地生成的安装包不附带 WAD、LANG 全文、完整词典、游戏数据库、原版贴图、字体或密钥。请导入自己有权使用的资源。
 
-## 功能
+[快速开始](#快速开始) · [完整使用手册](docs/usage.md) · [15 路由功能对照](docs/reference-parity.md) · [QQ / Discord 接入](docs/platforms.md) · [原生命令与按钮](docs/native-interactions.md)
 
-| 能力 | 行为 | 状态 |
-| --- | --- | --- |
-| 中英词典 | 名称、短文本、文件/key 引用互查；可扫描长对话 | 导入自己的词典后可离线使用 |
-| 简繁与俗称 | OpenCC 统一检索形式，支持自定义英文名称映射 | 已实现 |
-| 同名处理 | 中文对应多个英文时列出候选；保留原始来源 | 已实现 |
-| 百科条目 | 物品、法术、怪物、区域、NPC、任务、天赋、活动 | 在线适配已实现，待真实联调 |
-| 怪物资料 | 掉落、特殊机制、可抽取牌库 | 在线适配已实现，待真实联调 |
-| 配方与对比 | 按 ID 查配方预览；比较两件物品同字段的数值 | 取决于上游实际数据 |
-| 交互与缓存 | 候选选择、分页、会话隔离、TTL/LRU 缓存 | 已实现及测试 |
-| 请求控制 | 服务端鉴权、串行请求、超时、额度冷却、响应大小上限 | 已实现及测试 |
+## 0.3 能做什么
 
-新增功能：
-
-| 能力 | 行为与条件 |
+| 能力 | 实现与资料条件 |
 | --- | --- |
-| 本地图鉴 | 导入自有 `items.db` / 可选 `decks.db`，离线搜索装备、法术、怪物、宠物、鱼类、属性上限 |
-| 组合筛选 | 学派、部位/类型、精确等级、阶级/豆数；宠物 Wow/专属、鱼类哨兵标记 |
-| 图示卡片 | 原版 DDS/TGA 一次性转 PNG；中英标题、属性图标、来源、长内容分页 |
-| 单段伤害估算 | 刃、虚弱、陷阱、盾、穿透、抗性、固定增减伤与手动暴击倍率，逐步解释 |
-| 双平台 | QQ 官方群/单聊与 Discord 图片发送，QQ 频道兼容；失败回退文字 |
-| 完整导航 | `first/prev/next/last/pick` 控制查询列表；`page` 控制当前详情 |
+| 装备 `find/list` | 名称 / Object / ID、学派 / 部位 / 等级筛选；覆盖上游 135 个属性哈希、装备限制、插槽、自带卡、Maycast、牌组参数与标记 |
+| 法术 `find/list` | 中文描述模板、X 豆与特殊学派类别、用途标记；移植 119 种有专门解释的效果，识别全部 152 个效果枚举，支持层级、条件、随机分支、转换和目标数变体 |
+| 怪物 `find/list/deck/calc` | 基础资料、AI 与采集标记；汇总本体及 `mob_items` 全部关联装备，按上游顺序组合牌组，使用完整汇总资料进行伤害计算 |
+| 宠物 `find/list` | 蛋、五维、Wow、专属、自带卡、普通与竞速天赋；天赋分组遵循上游记录顺序约定 |
+| 鱼类 `find/list` | 学派、阶级、哨兵筛选、内部名列表、速度与咬钩参数；按基础长度乘尺寸倍率计算最小 / 最大长度 |
+| `statcaps.find` | 七大学派的 10–190 级档位；输入等级向下取到十级档位，例如 179 查询 170 |
+| `calc` / `mob.calc` | 上游兼容的有序 Buff、穿透、抗性、暴击 / 格挡评级及 PvP / PvE 倍率，显示逐步结果与已知兼容差异 |
+| 中文查询 | 简繁统一检索、俗称、同名多记录；`find` 无精确名称时明确显示相近匹配，`list` 按关键词列出并去重 |
+| Discord 原生交互 | 默认布局为 8 个根 Slash 命令、15 条路由，提供中文选项和首页 / 上一页 / 下一页 / 末页按钮；每条消息独立分页 |
+| QQ 官方机器人 | 同一组文字指令和图卡；已获平台 Markdown / 按钮权限时可选输入按钮，QQ 频道使用文字分页 |
+| Wiki 扩展 | 保留区域、NPC、任务、活动、天赋、配方、掉落、机制、物品对比等 Wizard404 适配；实际覆盖取决于接口和授权 |
 
-机器人运行时不需要数据库服务器或大模型服务。本地资料包是有上限的 JSON/JSON.gz；Python 仅用于一次性图标/数据库导入。平台连接由官方 Koishi 适配器负责。
+上游本身没有单独说明的 33 个效果枚举，以及未知条件或字段，会保留原名、原值和提示，不生成猜测说明。怪物关联表不完整时拒绝目标伤害计算。细节见[功能对照](docs/reference-parity.md)及[数据库导入说明](tools/catalog/README.md)。
 
-功能参考 [Kimerith-WindHammer](https://github.com/MajorPain1/Kimerith-WindHammer)，实现独立编写；详见[功能对照与数据条件](docs/reference-parity.md)。
-
-## 图标、本地资料与双平台接入
-
-原版图标与中文文本解决展示和译名；装备数值、宠物天赋池、鱼类参数仍需要游戏资料。三个导入文件分别配置，不互相冒充。
-
-```sh
-# 一次性转换 Icons.zip，需 Python 3 + Pillow
-python -m pip install Pillow
-python tools/icons/import.py --input /path/to/Icons.zip --output /path/to/koishi/data/wizard101/icons
-
-# 只读导入 wizdb 数据库，Python 标准库即可；--decks 可省略
-python tools/catalog/from-sqlite.py --input /path/to/items.db --decks /path/to/decks.db --version "自行确认的资料版本" --output /path/to/koishi/data/wizard101/catalog.json.gz
-```
-
-Koishi 配置中增加：
-
-```yaml
-catalogPath: data/wizard101/catalog.json.gz
-iconPath: data/wizard101/icons/manifest.json
-fontPath: ''
-dataSource: hybrid
-replyMode: auto
-```
-
-`dataSource` 控制资料查询来源。`hybrid` 的按名查询优先本地已收录类别，缺类别时进入 API 流程；已收录类别的本地搜索无结果时直接显示空结果。按 ID 查询则先找本地条目，未收录该 ID 时可查询 API。`local` 只查本地，`api` 让常规百科类别走 API；宠物、鱼类和属性上限始终需要本地资料，`wiz.list` 也始终查询本地资料包。
-
-支持该选项的指令可用 `--remote` 显式选择 API，但它不覆盖 `local` 模式，也不适用于宠物、鱼类和属性上限。`onlineSearchEnabled` 只控制 API 按名搜索；本地检索、离线词典和按 ID 查询不受这个开关影响。进入 API 名称流程且开关关闭时，插件返回词典结果或提示；API 请求仍需有效 Key 和 User-Agent。
-
-`auto` 在 QQ / Discord 尝试图片，其他平台使用文字；可选 `text` / `image`。PNG 不需要浏览器，但需要中文字体：自动发现 Noto Sans CJK、微软雅黑等，也可指定 `fontPath`；缺字体回退文字。Linux 可安装 `fonts-noto-cjk`。
-
-平台安装：
-
-```sh
-npm install @koishijs/plugin-adapter-qq@4.14.0 @koishijs/plugin-adapter-discord@4.6.2
-```
-
-QQ 使用 **AppID + AppSecret**，Discord 使用 **Bot Token**。QQ 群/单聊输出一条富媒体消息；QQ 频道当前适配器会分成两条。此版本采用普通文字命令与指令分页，尚未注册 Discord 原生 Slash Commands、按钮或 QQ Markdown 模板。
-
-详细操作：[QQ / Discord 部署](docs/platforms.md) · [图标与字体](tools/icons/README.md) · [本地数据库导入](tools/catalog/README.md)。缺少游戏数据库时，仍可用词典、伤害计算器和配置后的 API 查询。
+运行时只需要 Node.js / Koishi，不需要 Python、数据库服务器或大模型服务。Python 仅用于离线导入；游戏文本、数值资料、小图标和原图分别配置。
 
 ## 快速开始
 
-### 1. 准备环境与安装包
+### 1. 从源码安装
 
-需要 **Node.js ≥22** 和 **Koishi `^4.18.11`**。以下步骤从源码生成本地安装包；本项目尚未发布到 npm 或 Koishi 插件市场。
+需要 **Node.js ≥22**、**Koishi `^4.18.11`**。数据库导入需要 **Python ≥3.10**；图标转换另需 Pillow，图卡渲染需可用的中文字体。
 
-```bash
+```sh
 git clone https://github.com/adquantum/koishi-plugin-wizard101.git
 cd koishi-plugin-wizard101
 npm ci
@@ -92,163 +47,135 @@ npm test
 npm pack
 ```
 
-在实际运行 Koishi 的应用根目录安装生成的包：
+完整测试环境也需 Python ≥3.10、Pillow 和中文字体。Linux 可安装 `fonts-noto-cjk`。在实际运行 Koishi 的应用目录安装本地生成的包：
 
-```bash
-npm install --save /absolute/path/to/koishi-plugin-wizard101/koishi-plugin-wizard101-0.2.0.tgz
+```sh
+npm install --save /absolute/path/to/koishi-plugin-wizard101/koishi-plugin-wizard101-0.3.0.tgz
 ```
 
-### 2. 生成自己的中文词典
+### 2. 准备中文词典和游戏资料
 
-在源码目录运行导入工具，将输出放到 Koishi 的数据目录。输入支持 `.wad`、单个 `.lang` 或包含 `.lang` 的目录：
+在插件源码目录执行以下命令；输出目录为自己的 Koishi 应用数据目录。路径含空格时加引号。
 
-```bash
+```sh
+# WAD、单个 LANG 或 LANG 目录 → 中英词典
 node tools/locale/import.cjs \
   --input /path/to/Locale_en-US-Root.wad \
   --output /absolute/path/to/koishi-app/data/wizard101/locale-zh.json.gz
+
+# 只读导入数值资料；--locale 用于名称及原始法术说明的中文化
+# --decks 可省略；有独立牌组库时建议提供
+python3 tools/catalog/from-sqlite.py \
+  --input /path/to/items.db \
+  --decks /path/to/decks.db \
+  --locale /absolute/path/to/koishi-app/data/wizard101/locale-zh.json.gz \
+  --version "自己确认的游戏或资料版本" \
+  --output /absolute/path/to/koishi-app/data/wizard101/catalog.json.gz
+
+# 可选：原版小图标转换，仅此步骤需要 Pillow
+python3 -m pip install Pillow
+python3 tools/icons/import.py \
+  --input /path/to/Icons.zip \
+  --output /absolute/path/to/koishi-app/data/wizard101/icons
 ```
 
-路径含空格时加引号。`.lang` 采用 UTF-16LE，空行可能是有效字段；不要先转换编码、删除空行或把本地化 key 当成 API 条目 ID。详见[导入说明](tools/locale/README.md)。
+LANG 按 UTF-16LE 读取，空行可能是有效字段；不要先删除空行或改编码。本地化 key 也不是百科条目 ID。`--locale` 只采用可唯一确定的翻译，未匹配的名称和原说明继续保留原文；结构性效果和状态术语仍有中文解释。
+
+可选的法术 / 怪物原图放入本地目录，通过 `portraitPath` 配置。导入器根据数据库 `image_file/image` 生成 PNG 文件名，机器人只读取本地 PNG，不下载原图。命名和限制见[导入说明](tools/catalog/README.md#原版画像与缩略图)。
 
 ### 3. 启用插件
 
-在 Koishi 控制台启用 `wizard101`，或把以下内容合并到现有配置。`localePath` 相对于 **Koishi 应用根目录**解析，也可填写绝对路径：
+把以下内容合并到现有 Koishi 配置。相对路径以 **Koishi 应用根目录**为准。
 
 ```yaml
 plugins:
   wizard101:
     command: wiz
     localePath: data/wizard101/locale-zh.json.gz
-    apiKey: ''
-    userAgent: ''
-    authMode: bearer
+    catalogPath: data/wizard101/catalog.json.gz
+    iconPath: data/wizard101/icons/manifest.json
+    fontPath: ''
+    portraitPath: data/wizard101/portraits
+    dataSource: hybrid
+    replyMode: auto
+    nativeDiscordEnabled: false
+    qqInputButtons: false
     onlineSearchEnabled: false
 ```
 
-重新加载后可先测试离线词典。下面名称仅演示用法，具体能否命中取决于自己的汉化文件：
+先用 `wiz.dict Fire Cat` 检查词典，再用 `wiz.spell.find Fire Cat` 检查本地资料。实际命中取决于自己的文件。没有数据库也可使用词典、通用伤害计算和另行配置的 Wiki API；新 `find/list` 路由固定使用本地资料。
 
-```text
-wiz
-wiz.dict 火猫
-wiz.dict Fire Cat
-wiz.dict -f 任务里的关键词
-wiz.pick 1
-wiz.next
+### 4. 接入 QQ / Discord
+
+在 Koishi 应用目录安装所需的官方适配器：
+
+```sh
+npm install @koishijs/plugin-adapter-qq@4.14.0 @koishijs/plugin-adapter-discord@4.6.2
 ```
 
-### 4. 配置在线 API
+QQ 使用 AppID + AppSecret，Discord 使用 Bot Token。两端普通文字指令均可用；`replyMode: auto` 尝试生成图卡，缺字体或发送失败时回退文字。
 
-在服务器环境设置 `W404_API_KEY` 和 `W404_USER_AGENT`，或在插件控制台填写对应字段。`User-Agent` 应包含工具名称与真实邮箱或项目地址；密钥只放在自己控制的服务端。
+Discord 原生命令须把官方适配器设为 **`slash: false`**，再开启插件的 `nativeDiscordEnabled: true`。由 **Koishi 权限等级 4** 的管理员执行 `wiz.sync`；启动插件本身不会注册命令。默认创建 `/item`、`/spell`、`/mob`、`/pet`、`/fish`、`/statcaps`、`/calc`、`/help` 八个根命令；也可设 `discordCommandName: wiz` 使用一个 `/wiz` 命名空间。同步只管理本插件登记的命令 ID，同名外部命令会阻止同步，不覆盖其他插件。
 
-```bash
+详见[平台配置](docs/platforms.md)及[原生命令、归属文件和按钮有效期](docs/native-interactions.md)。QQ 输入按钮默认关闭，需要自己的机器人已经取得相关平台能力。
+
+## 常用指令
+
+以下使用默认前缀 `wiz`。**名称参数会读取余下整段文本，选项应放在名称前。** 英文名称可以包含空格。
+
+| 示例 | 用途 |
+| --- | --- |
+| `wiz.help` | 查看中文命令帮助 |
+| `wiz.dict 火猫` / `wiz.dict -f 对话关键词` | 离线词典；`-f` 扫描长文本 |
+| `wiz.item.find --search-by Name Sky Iron Hasta` | 装备完整资料 |
+| `wiz.item.list -s fire -k hat -l 170 *` | 火系、170 级帽子名称列表 |
+| `wiz.spell.find --effects true --targets 2 Fire Cat` | 法术完整效果及指定目标数变体 |
+| `wiz.mob.find Lost Soul` / `wiz.mob.deck Lost Soul` | 怪物本体与装备属性 / 牌组 |
+| `wiz.pet.list --wow 5 --exclusive false *` | 非专属、Wow 为 5 的宠物 |
+| `wiz.fish.list -s ice -r 2 --sentinel false --object-names true *` | 按内部名显示符合条件的鱼 |
+| `wiz.statcaps.find 179 fire` | 查询火系 170 级上限档位 |
+| `wiz.calc 1000 -d 100 -p 20 -c 500 -r 30 --block 200 --buffs "35 -50P" --pvp false` | 上游兼容单段伤害计算 |
+| `wiz.mob.calc -s fire --base 1000 -d 100 -p 20 -c 500 --pvp false Lost Soul` | 读取怪物汇总抗性、格挡后计算 |
+| `wiz.page 2` / `wiz.page.next` / `wiz.page.last` | 当前资料卡或新列表翻页 |
+| `wiz.search -t spell Fire Cat` / `wiz.detail mob 1749326` | 旧查询入口，遵循 `dataSource` 策略 |
+| `wiz.drops 怪物ID` / `wiz.cheats 怪物ID` | Wiki 掉落 / 机制 |
+| `wiz.status` | 权限等级 3：加载与缓存状态 |
+
+`wiz.calc` 中 `critical/block` 是**评级**，不是手动暴击倍率；`buffs` 以空格按顺序输入，`P` 为大写后缀。计算器复现固定上游算法，包括逐步向零截断及已说明的兼容差异，不代表对当前游戏服务器的完整模拟。全部选项和旧指令见[使用手册](docs/usage.md#完整指令)。
+
+## 从 0.2 升级
+
+0.2 的词典、图标、原有 `catalog.json(.gz)` 结构仍可读取，原有 `wiz.item/spell/mob`、`pick/next`、API 查询等继续保留。**旧版简化 `wiz.calc` 改名为 `wiz.estimate`**，旧 `wiz.mobcalc` 保留；不要把旧 `-c 1.8` 手动倍率传给新的 `wiz.calc`。
+
+已有数值资料包不会自动增加法术效果、完整怪物装备汇总和新展示字段。需要这些功能时，用 0.3 导入器重新导出 `items.db`，并提供 `--locale` / 可用的 `--decks`。`base_only` 的旧怪物资料不能用于需要完整目标抗性的计算。
+
+升级后的整包许可为 GPL-3.0-only。早期原创代码的 MIT 通知保留在 [LICENSES/MIT-legacy.txt](LICENSES/MIT-legacy.txt)，不代表 0.3 整包仍按 MIT 授权。
+
+## Wizard404 在线扩展
+
+在 Koishi 服务环境设置 `W404_API_KEY`、`W404_USER_AGENT`，或填写插件密码字段和 User-Agent。二者均非空后才能联网；不要把 Key 放入 GitHub 或群聊。
+
+```sh
 export W404_API_KEY='REPLACE_LOCALLY_WITH_YOUR_PRIVATE_KEY'
-export W404_USER_AGENT='MyWizardWiki/0.2.0 (replace-with-your-contact@example.com)'
-```
-
-环境变量必须对 Koishi 进程可见。服务、容器、启动器的配置方式见[完整使用手册](docs/usage.md#服务端鉴权)。
-
-先用内置脚本检查实际接口。它不接受命令行密钥参数，报告中会移除敏感字段：
-
-```bash
+export W404_USER_AGENT='MyWizardWiki/0.3.0 (replace-with-your-contact@example.com)'
 node tools/probe-api.cjs --type mob --id 1749326 --out ./probe-detail.json
 node tools/probe-api.cjs --type spell --query "Fire Cat" --search-param q --out ./probe-search.json
 ```
 
-`q`、`page`、`limit` 目前是可修改的适配默认值，**尚未由有效 Key 联调确认**。名称探测会使用正常关键词和随机不存在的关键词做对照；通过一个样例不代表所有类别或分页均正确。确认要开放的类别、响应字段和分页后，再开启 `onlineSearchEnabled`。详见[在线联调](docs/usage.md#在线接口联调)与[接口契约说明](docs/api-contract.md)。
+名称参数 `q`、页码 `page`、条数 `limit` 是可配置的适配默认值，仍需有效 Key 核实。确认类别响应和分页后才开启 `onlineSearchEnabled`；该开关不影响本地检索或按 ID 查询。新 15 路由中的图鉴查询固定使用本地资料；`dataSource` 和 `--remote` 控制原有 Wiki 查询入口。详见[服务端鉴权与联调](docs/usage.md#服务端鉴权)和[接口契约](docs/api-contract.md)。
 
-没有本地词典时，仍可配置 API 使用按 ID 查询；启用并验证在线搜索后，也可直接输入英文名称。
+## 开发、来源与验证
 
-## 常用指令
-
-默认前缀为 `wiz`。英文名可以含空格；`-t`、`-p` 等选项要放在名称前。
-
-| 指令 | 用途 |
-| --- | --- |
-| `wiz.dict 名称` | 离线中英互查 |
-| `wiz.dict -f 关键词` | 扫描长对话文本 |
-| `wiz.search -t spell Fire Cat` | 按指定类别和数据来源策略搜索；仅 API 按名搜索需要开启在线搜索 |
-| `wiz.item 名称或ID` / `wiz.spell 名称或ID` | 物品 / 法术查询 |
-| `wiz.mob 名称或ID` | 怪物查询 |
-| `wiz.zone` / `wiz.npc` / `wiz.quest` | 区域 / NPC / 任务查询，后接名称或 ID |
-| `wiz.talent` / `wiz.event` | 天赋 / 活动条目查询，后接名称或 ID |
-| `wiz.detail mob 1749326` | 按类型与完整 ID 查询详情 |
-| `wiz.drops 怪物ID` / `wiz.cheats 怪物ID` / `wiz.deck 怪物ID` | 掉落 / 机制 / 牌库 |
-| `wiz.recipe 配方ID` | 配方预览 |
-| `wiz.compare 物品ID_A 物品ID_B` | 相同数值字段对比 |
-| `wiz.where 游戏内部区域路径` | 按大小写敏感的内部路径查区域 |
-| `wiz.pick 1` / `wiz.next` | 选择当前候选 / 翻页 |
-| `wiz.status` | 公开的插件加载与缓存状态 |
-
-0.2.0 新指令：
-
-| 指令 | 用途 |
-| --- | --- |
-| `wiz.gear 名称或ID` | 装备查询，同 item |
-| `wiz.pet -s fire --wow 5 名称` | 宠物与条件筛选 |
-| `wiz.fish -s ice -r 2 --sentinel false 名称` | 鱼类与哨兵筛选 |
-| `wiz.list -t item -s fire -k hat -l 170` | 本地火系 170 级帽子列表 |
-| `wiz.item --object 内部Object名` | 本地内部名称检索 |
-| `wiz.item --remote 物品ID` | 绕过本地查 API |
-| `wiz.statcaps fire 170` | 已收录的精确等级上限 |
-| `wiz.prev` / `wiz.first` / `wiz.last` | 上一页、首页、末页；远程总页数未知时不猜末页 |
-| `wiz.page 2` | 当前详情/图卡第 2 页 |
-| `wiz.calc 1000 -d 100 -b 40,35 -t 30 --shields 50 -r 20 -p 30 -c 1.8` | 单段伤害估算 |
-| `wiz.mobcalc 怪物ID 1000 -s fire -d 100` | 使用来源明确的目标百分比抗性估算 |
-
-`-d/-b/-t/-r/-p` 均为百分数，`-w` 表示虚弱减伤，`--shields` 为盾的正减伤百分比；`-c` 手动暴击倍率。多项状态用逗号分隔，固定值用 `--flat-damage/--flat-resist`。输入面板值应已处理游戏曲线，最终才向下取整。此模型不覆盖 DoT、多段、吸收、转换、同源叠加合法性、评级曲线或游戏逐阶段舍入；不是完整战斗模拟。`mobcalc` 不将模糊 rating 或未汇总装备的本体属性当完整抗性。
-
-中文别名为 `巫师百科`、`巫师词典`。搜索状态按用户及频道隔离，约 10 分钟后过期。完整类别、配置和示例见[使用手册](docs/usage.md#完整指令)。
-
-## 中文匹配与资料边界
-
-中文精确匹配到唯一英文名称时，插件用该英文查询；多义词先列候选，模糊匹配只作建议。简繁归一化仅用于检索，展示仍保留本地化文件的原文。
-
-本地化记录包含名称、台词、界面文字和重复项，记录数不代表独立百科实体数或 API 覆盖率。装备属性、掉落和任务关系以资料包或 API 实际数据为准；空列表不意味着游戏里不存在该物品或掉落。本地资料显示其版本，未提供版本会写“未标注”；不自动称作最新数据。
-
-Boss 机制目前保留来源原文。装备对比只计算同字段差值，不换算评级或评估整套配装。法术牌图、全量 `bulk` 等上游接口存在角色限制，当前客户端不调用这些接口。
-
-## 开发与验证
-
-```bash
-npm ci
+```sh
 npm run check
 npm test
+npm run check:public
 ```
 
-测试使用 Node.js 的测试运行器和 Koishi 官方 mock 适配器，覆盖导入边界、编码、简繁检索、同名选择、大整数 ID、会话隔离、消息元素转义、鉴权、限流、缓存和生命周期。HTTP 响应为合成测试数据，**不代表已完成真实 Wizard404 认证查询或真实群聊联调**。
+测试覆盖 UTF-16LE / WAD 导入、简繁与歧义、大整数 ID、SQLite 关联、效果树与目标变体、135 属性与怪物装备合并、上游计算、PNG 渲染、15 路由、平台编码、命令归属、四按钮分页及降级。成功的本地测试不替代真实平台账号、完整资料库和远程 API 验收。
 
-新增测试覆盖 SQLite 导入、筛选分页、图标安全、真实中文 PNG、伤害估算与 QQ/Discord 官方编码器。完整执行还需 Python 3、Pillow 和中文字库；CI 已配置这些环境。机器人正常运行不需要 Python。
+主要代码：`lib/kimerith-controller.cjs` 连接路由，`lib/kimerith-search.cjs` 负责参考检索，`lib/kimerith-views.cjs` 组织资料，`lib/kimerith-math.cjs` 实现参考计算，`lib/interactions.cjs` 处理原生交互。只读数据库导入位于 `tools/catalog/`；原有词典、API、卡片及发送模块继续共用。参与开发见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-| 路径 | 作用 |
-| --- | --- |
-| `lib/index.cjs` | Koishi 入口、配置与指令注册 |
-| `lib/controller.cjs` | 查询、候选、分页与会话状态 |
-| `lib/bot-controller.cjs` / `lib/catalog.cjs` | 本地与在线图鉴、筛选、回复分页 |
-| `lib/cards.cjs` / `lib/views.cjs` | 资料模型与 PNG 图卡 |
-| `lib/platform.cjs` / `lib/calculators.cjs` | 双平台发送与伤害估算 |
-| `lib/api.cjs` | 只读 API、鉴权、缓存、限流与无损 ID |
-| `lib/locale.cjs` | 词典加载、简繁检索与歧义处理 |
-| `lib/format.cjs` | 双语文本与来源展示 |
-| `tools/locale/` | WAD / LANG 导入工具 |
-| `tools/probe-api.cjs` | 服务端只读联调脚本 |
-| `test/` | 可独立运行的合成测试 |
-| `docs/usage.md` | 完整配置、运维和排错说明 |
+上游元数据列出作者 **Valentin B.**，本项目同时保留仓库维护者 **MajorPain1** 与 **Kimerith-WindHammer contributors** 的归属。本项目将相关逻辑移植为 Koishi / 中文展示 / 离线导入，并保留来源和修改说明，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)与 [GPL-3.0 许可证](LICENSE)。游戏文字、社区译文、图片、API 数据和依赖各自保留其权利归属。
 
-欢迎提交包含复现步骤的 Issue 或 PR。接口适配变更请附最小脱敏响应和测试；不要提交 Key、完整汉化词典、原始游戏资源或未经授权的资料。
-
-## 路线图
-
-- 完成各类别的有效 Key 联调，固化响应与分页契约。
-- 在可靠数据支持下建立物品获取来源的反向查询。
-- 加入经校对的中文 Boss 机制与更完整的属性展示。
-- 按真实资料版本继续补齐底层法术效果、怪物装备总属性与任务导航。
-- 加入 Discord 原生 Slash / 按钮及 QQ 菜单交互。
-
-## 许可证与来源
-
-代码采用 [MIT License](LICENSE)。游戏文本、社区译文、API 数据及依赖分别遵循各自权利与许可证，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。部署者自行准备有权使用的词典；公开仓库不提供完整游戏或汉化数据下载。
-
-数据接口：[Wizard404 API](https://wizard404.com/api/v1/docs) · [OpenAPI](https://www.wizard404.com/api/v1/openapi.json)  
-框架与工具：[Koishi](https://koishi.chat/) · [OpenCC-JS](https://github.com/nk2028/opencc-js)
-
-本项目是社区工具，与 KingsIsle Entertainment、Wizard101 或 Wizard404 无官方从属关系。
+接口与格式来源：[Wizard404 API](https://wizard404.com/api/v1/docs) · [OpenAPI](https://www.wizard404.com/api/v1/openapi.json) · [wizdb](https://github.com/MajorPain1/wizdb) · [Koishi](https://koishi.chat/)。本项目是社区工具，与 KingsIsle Entertainment、Wizard101、Wizard404 或参考项目作者没有官方从属关系。

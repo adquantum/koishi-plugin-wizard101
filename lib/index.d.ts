@@ -11,6 +11,11 @@ export interface Config {
   replyMode?: 'auto' | 'text' | 'image';
   iconPath?: string;
   fontPath?: string;
+  portraitPath?: string;
+  nativeDiscordEnabled?: boolean;
+  discordCommandName?: string;
+  discordGuildId?: string;
+  qqInputButtons?: boolean;
   apiKey?: string;
   authMode?: 'bearer' | 'x-api-key';
   baseUrl?: string;

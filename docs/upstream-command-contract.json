@@ -1,0 +1,470 @@
+{
+  "repository": "https://github.com/MajorPain1/Kimerith-WindHammer",
+  "revision": "3c24847d111387fc0b34772b548f74e80089599f",
+  "commands": [
+    {
+      "route": "calc",
+      "source": "bot/extensions/calc.py",
+      "description": "Simple Calculation of Damage",
+      "params": [
+        {
+          "name": "base",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "damage",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "pierce",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "critical",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "resist",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "block",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "buffs",
+          "type": "Optional[str]",
+          "default": "''"
+        },
+        {
+          "name": "pvp",
+          "type": "Optional[bool]",
+          "default": "True"
+        }
+      ]
+    },
+    {
+      "route": "fish.find",
+      "source": "bot/extensions/fish.py",
+      "description": "Finds a Wizard101 fish by name",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "is_sentinel",
+          "type": "Optional[bool]",
+          "default": "None"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        }
+      ]
+    },
+    {
+      "route": "fish.list",
+      "source": "bot/extensions/fish.py",
+      "description": "Finds a list of fish names that contain the string",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "is_sentinel",
+          "type": "Optional[bool]",
+          "default": "None"
+        },
+        {
+          "name": "use_object_name",
+          "type": "Optional[bool]",
+          "default": "False"
+        }
+      ]
+    },
+    {
+      "route": "help",
+      "source": "bot/extensions/help.py",
+      "description": "Provides a list of commands Kimerith WindHammer can do",
+      "params": []
+    },
+    {
+      "route": "mob.find",
+      "source": "bot/extensions/mobs.py",
+      "description": "Finds a Wizard101 mob by name",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance', 'Star', 'Sun', 'Moon', 'Shadow']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Easy', 'Normal', 'Elite', 'Boss']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        }
+      ]
+    },
+    {
+      "route": "mob.deck",
+      "source": "bot/extensions/mobs.py",
+      "description": "Finds a Wizard101 mob deck by name",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance', 'Star', 'Sun', 'Moon', 'Shadow']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Easy', 'Normal', 'Elite', 'Boss']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        }
+      ]
+    },
+    {
+      "route": "mob.list",
+      "source": "bot/extensions/mobs.py",
+      "description": "Finds a list of mob names that contain the string",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance', 'Star', 'Sun', 'Moon', 'Shadow']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Easy', 'Normal', 'Elite', 'Boss']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        }
+      ]
+    },
+    {
+      "route": "mob.calc",
+      "source": "bot/extensions/mobs.py",
+      "description": "Calcs damage against a specific mob",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Literal['Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance', 'Star', 'Sun', 'Moon', 'Shadow']",
+          "default": null
+        },
+        {
+          "name": "base",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "damage",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "pierce",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "critical",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "buffs",
+          "type": "Optional[str]",
+          "default": "''"
+        },
+        {
+          "name": "pvp",
+          "type": "Optional[bool]",
+          "default": "True"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        }
+      ]
+    },
+    {
+      "route": "pet.find",
+      "source": "bot/extensions/pets.py",
+      "description": "Finds a Wizard101 pet by name",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "wow",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "exclusive",
+          "type": "Optional[bool]",
+          "default": "None"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        }
+      ]
+    },
+    {
+      "route": "pet.list",
+      "source": "bot/extensions/pets.py",
+      "description": "Finds a list of pet names that contain the string",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "wow",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "exclusive",
+          "type": "Optional[bool]",
+          "default": "None"
+        }
+      ]
+    },
+    {
+      "route": "spell.find",
+      "source": "bot/extensions/spells.py",
+      "description": "Finds a Wizard101 spell by name",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance', 'Star', 'Sun', 'Moon', 'Gardening', 'Shadow', 'Fishing', 'Cantrips', 'Castlemagic', 'WhirlyBurly']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Healing', 'Damage', 'Charm', 'Ward', 'Aura', 'Global', 'AOE', 'Steal', 'Manipulation', 'Enchantment', 'Polymorph', 'Curse', 'Jinx', 'Mutate', 'Cloak']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        },
+        {
+          "name": "show_spell_effects",
+          "type": "Optional[bool]",
+          "default": "False"
+        },
+        {
+          "name": "num_targets",
+          "type": "Optional[int]",
+          "default": "1"
+        }
+      ]
+    },
+    {
+      "route": "spell.list",
+      "source": "bot/extensions/spells.py",
+      "description": "Finds a list of spell names that contain the string",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance', 'Star', 'Sun', 'Moon', 'Gardening', 'Shadow', 'Fishing', 'Cantrips', 'Castlemagic', 'WhirlyBurly']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Healing', 'Damage', 'Charm', 'Ward', 'Aura', 'Global', 'AOE', 'Steal', 'Manipulation', 'Enchantment', 'Polymorph', 'Curse', 'Jinx', 'Mutate', 'Cloak']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "rank",
+          "type": "Optional[int]",
+          "default": "-1"
+        }
+      ]
+    },
+    {
+      "route": "statcaps.find",
+      "source": "bot/extensions/statcaps.py",
+      "description": "Finds a stat cap by level and school",
+      "params": [
+        {
+          "name": "level",
+          "type": "int",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Literal['Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']",
+          "default": null
+        }
+      ]
+    },
+    {
+      "route": "item.find",
+      "source": "bot/extensions/stats.py",
+      "description": "Finds a Wizard101 item by name",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Hat', 'Robe', 'Shoes', 'Weapon', 'Athame', 'Amulet', 'Ring', 'Deck', 'Jewel', 'Mount']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "level",
+          "type": "Optional[int]",
+          "default": "-1"
+        },
+        {
+          "name": "search_by",
+          "type": "Optional[Literal['Name', 'Object', 'ID']]",
+          "default": "'Name'"
+        }
+      ]
+    },
+    {
+      "route": "item.list",
+      "source": "bot/extensions/stats.py",
+      "description": "Finds a list of item names that contain the string",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "default": null
+        },
+        {
+          "name": "school",
+          "type": "Optional[Literal['Any', 'Fire', 'Ice', 'Storm', 'Myth', 'Life', 'Death', 'Balance']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "kind",
+          "type": "Optional[Literal['Any', 'Hat', 'Robe', 'Shoes', 'Weapon', 'Athame', 'Amulet', 'Ring', 'Deck', 'Jewel', 'Mount']]",
+          "default": "'Any'"
+        },
+        {
+          "name": "level",
+          "type": "Optional[int]",
+          "default": "-1"
+        }
+      ]
+    }
+  ]
+}

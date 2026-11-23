@@ -39,7 +39,7 @@ jobs:
       - name: Check syntax
         run: npm run check
       - name: Check Python importers
-        run: python3 -m py_compile tools/icons/import.py tools/catalog/from-sqlite.py
+        run: python3 -m py_compile tools/icons/import.py tools/catalog/*.py test/*.py
       - name: Run offline and synthetic HTTP tests
         run: npm test
       - name: Check public package contents

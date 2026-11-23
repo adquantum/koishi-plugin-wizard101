@@ -1,10 +1,10 @@
 {
   "name": "koishi-plugin-wizard101",
-  "version": "0.2.0",
-  "description": "Wizard101 中文图鉴：QQ 官方 Bot / Discord 图示卡、本地游戏资料、Wiki 查询与伤害估算",
+  "version": "0.3.0",
+  "description": "Kimerith 中文版 Koishi 插件：完整查询命令、法术效果树、战斗计算、QQ 官方 Bot / Discord 原生交互",
   "main": "lib/index.cjs",
   "types": "lib/index.d.ts",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "engines": {
     "node": ">=22"
   },
@@ -14,6 +14,7 @@
     "tools/**/*.py",
     "tools/**/README.md",
     "test/*.test.cjs",
+    "test/*.py",
     "examples",
     "docs",
     "data/README.md",
@@ -22,7 +23,8 @@
     "README.md",
     "LICENSE",
     "THIRD_PARTY_NOTICES.md",
-    "CONTRIBUTING.md"
+    "CONTRIBUTING.md",
+    "LICENSES"
   ],
   "scripts": {
     "test": "node --test test/*.test.cjs",

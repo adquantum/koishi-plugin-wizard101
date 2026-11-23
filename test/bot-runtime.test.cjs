@@ -160,19 +160,19 @@ test('long description continuation is accessible and isolated from other users'
   assert.match(await ask(`wiz.page ${Number(count[1]) + 1}`), /只有/u);
 });
 
-test('calc parses options after numbers and mobcalc accepts only explicit percentage resistance', async t => {
+test('legacy estimate parses options after numbers and mobcalc accepts only explicit percentage resistance', async t => {
   const { ask, requests } = await setup(t);
-  const exact = await ask('wiz.calc 1000 --shields 30,30');
+  const exact = await ask('wiz.estimate 1000 --shields 30,30');
   assert.match(exact, /普通伤害估算：490/u);
   assert.doesNotMatch(exact, /普通伤害估算：489/u);
-  const amplified = await ask('wiz.calc 1000 -d 100 -b 40 -r 20 -p 10');
+  const amplified = await ask('wiz.estimate 1000 -d 100 -b 40 -r 20 -p 10');
   assert.match(amplified, /普通伤害估算：2520/u);
   const mob = await ask('wiz.mobcalc 4001 1000 -s fire -d 100 -b 40 -p 10');
   assert.match(mob, /普通伤害估算：2240/u);
   assert.match(mob, /抗性 30%/u);
   assert.match(await ask('wiz.mobcalc 4002 1000 -s ice'), /没有明确标注单位.*resist_percent/u);
-  assert.match(await ask('wiz.calc 1000 --shields 101'), /输入错误/u);
-  assert.match(await ask('wiz.calc 1000 -b 0.0000001'), /最多支持 6 位小数/u);
+  assert.match(await ask('wiz.estimate 1000 --shields 101'), /输入错误/u);
+  assert.match(await ask('wiz.estimate 1000 -b 0.0000001'), /最多支持 6 位小数/u);
   assert.equal(requests.length, 0);
 });
 

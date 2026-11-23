@@ -1,23 +1,52 @@
-# 合并到现有 Koishi 配置的 plugins 下；不要覆盖原有适配器配置。
-# 推荐通过服务器环境变量 W404_API_KEY 与 W404_USER_AGENT 提供密钥和联系方式。
-# 使用控制台配置时，把真正密钥填入 apiKey 的密码字段，不要上传配置文件。
+# 合并到现有 Koishi 配置的 plugins 下，不要覆盖原来的适配器或其他插件。
+# 路径相对于实际 Koishi 应用根目录；公开源码包不附游戏数据。
+# Wizard404 凭据推荐由服务环境 W404_API_KEY / W404_USER_AGENT 提供。
+# 当前版本从源码 npm pack 安装，尚未发布 npm / 插件市场条目。
 plugins:
+  # 需要 Discord 时，安装官方适配器后取消这一段注释。
+  # 即使启用本插件原生 Slash，也必须保持适配器 slash: false。
+  # adapter-discord:
+  #   type: bot
+  #   token: ${{ env.DISCORD_BOT_TOKEN }}
+  #   slash: false
+  #   handleMixedContent: attach
+
+  # 需要 QQ 官方群 / C2C 时，按自己的机器人类型和权限配置。
+  # 这里是沙盒 WebSocket 示例；频道权限请另行核对。
+  # adapter-qq:
+  #   id: ${{ env.QQ_BOT_APP_ID }}
+  #   secret: ${{ env.QQ_BOT_APP_SECRET }}
+  #   type: public
+  #   protocol: websocket
+  #   sandbox: true
+  #   intents: 33554432
+  #   retryWhen: []
+
   wizard101:
     command: wiz
     defaultType: item
     enableChineseAliases: true
-    localePath: ''
-    catalogPath: ''
-    dataSource: hybrid
+    localePath: '' # 默认 data/wizard101/locale-zh.json.gz
+    catalogPath: '' # 默认 data/wizard101/catalog.json.gz；0.3 新字段需重导出
+    dataSource: hybrid # 只控制旧百科入口；15 条参考路由中的图鉴固定查本地
     replyMode: auto
-    iconPath: ''
-    fontPath: ''
-    apiKey: ''
+    iconPath: '' # 默认 data/wizard101/icons/manifest.json
+    fontPath: '' # 自动找中文字体，或填写自己的 TTF / OTF / TTC
+    portraitPath: '' # 默认 data/wizard101/portraits，只读取本地 PNG
+
+    # 开启只监听事件；注册命令需 authority >= 4 且用户资料已挂载的管理员执行 wiz.sync。
+    # 同步仅管理自己登记的命令，不覆盖同名外部命令。
+    nativeDiscordEnabled: false
+    discordCommandName: '' # 空为上游 8 根命令；wiz 为一个 /wiz 命名空间
+    discordGuildId: '' # 可填测试服务器 ID；空为全局同步
+    qqInputButtons: false # 需自定义 Markdown + 内联键盘权限；QQ 频道不启用
+
+    apiKey: '' # 留空读 W404_API_KEY，不要把真实密钥提交到仓库
+    userAgent: '' # 留空读 W404_USER_AGENT，需工具名和真实联系方式
     authMode: bearer
-    userAgent: ''
     baseUrl: https://wizard404.com/api/v1
-    onlineSearchEnabled: false
-    searchParam: q
+    onlineSearchEnabled: false # 用自己的有效 Key 核实名称 / 分页契约后开启
+    searchParam: q # 待部署端联调确认的默认值
     pageParam: page
     pageSizeParam: limit
     pageSize: 8
@@ -29,8 +58,9 @@ plugins:
     maxCacheBytes: 16777216
     maxResponseBytes: 4194304
     maxQueue: 12
-    # 这些是可选的、已按对应词条核对过的社区别名。
-    # 删除此部分后，机器人会按汉化包的全部上下文列出多义候选。
+
+    # 可选社区俗称；请按自己的数据核对，多义时可以写英文候选数组。
+    # 删除别名后按词典原始上下文处理。
     aliases:
       火猫: Fire Cat
       天铁哈斯塔: Sky Iron Hasta

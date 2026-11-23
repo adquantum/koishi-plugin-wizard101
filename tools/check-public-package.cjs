@@ -15,7 +15,7 @@ function check(paths) {
     return /locale-zh.*\.json(?:\.gz)?$/i.test(name);
   });
   if (forbidden.length) throw new Error(`公开包含有不应分发的数据文件：\n${forbidden.join('\n')}`);
-  for (const required of ['README.md', 'LICENSE', 'lib/index.cjs', 'lib/cards.cjs', 'lib/platform.cjs', 'tools/locale/import.cjs', 'tools/icons/import.py', 'tools/catalog/from-sqlite.py', 'data/locale-example.json', 'data/catalog-example.json']) {
+  for (const required of ['README.md', 'LICENSE', 'LICENSES/MIT-legacy.txt', 'lib/index.cjs', 'lib/cards.cjs', 'lib/platform.cjs', 'lib/interactions.cjs', 'lib/kimerith-controller.cjs', 'lib/kimerith-math.cjs', 'lib/kimerith-search.cjs', 'lib/kimerith-views.cjs', 'lib/portraits.cjs', 'tools/locale/import.cjs', 'tools/icons/import.py', 'tools/catalog/from-sqlite.py', 'tools/catalog/combat.py', 'tools/catalog/presentation.py', 'tools/catalog/spell_effects.py', 'test/spell-effects-fixture.py', 'docs/upstream-command-contract.json', 'data/locale-example.json', 'data/catalog-example.json']) {
     if (!paths.includes(required)) throw new Error(`公开包缺少必需文件：${required}`);
   }
   return paths.length;

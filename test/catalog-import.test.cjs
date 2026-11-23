@@ -205,7 +205,12 @@ test('SQLite importer decodes known Canonical stats as exported integers with ex
   assert.equal(mob.stats_scope, 'base_only');
   assert.equal(mob.stats.universal.resist_percent, 30);
   assert.equal(mob.unparsed_stats, 1);
-  assert.match(mob.notes.join('\n'), /未把装备属性汇总/);
+  assert.equal(mob.combat.stats_scope, 'base_and_equipment');
+  assert.equal(mob.combat.complete, true);
+  assert.equal(mob.combat.target_by_school.fire.resist, 40, 'base universal resist 30 plus equipped universal resist 10');
+  assert.equal(mob.combat.target_by_school.storm.block, 160, 'equipment contributes school-specific block');
+  assert.ok(item.native_stats.some(row => row.unit === 'exported_rating' && row.value === 23));
+  assert.ok(item.native_stats.some(row => row.unit === 'rating' && row.value === 420));
 });
 
 test('SQLite importer resolves item cards and Maycasts without exporting all spell entries', t => {
@@ -302,7 +307,7 @@ source.close()
   const result = run(input, output, ['--decks', decks]);
   assert.equal(result.status, 0, result.stderr);
   const mob = read(output).entries.find(entry => entry.type === 'mob');
-  assert.deepEqual(mob.deck.map(entry => entry.count), [2, 1]);
+  assert.deepEqual(mob.deck.map(entry => entry.count), [1, 2], 'Kimerith lists equipment decks before the mob own deck');
   assert.equal(mob.deck[0].id, '4611686020152371460');
 });
 
@@ -313,6 +318,93 @@ test('SQLite importer supports focused type exports while still resolving pet ca
   const data = read(output);
   assert.deepEqual(data.entries.map(entry => entry.type), ['pet', 'fish', 'statcaps']);
   assert.equal(data.entries[0].cards[0].name, 'Synthetic Spell');
+});
+
+test('complete importer wires Chinese templates, effect variants, pet grouping, original portraits and metadata', async t => {
+  const { dir, input, output } = setup(t);
+  const locale = path.join(dir, 'locale.json');
+  fs.writeFileSync(locale, JSON.stringify({ schemaVersion: 1, entries: [[0, 'spell', 'Synthetic Spell', '合成法术'], [0, 'description', 'Deal $eA$ damage.', '造成 $eA$ 点伤害。']] }));
+  python(String.raw`
+import sqlite3,sys
+db=sqlite3.connect(sys.argv[1])
+db.executescript('''
+CREATE TABLE effects(id INTEGER PRIMARY KEY, spell INTEGER, indx INTEGER, param INTEGER, damage INTEGER, rounds INTEGER);
+CREATE TABLE spell_effects(id INTEGER PRIMARY KEY, spell_id INTEGER, parent_id INTEGER, idx INTEGER, effect_class INTEGER, param INTEGER, disposition INTEGER, target INTEGER, type INTEGER, heal_modifier REAL, rounds INTEGER, pip_num INTEGER, protected INTEGER, rank INTEGER, school INTEGER, num_targets INTEGER, condition TEXT);
+ALTER TABLE items ADD COLUMN jewels INTEGER;
+ALTER TABLE items ADD COLUMN extra_flags INTEGER;
+ALTER TABLE items ADD COLUMN image_file TEXT;
+''')
+db.execute('UPDATE locale_en SET data=? WHERE id=9',('Deal $eA$ damage.',))
+db.execute('INSERT INTO effects VALUES (1,4611686020152371460,0,125,2,3)')
+db.execute('INSERT INTO effects VALUES (2,7,0,999,2,3)')
+db.executemany('INSERT INTO spell_effects VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[
+ (1,4611686020152371460,-1,0,0,125,1,8,1,.5,0,2,0,0,2,0,''),
+ (2,4611686020152371460,-1,1,0,777,1,8,1,.5,0,2,0,0,2,7,'')])
+db.execute('UPDATE items SET jewels=?, extra_flags=?, image_file=?',(2|(5<<4),256,b'Icons/|Synthetic Deck.dds'))
+db.execute('DELETE FROM talents')
+db.executemany('INSERT INTO locale_en VALUES (?,?)',[(100+i,'Talent '+str(i)) for i in range(20)])
+db.executemany('INSERT INTO talents VALUES (?,?,?,?)',[(1000+i,100-i,9007199254740997,100+i) for i in range(20)])
+db.commit()
+db.close()
+`, [input]);
+  const imported = run(input, output, ['--locale', locale]);
+  assert.equal(imported.status, 0, imported.stderr);
+  const catalog = await LocalCatalog.load(output);
+  const spell = catalog.get('spell', '4611686020152371460');
+  assert.equal(spell.zh, '合成法术');
+  assert.match(spell.description_zh, /造成 125 点伤害/);
+  assert.doesNotMatch(spell.description_zh, /999/);
+  assert.match(spell.effect_variants.find(v => v.num_targets === 7).text, /777/);
+  assert.doesNotMatch(spell.effect_variants.find(v => v.num_targets === 0).text, /777/);
+  const item = catalog.get('item', '9007199254740993');
+  assert.deepEqual(item.sockets, [{ shape: 'tear', locked: false }, { shape: 'circle', locked: true }]);
+  assert.ok(item.flags.includes('不可拍卖'));
+  assert.equal(item.portrait, 'SyntheticDeck.png');
+  assert.ok(item.requirements.some(s => s.includes('除火焰之外')));
+  const pet = catalog.get('pet', '9007199254740997');
+  assert.equal(pet.talents.length, 10);
+  assert.equal(pet.derby_talents.length, 10);
+  assert.equal(pet.talents[0].name, 'Talent 9');
+  assert.equal(pet.derby_talents[0].name, 'Talent 19');
+  const fish = catalog.get('fish', '9007199254740999');
+  assert.equal(fish.min_length, 8);
+  assert.equal(fish.max_length, 12);
+});
+
+test('missing item_stats is reported as missing data without dropping other entity categories', t => {
+  const { input, output } = setup(t);
+  python('import sqlite3,sys\ndb=sqlite3.connect(sys.argv[1]);db.execute("DROP TABLE item_stats");db.commit();db.close()', [input]);
+  const result = run(input, output);
+  assert.equal(result.status, 0, result.stderr);
+  const data = read(output);
+  assert.equal(data.entries.length, 6);
+  assert.match(data.entries.find(e => e.type === 'item').notes.join('\n'), /缺少 item_stats/);
+  assert.equal(data.entries.find(e => e.type === 'mob').combat.complete, false);
+});
+
+test('large unknown-effect trees retain warnings and source rows through both import and load boundaries', async t => {
+  const { input, output } = setup(t);
+  python(String.raw`
+import sqlite3,sys
+db=sqlite3.connect(sys.argv[1])
+db.executescript('''
+CREATE TABLE effects(id INTEGER PRIMARY KEY, spell INTEGER, indx INTEGER, param INTEGER, damage INTEGER, rounds INTEGER);
+CREATE TABLE spell_effects(id INTEGER PRIMARY KEY, spell_id INTEGER, parent_id INTEGER, idx INTEGER, effect_class INTEGER, param INTEGER, disposition INTEGER, target INTEGER, type INTEGER, heal_modifier REAL, rounds INTEGER, pip_num INTEGER, protected INTEGER, rank INTEGER, school INTEGER, num_targets INTEGER, condition TEXT);
+''')
+db.executemany('INSERT INTO spell_effects VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[(i+1,4611686020152371460,-1,i,0,125,1,8,4000+i,.5,0,2,0,0,2,0,'') for i in range(600)])
+db.execute('UPDATE spells SET school=12,form=2')
+db.commit()
+db.close()
+`, [input]);
+  const result = run(input, output, ['--types', 'spell']);
+  assert.equal(result.status, 0, result.stderr);
+  const catalog = await LocalCatalog.load(output);
+  const spell = catalog.get('spell', '4611686020152371460');
+  assert.equal(spell.effect_unparsed.length, 600);
+  assert.ok(spell.effect_warnings.length >= 600);
+  assert.ok(spell.effect_variants[0].text.length > 16000);
+  assert.equal(spell.kind, 'damage', 'upstream filters numeric form even in a special spell school');
+  assert.equal(spell.spell_kind_label, '土壤', 'presentation still uses the gardening meaning of form 2');
 });
 
 test('SQLite importer rejects oversized relations, duplicate template IDs, and nonfinite data', t => {

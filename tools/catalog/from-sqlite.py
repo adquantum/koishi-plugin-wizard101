@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Read a user-owned wizdb SQLite export into a bounded local wiki catalogue.
+"""Read a user-owned wizdb SQLite export into a Chinese Kimerith catalogue.
 
-The field mapping is independently implemented from the public database schema:
-https://github.com/MajorPain1/wizdb/blob/main/wizdb/db.py
-No game assets, database, or third-party bot implementation is included.
+Compatibility modules adapt Kimerith-WindHammer 3c24847d under GPL-3.0.
+See LICENSE and THIRD_PARTY_NOTICES.md. No game data is included.
 """
 
 import argparse
@@ -20,9 +19,14 @@ import sqlite3
 import sys
 import tempfile
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from presentation import enrich_entry, separate_talents, load_translator, localize_names
+
 
 MAX_ENTRIES = 100000
-MAX_BYTES = 64 * 1024 * 1024
+MAX_BYTES = 256 * 1024 * 1024
+MAX_TEXT = 1024 * 1024
+MAX_NODES = 131072
 MAX_ARRAY = 512
 MAX_SAFE_INTEGER = 9007199254740991
 SCHOOLS = (
@@ -91,7 +95,7 @@ class CatalogError(Exception):
     pass
 
 
-def text(value, label, limit=16000):
+def text(value, label, limit=MAX_TEXT):
     if value is None:
         return ""
     if isinstance(value, bytes):
@@ -192,7 +196,7 @@ class Reader:
         self.connection = connection
         self.tables = {}
         for row in connection.execute("SELECT name, sql FROM sqlite_master WHERE type = 'table'"):
-            if row[0] in set(TYPE_TABLES.values()) | {"locale_en", "set_bonuses", "talents", "pet_cards", "item_stats", "mob_stats", "mob_items", "deck"}:
+            if row[0] in set(TYPE_TABLES.values()) | {"locale_en", "set_bonuses", "talents", "pet_cards", "item_stats", "mob_stats", "mob_items", "deck", "effects", "spell_effects"}:
                 if "CREATE VIRTUAL TABLE" in str(row[1]).upper():
                     raise CatalogError(f"不接受虚拟表 {row[0]}，请使用标准 wizdb SQLite 导出。")
                 self.tables[row[0]] = {item[1] for item in connection.execute(f'PRAGMA table_info("{row[0]}")')}
@@ -227,8 +231,9 @@ def copy_values(entry, row, fields):
             entry[key] = scalar(row[key], key)
 
 
-def build_catalog(reader, version, decks_reader=None, selected_types=None):
+def build_catalog(reader, version, decks_reader=None, selected_types=None, translate=None):
     selected_types = set(selected_types or TYPE_TABLES)
+    translate = translate or (lambda value, ref=None: value)
     locales = {}
     for row in reader.rows("locale_en", ("id", "data"), optional=False):
         if len(locales) >= 1000000:
@@ -244,6 +249,11 @@ def build_catalog(reader, version, decks_reader=None, selected_types=None):
     sets = {identifier(row["id"], "set_bonuses.id"): localized(row["name"], "set_bonuses.name") for row in reader.rows("set_bonuses", ("id", "name"))}
     entries, by_type, seen = [], defaultdict(dict), set()
     spell_objects, spell_ids, item_objects = {}, {}, {}
+    from spell_effects import SpellEffectRenderer
+    effect_renderer = SpellEffectRenderer(reader.connection, translate=translate)
+    if "spell" in selected_types:
+        effect_renderer.preload_effects()
+    combat_item_cache = {}
     missing_tables = []
 
     def add(entry):
@@ -328,14 +338,18 @@ def build_catalog(reader, version, decks_reader=None, selected_types=None):
                 if row.get("form") is not None:
                     form = integer(row["form"], "spells.form")
                     entry["form_raw"] = scalar(form, "form")
-                    if row.get("school") not in (12, 14, 15) and 0 <= form < len(SPELL_KINDS):
+                    # Upstream filtering always compares the numeric form,
+                    # including gardening/fishing/cantrips. Presentation uses
+                    # that school's separate labels in spell_kind_label.
+                    if 0 <= form < len(SPELL_KINDS):
                         entry["kind"] = SPELL_KINDS[form]
                 for flag in ("pve", "pvp"):
                     if row.get(flag) is not None:
                         entry[f"{flag}_raw"] = scalar(row[flag], flag)
                 if row.get("description") is not None:
                     entry["description"] = localized(row["description"], "spells.description")
-                note(entry, "描述保留本地文本模板；未展开底层法术效果树，未解释原始 PvE/PvP 标记。")
+                spell_details = effect_renderer.render_spell_details(row)
+                entry.update(spell_details)
                 spell_objects[object_name] = entry
                 spell_ids[identity] = entry
             elif type_name == "mob":
@@ -347,7 +361,7 @@ def build_catalog(reader, version, decks_reader=None, selected_types=None):
                     entry["kind"] = text(row["title"], "mobs.title").lower()
                 if row.get("stunnable") is not None:
                     entry["stunnable_raw"] = scalar(row["stunnable"], "stunnable")
-                note(entry, "has_cheats 仅为数据库标记，不包含 Boss 机制说明；未把装备属性汇总到怪物属性。")
+                note(entry, "has_cheats 仅为数据库标记，不包含 Boss 机制攻略。")
             elif type_name == "pet":
                 school(entry, row.get("school"))
                 copy_values(entry, row, ("rarity", "extra_flags", "wow_factor", "exclusive"))
@@ -364,13 +378,15 @@ def build_catalog(reader, version, decks_reader=None, selected_types=None):
                 entry["set_bonus"] = {"id": set_id, "name": sets.get(set_id, "")}
                 if not sets.get(set_id):
                     note(entry, "套装名称未解析，保留套装 ID。")
+            enrich_entry(entry, row)
             add(entry)
 
     for row in reader.rows("talents", ("id", "priority", "pet", "talent"), order="id"):
         owner = by_type["pet"].get(identifier(row["pet"], "talents.pet"))
         if owner:
             append_bounded(owner, "talents", {"id": identifier(row["id"], "talents.id"), "name": localized(row["talent"], "talents.talent"), "priority": scalar(row["priority"], "priority")})
-            note(owner, "talents 表没有普通/竞速类别列；按原始行 ID 保留顺序与 priority，未猜测天赋类别。")
+    for pet in by_type["pet"].values():
+        separate_talents(pet)
 
     def spell_reference(value):
         object_name = text(value, "spell reference")
@@ -448,7 +464,7 @@ def build_catalog(reader, version, decks_reader=None, selected_types=None):
                 owner["parsed_stats"] = owner.get("parsed_stats", 0) + 1
             else:
                 owner["unparsed_stats"] = owner.get("unparsed_stats", 0) + 1
-                note(owner, "仍有未识别的属性哈希或记录种类，unparsed_stats 标记未解析条数，未把缺失属性补零。")
+                note(owner, "旧简化字段仍有未映射的属性哈希或记录种类，unparsed_stats 仅统计该旧格式；完整原生属性另行解析，未把缺失属性补零。")
         for entry in by_type[type_name].values():
             if entry.get("parsed_stats"):
                 note(entry, "Canonical 数值直接使用 wizdb 已换算并 round 的整数；百分比不再次乘 100，数据不按浮点位串解包。")
@@ -484,13 +500,32 @@ def build_catalog(reader, version, decks_reader=None, selected_types=None):
                 raise CatalogError("单个怪物装备关联超过 512 条。")
             mob_item_names[mob_id].append(item_name)
     for entry in by_type["mob"].values():
-        keys = list(dict.fromkeys([entry["object_name"], *mob_item_names[entry["id"]]]))
-        for key in keys:
-            rows = next((source[key] for source in deck_sources if key in source), [])
-            for row in rows:
-                append_bounded(entry, "deck", row)
+        keys = list(dict.fromkeys(mob_item_names[entry["id"]]))
+        rows = [card for key in keys for card in (deck_sources[0].get(key, []) if deck_sources else [])]
+        if not rows and len(deck_sources) > 1:
+            rows = [card for key in keys for card in deck_sources[1].get(key, [])]
+        # Kimerith falls back as a group for equipment decks, then appends the
+        # mob's own deck from items.db only. Per-key fallback changes its output.
+        rows += deck_sources[0].get(entry["object_name"], []) if deck_sources else []
+        for card in rows:
+            append_bounded(entry, "deck", card)
         if entry.get("deck"):
-            note(entry, "牌组按怪物/装备内部名关联；同名记录优先 items.db，再使用 --decks，不推断脚本动态生成的牌。")
+            note(entry, "牌组按 Kimerith 规则：装备牌组整体优先 items.db；全空时才回退 decks.db；再加入 items.db 中怪物自身的牌组。")
+        from combat import build_mob_combat
+        entry["combat"] = build_mob_combat(reader.connection, entry["id"], entry["object_name"], item_cache=combat_item_cache)
+        # Keep the legacy top-level dictionary honestly scoped. Full native
+        # aggregation, including ratings, lives in combat and is consumed by
+        # the Kimerith calculation route only.
+        entry["stats_scope"] = "base_only"
+
+    from combat import read_entity_stats
+    for entry in by_type["item"].values():
+        if "item_stats" in reader.tables:
+            entry["native_stats"] = read_entity_stats(reader.connection, "item_stats", "item", entry["id"])
+        else:
+            note(entry, "数据库缺少 item_stats，未提供装备属性；没有把缺失属性当作零。")
+    for entry in entries:
+        localize_names(entry, translate)
 
     return {"kind": "wizard101.catalog", "schemaVersion": 1, "source": {"name": "wizdb 本地导出", "version": version, "url": "https://github.com/MajorPain1/wizdb", "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")}, "entries": entries, "importNotes": ["缺少的数据表：" + ", ".join(missing_tables)] if missing_tables else []}
 
@@ -499,24 +534,27 @@ def save_catalog(document, output):
     for entry in document["entries"]:
         nodes = 0
 
-        def inspect(value, depth=0):
+        def inspect(value, depth=0, field=""):
             nonlocal nodes
             nodes += 1
-            if nodes > 4096 or depth > 10:
-                raise CatalogError(f"{entry['type']}:{entry['id']} 超过单条 4096 字段节点或 10 层嵌套上限。")
+            if nodes > MAX_NODES or depth > 10:
+                raise CatalogError(f"{entry['type']}:{entry['id']} 超过单条 {MAX_NODES} 字段节点或 10 层嵌套上限。")
+            if isinstance(value, str) and len(value.encode("utf-16-le")) // 2 > MAX_TEXT:
+                raise CatalogError("资料单字段文字超过 1048576 个 UTF-16 单元。")
             if isinstance(value, dict):
-                for child in value.values():
-                    inspect(child, depth + 1)
+                for key, child in value.items():
+                    inspect(child, depth + 1, key)
             elif isinstance(value, list):
-                if len(value) > MAX_ARRAY:
-                    raise CatalogError("资料单字段数组超过 512 项。")
+                maximum = 8192 if field == "effect_warnings" else 4096 if field in ("effect_unparsed", "effect_rows") else MAX_ARRAY
+                if len(value) > maximum:
+                    raise CatalogError(f"资料单字段数组超过 {maximum} 项。")
                 for child in value:
                     inspect(child, depth + 1)
 
         inspect(entry)
     payload = json.dumps(document, ensure_ascii=False, allow_nan=False, separators=(",", ":")).encode("utf-8")
     if len(payload) > MAX_BYTES:
-        raise CatalogError("资料包解压后超过 64 MiB，请用 --types 分类别导出。")
+        raise CatalogError("资料包解压后超过 256 MiB，请用 --types 分类别导出。")
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = None
     try:
@@ -538,6 +576,7 @@ def main(argv=None):
     parser.add_argument("--input", required=True, help="items.db 路径")
     parser.add_argument("--output", required=True, help="输出 catalog.json 或 catalog.json.gz")
     parser.add_argument("--decks", help="可选 decks.db 路径")
+    parser.add_argument("--locale", help="可选中文词典 JSON/JSON.gz；用于名称与法术原始说明模板的中文化")
     parser.add_argument("--version", default="未标注", help="用户提供的游戏/资料版本标识，不会自动猜测")
     parser.add_argument("--types", default=",".join(TYPE_TABLES), help="逗号分隔的 item,spell,mob,pet,fish,statcaps 子集")
     args = parser.parse_args(argv)
@@ -555,13 +594,14 @@ def main(argv=None):
             raise CatalogError("输出不能覆盖输入数据库。")
         if not (output_path.name.endswith(".json") or output_path.name.endswith(".json.gz")):
             raise CatalogError("输出扩展名须为 .json 或 .json.gz。")
+        translate = load_translator(args.locale)
         with closing(open_db(input_path)) as connection:
             reader = Reader(connection)
             if deck_path:
                 with closing(open_db(deck_path)) as decks_connection:
-                    document = build_catalog(reader, version, Reader(decks_connection), selected)
+                    document = build_catalog(reader, version, Reader(decks_connection), selected, translate)
             else:
-                document = build_catalog(reader, version, selected_types=selected)
+                document = build_catalog(reader, version, selected_types=selected, translate=translate)
         save_catalog(document, output_path)
         print(json.dumps({"ok": True, "entries": len(document["entries"]), "types": dict(Counter(entry["type"] for entry in document["entries"])), "version": version, "notes": document["importNotes"]}, ensure_ascii=False))
         return 0
