@@ -47,7 +47,7 @@ plugins:
     command: wiz
     localePath: data/wizard101/locale-zh.json.gz
     catalogPath: data/wizard101/catalog.json.gz
-    iconPath: data/wizard101/icons/manifest.json
+    iconPath: '' # 使用随包图标；兼容已有自定义目录
     fontPath: ''
     portraitPath: data/wizard101/portraits
     dataSource: hybrid
@@ -61,7 +61,7 @@ plugins:
 
 这是两个适配器的组合示例，不要求同时部署两端。`wizard101` 可先保持全部在线可选功能关闭，验证文字和本地图鉴。环境变量须传入实际 Koishi 进程；QQ AppSecret、Discord Token 与 Wizard404 API Key 用途不同，不可互换。
 
-`replyMode: auto` 在上述官方平台尝试图卡；`text` 只发文字，`image` 强制尝试图片。`fontPath` 留空会自动找中文字体，Linux 可安装 `fonts-noto-cjk`；缺字体或渲染失败时返回文字。原版小图标与可选本地 PNG 原图分别使用 `iconPath` / `portraitPath`，不会自动从网络下载。
+`replyMode: auto` 在上述官方平台尝试图卡；`text` 只发文字，`image` 强制尝试图片。`fontPath` 留空会自动找中文字体，Linux 可安装 `fonts-noto-cjk`；缺字体或渲染失败时返回文字。323 个原版小图标已随插件包提供，两平台使用同一套资源，不需要浏览器联网拉图。`iconPath` 留空时优先已有且有效的 `data/wizard101/icons/manifest.json`，该旧清单缺失或损坏时加载包内清单；显式填写可使用独立自定义清单。法术 / 怪物等可选 PNG 画像仍由 `portraitPath` 指定本地目录，不会自动从网络下载。
 
 ## QQ 官方机器人
 

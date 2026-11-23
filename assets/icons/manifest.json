@@ -1,0 +1,4763 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "kind": "user-supplied",
+    "fileCount": 323
+  },
+  "semanticIconCount": 92,
+  "icons": {
+    "asset.add-card-to-deck.dds": {
+      "file": "png/add-card-to-deck-9a96ac14597e.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "2c746546fde56933913d19c31474ccdb8792ef40f8a10e0873da0f3ec100b337"
+    },
+    "asset.add-card-to-hand.dds": {
+      "file": "png/add-card-to-hand-6a8d17ecd182.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "48028d2848d06100c4b2b56a78e099c6fb6ec28c4eafd4346d2a52c0533ca929"
+    },
+    "asset.card_health_bar.dds": {
+      "file": "png/card_health_bar-da8c73ebbcfb.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "63c01552c1bf9c015adb5feda66ff3492a1e7c5b0064ae086bfcbfb6d8d4fff6"
+    },
+    "asset.description_chromatic_caster_school.tga": {
+      "file": "png/description_chromatic_caster_school-ac6f5c389d98.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2fb7857eb58387410eb5d083a708a8aa463165263df65ca113bbd78399f6cd1f"
+    },
+    "asset.description_chromatic_target_school.tga": {
+      "file": "png/description_chromatic_target_school-58e52f95ee3e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f84a322ca865804e71dab9b96b4e5af56e5b75f195ec6c219d9561ab9064ed9a"
+    },
+    "asset.description_select_enemy.dds": {
+      "file": "png/description_select_enemy-92e4b6f71dc9.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "c499d8c94a9abfa86b0e493086f541ee7cd20e5bd0d38d0d189bc4d41194ae51"
+    },
+    "asset.description_select_enemy.tga": {
+      "file": "png/description_select_enemy-386f153f1204.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "e1677bf8a0834385c0e6a480a03d22c69b15956f57e5d210ba4ec40e29f6dcb4"
+    },
+    "asset.description_select_friend.dds": {
+      "file": "png/description_select_friend-928ed199dbbd.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "5cf63b8bb9c30cfcbe74a3c205f700d251ae5eaed082ac76989f53194d34ff71"
+    },
+    "asset.frame.dds": {
+      "file": "png/frame-17ec259949f3.png",
+      "width": 128,
+      "height": 64,
+      "sha256": "79335de6a9ea91f467a0a49c23de79e598367c6b81c9576558007b63cfae1e89"
+    },
+    "asset.gem_circle.dds": {
+      "file": "png/gem_circle-790b091adbb8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "223c3399b33f696fa13e1ea8e4cc4099b40f176032f25e253f94a54ebf31fdeb"
+    },
+    "asset.gem_circlelocked.dds": {
+      "file": "png/gem_circlelocked-3ea89a2ee309.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "93fd99c8f6a1dffcdb677eef7dae3214372c6ef5008936404edc646e1fa4826d"
+    },
+    "asset.gem_octagon.dds": {
+      "file": "png/gem_octagon-445fd3a43c3d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d003c8e937f49d3b807bead30c4f290a3b855a3bb2b056656749948e0faa041c"
+    },
+    "asset.gem_octagonlocked.dds": {
+      "file": "png/gem_octagonlocked-20edcaf951f4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "676c0a3aee7337c8ada5e74fdc02621da089376c5527f9f755531ed284d4c956"
+    },
+    "asset.gem_square.dds": {
+      "file": "png/gem_square-83e6bd5fd130.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5e8369cf985c1a5fd5f228b9bcc14ca1b6bd7effa73ad8c977ac3ca941e99fdd"
+    },
+    "asset.gem_squarelocked.dds": {
+      "file": "png/gem_squarelocked-d5dfc3523b6b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0bac95599b6dfa50a7a3778b311d3a5aac17f1bb351e75d0717f34aa5263fffb"
+    },
+    "asset.gem_triangle.dds": {
+      "file": "png/gem_triangle-2c153e99ff4e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fa515075a961624434c15e229756947fbe1182344b5ebec94fd6ece9a5af6633"
+    },
+    "asset.gem_trianglelocked.dds": {
+      "file": "png/gem_trianglelocked-4c7149789971.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bb9bbe15bc34cff104ea4d97292c3c69b5f94938e557adafb63a984c44a1714d"
+    },
+    "asset.global_balefrost.tga": {
+      "file": "png/global_balefrost-f5863c13dc48.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "144947b5d0e6de0de6911b8619fa50ad2ddbba695aa560ed575b03e9a34acce1"
+    },
+    "asset.global_bloodmoon.tga": {
+      "file": "png/global_bloodmoon-9f3902485a4c.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "14309ebbfe7d3b77db78f03a432d24dca5984d3c07f746cbacbada099aed3b4b"
+    },
+    "asset.global_darkwind.tga": {
+      "file": "png/global_darkwind-d2095a5202a9.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "b1554cf11641b81726a99cdf650a87e3d274751e14cbab394f57849240e2cc9c"
+    },
+    "asset.global_doomgloom.tga": {
+      "file": "png/global_doomgloom-e214d8bc4be4.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "d7843f918d37a8d0e666bab4c1051933f93758a400ec71e476ccba9ccd9b2c34"
+    },
+    "asset.global_generic.tga": {
+      "file": "png/global_generic-e4b02d27225e.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "ca2c03dde1d13c35e3e54dc55e02ddebdbb30ca93481da99fdf994b0fec05fcc"
+    },
+    "asset.global_sanctuary.tga": {
+      "file": "png/global_sanctuary-3e3064fefe9c.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "dc57d554ef8dfe3b0277a27be3b2a9eccf3ba972c82cea1d200e4d284e92d9ea"
+    },
+    "asset.global_shroud.tga": {
+      "file": "png/global_shroud-d24f9bb251c6.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "c5554fe704829db866f50a0932b5fff88e0d99c37aa8261087fa64eeed9f724f"
+    },
+    "asset.global_wyldfire.tga": {
+      "file": "png/global_wyldfire-eb968367522f.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "6991f84f99ad55a1141f6f83e75d6ef7a1ee851d25919213f2c49968878d6d06"
+    },
+    "asset.health.dds": {
+      "file": "png/health-eca73374e2a5.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "e5b79b4539b48707bb73f933f65577b2abd86018e8727f88ce19f3479241a6d4"
+    },
+    "asset.icon_accuracy.dds": {
+      "file": "png/icon_accuracy-eaf4fd624cf5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f73a648280c9083db6fd2b364b10b43287843e324c20b0c623e96fa9f99f5bb0"
+    },
+    "asset.icon_accuracy.tga": {
+      "file": "png/icon_accuracy-3cc2a2999114.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "023d0b66de49787a9905854302e9e64e998415fd280f75bd17399f8a787800f5"
+    },
+    "asset.icon_advanced_mode.dds": {
+      "file": "png/icon_advanced_mode-82636732a392.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1da1c48f6b78dffbd444ce534364fa83a847a14762a208f9de0a7bb9b6c3abfe"
+    },
+    "asset.icon_adventure_island_large_house.dds": {
+      "file": "png/icon_adventure_island_large_house-104d1c4ea8ac.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e0d89a3f2968a2e5e103b748197ac25b2ac9af686492ee330706a67c1695504"
+    },
+    "asset.icon_adventure_island_medium_house.dds": {
+      "file": "png/icon_adventure_island_medium_house-880b7e25e105.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c0467ad2d2da3d44e786b3557096dfc8c65f9b77dcf95e02490c1aa5696886b1"
+    },
+    "asset.icon_adventure_island_museum.dds": {
+      "file": "png/icon_adventure_island_museum-e8acc5728d8e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e5ee72bc04377700475d018ad3a6f441ea83971cbfc592493084a4ca23da192b"
+    },
+    "asset.icon_adventure_island_pvp.dds": {
+      "file": "png/icon_adventure_island_pvp-f8360bcc5c10.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "488c5e409513dc86d133d8aa181ac3653479abd394f7bc91f8d5f3fecb0641b3"
+    },
+    "asset.icon_adventure_island_raid.dds": {
+      "file": "png/icon_adventure_island_raid-ec218ae5ea00.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9459705674170009535e7d9dc3c7de247cea7e7e8fce3cce331d9e92a3f43ae1"
+    },
+    "asset.icon_adventure_island_small_house.dds": {
+      "file": "png/icon_adventure_island_small_house-9cf261370e88.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f69c18130dff71b14dc8de59a6aa0a2a279df6d8461dedacf2c6dbde5ad3f26e"
+    },
+    "asset.icon_adventure_party_beastmoon.dds": {
+      "file": "png/icon_adventure_party_beastmoon-c621b3ed48cf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "98e97101d32c101aab9ce47defcc32ab7b7aa4d5c78bb98050b0ceb9ae1f01f5"
+    },
+    "asset.icon_adventure_party_combat.dds": {
+      "file": "png/icon_adventure_party_combat-0cb7f7029095.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "32932587a47317ae368cc7fb55445bafdb89e18fb5aa07413a7bee8da141884c"
+    },
+    "asset.icon_adventure_party_derby.dds": {
+      "file": "png/icon_adventure_party_derby-555efd9aad1c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2994dac4ab67da3e148c6eb9284dbd12ffa18da4ba14ca4b765703d3675dc93e"
+    },
+    "asset.icon_adventure_party_dungeon.dds": {
+      "file": "png/icon_adventure_party_dungeon-71b617f6af63.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ea3d30790c444209c86b31ba61830a228f3fa9ac73820b1a1d3c84d87437b4fd"
+    },
+    "asset.icon_adventure_party_hatching.dds": {
+      "file": "png/icon_adventure_party_hatching-96e69554e714.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "34f4007e0d9f62162c064fd97f3c3214e70839eae2301b8990d136251d26db2a"
+    },
+    "asset.icon_adventure_party_housing_game.dds": {
+      "file": "png/icon_adventure_party_housing_game-1448f39a84cc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a2cb6b11103f56ab116193d57f190b89d912db9196afe88c761874dce8f6c232"
+    },
+    "asset.icon_adventure_party_pvp.dds": {
+      "file": "png/icon_adventure_party_pvp-fb0ae6175c51.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "84247966ce983095301d7eda27798569fd959928a834e2f5c871bc351330b42c"
+    },
+    "asset.icon_afterlife.dds": {
+      "file": "png/icon_afterlife-e60ceb820a0b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "08df03d42f0c7b2ed8dc2c84880cd535be9ac3c18ecbb68c92f6de429767dd2b"
+    },
+    "asset.icon_alchemy.dds": {
+      "file": "png/icon_alchemy-181ba061006c.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "1892ef9d85edb9ce8fe118c504eb0b46592fa1235a3ecfe74d0b24a5abf8861b"
+    },
+    "asset.icon_all.dds": {
+      "file": "png/icon_all-df51b5ad931a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ebb82a70028609e2a20b88374c02d3b398b8b329ce6cc270f50e58156b07b3d5"
+    },
+    "asset.icon_all.tga": {
+      "file": "png/icon_all-89d464138a68.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "c7b872084dca9bb39cfb89a58b8762d7c4a9cea6888cde1e90aec9259cbb5949"
+    },
+    "asset.icon_all_enemies_square.dds": {
+      "file": "png/icon_all_enemies_square-222b33745dfe.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e1a9f3e9bcf76bcee5da7d15607b32b7ff4b3dd2426625a72372566b057a0d7"
+    },
+    "asset.icon_all_friends_square.dds": {
+      "file": "png/icon_all_friends_square-94e9266293a6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e611eef9d976b031320d7894da5fb83bae58c6062f6b0ce28803f09683523882"
+    },
+    "asset.icon_archmastery.dds": {
+      "file": "png/icon_archmastery-da3d6537ddb3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a16b68de16c1ab20a581d21965b71b7bb3d04f3862d673d548cc5cde282341b5"
+    },
+    "asset.icon_armor_penetration.dds": {
+      "file": "png/icon_armor_penetration-231e45d18a7b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fa25c2566650c446157b0e09a7625f93ad6b6c0df1f40893b7ad019d345dfbcd"
+    },
+    "asset.icon_art_default_emote.dds": {
+      "file": "png/icon_art_default_emote-ea79a69ee910.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d5f06712ac387d2daa611821e76472e98ce1660fc95de4b15d65d350d96ba4a3"
+    },
+    "asset.icon_art_member_emote.dds": {
+      "file": "png/icon_art_member_emote-86f003432998.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "72050211fc46c66e6985e4b8c0fb5abbc8bf6109a63beabc2f6b454e98a02f86"
+    },
+    "asset.icon_balance.dds": {
+      "file": "png/icon_balance-6a5be6fc6789.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6dd81a75cff005622d0070dc5d67cea2ac9c6aaffcec5d653550215027d2dd87"
+    },
+    "asset.icon_balance.tga": {
+      "file": "png/icon_balance-2fa80b9b0886.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "a4ceba56e6b51d10f07aecbb2c364f7741940cbd77666b74800ae10f032dc3ca"
+    },
+    "asset.icon_blockrating.dds": {
+      "file": "png/icon_blockrating-2cc7c25132d0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "48b374ca6f01249b49d789842d0f1f35389d1fee7e3b1e3df81921ace3fbad4f"
+    },
+    "asset.icon_blockrating.tga": {
+      "file": "png/icon_blockrating-4516fcc016a9.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5ac6ab5f82f416eb5df142e582900a419d9f01a726e7023c3525a534fe2ec2b8"
+    },
+    "asset.icon_booster.dds": {
+      "file": "png/icon_booster-7850f2ff3180.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "fbc8cac49f9334f430fb5689cd2b9512bf95e86a8316ae38c22fbc2a108ea329"
+    },
+    "asset.icon_building_blocks.dds": {
+      "file": "png/icon_building_blocks-bc2172668739.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "4297d0c1ea6a3d04ccaa3449b309cb52b0064a16010b855feb6f4d46a3e7d244"
+    },
+    "asset.icon_button_equipradialmenu.dds": {
+      "file": "png/icon_button_equipradialmenu-b2d0cbbc71c1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0b769a78faf0ba5ded63fe60a10877971e4a6712fdd87eec0dcfda8d00438e34"
+    },
+    "asset.icon_button_equipvictorydance.dds": {
+      "file": "png/icon_button_equipvictorydance-ff5066174cba.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0d7b4d631a414ad2eaefc0d83f02bc268a090c87371d76c57b4311a5bd17f1e9"
+    },
+    "asset.icon_button_equipvictorydanceandradialmenu.dds": {
+      "file": "png/icon_button_equipvictorydanceandradialmenu-d2f08374deb4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c35b8c6db73c2516b7db82536b0f156f19e4a78384ec563c9487cd8550a27917"
+    },
+    "asset.icon_cantrips.dds": {
+      "file": "png/icon_cantrips-05c95659b7f0.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "b12045f8a438f4803e83a99a026ef86b37d66fd6b699246375d203306dba36b7"
+    },
+    "asset.icon_chromatic_caster_school.dds": {
+      "file": "png/icon_chromatic_caster_school-7132dbd27c5b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f4304e49574135b78cc56352b1e08af2a4abc4d2429246e7757f9d1f251f8541"
+    },
+    "asset.icon_chromatic_target_school.dds": {
+      "file": "png/icon_chromatic_target_school-6378fb2fe0e5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5159e2739d397c8a7048f814bdb7c1b6528b2c9e67c5b9430f1f837f92df47d6"
+    },
+    "asset.icon_clothing_sets.dds": {
+      "file": "png/icon_clothing_sets-b9f5ace21834.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "9794c52f029ead89ecd2c8627ec5dd7ee3a55dce3317d7b832cd2cbc437aabba"
+    },
+    "asset.icon_criticalrating.dds": {
+      "file": "png/icon_criticalrating-4bf2b88ee6ec.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7b6d043776b265cdc7be7d34b6fa949f3339cd784e3df13f2510b99870146fb4"
+    },
+    "asset.icon_criticalrating.tga": {
+      "file": "png/icon_criticalrating-a0a2b0187d74.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "12ae4d8558ee0e2f99d87e4dfd98cc6d768f35957fc6249a008b986c34c73fab"
+    },
+    "asset.icon_damage_or_drain.dds": {
+      "file": "png/icon_damage_or_drain-858cdbcea8f7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "41a4dbb3f9dec273df9da1c11d7f4eb704394adb7d331647b882f3ec3405ec19"
+    },
+    "asset.icon_daybreaker.dds": {
+      "file": "png/icon_daybreaker-d1e0cb0da9d0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1a100361168055bbdd9a586204d4e410dfa8ea7bf05a8836e32e215c8bec352d"
+    },
+    "asset.icon_daybreaker.tga": {
+      "file": "png/icon_daybreaker-f78dade66d23.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f0d709d7340b9187e07aae96c6ec2b34b12362a9609c2ddddee507fad4331414"
+    },
+    "asset.icon_death.dds": {
+      "file": "png/icon_death-c8ac348164bc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ddbc4682888b52c062f604041311408893a0e55370419796632772295caff1d4"
+    },
+    "asset.icon_death.tga": {
+      "file": "png/icon_death-3b1ea401e70d.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f85734b1f1618c9cec222ac27b86425421cafe43a96fd857103054848b73256f"
+    },
+    "asset.icon_dispel02.dds": {
+      "file": "png/icon_dispel02-0f78d922b00b.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "de105df6fc6d5f98c4337c758305e65ee7d9abb5a6c6d9c08ddb18003777de8d"
+    },
+    "asset.icon_elemental.dds": {
+      "file": "png/icon_elemental-6b0f5e902fe1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bf70a9e7c6767b28bd530dd357619cb359aaf58e80933c316d6a8f5eaa63862f"
+    },
+    "asset.icon_fire.dds": {
+      "file": "png/icon_fire-da0a7df5e97f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "39201d5dc6343bf7920575dcadbf6f4a366c02019ba05921c241bf8e60fcd8d0"
+    },
+    "asset.icon_fire.tga": {
+      "file": "png/icon_fire-6ed01d7d425f.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "2bbbc2cde48194d80fa61d4c267ba0e896d181a3cac2e98771157c7c8fdd25f9"
+    },
+    "asset.icon_fishing.dds": {
+      "file": "png/icon_fishing-c2e603e5b26f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fdc3fb0ac61c46c8b4f8b6fc063393a52a8c391f4cf2bca93a5912ab5a7feda7"
+    },
+    "asset.icon_flag_arenapointsonly.dds": {
+      "file": "png/icon_flag_arenapointsonly-ead6637fc736.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fcc9d5c45d1f64a145b8e418546cd5f15586459e550fc9a8921d3b49e6a737ea"
+    },
+    "asset.icon_flag_bluearenapointsonly.dds": {
+      "file": "png/icon_flag_bluearenapointsonly-7d8aebb3936f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "18b93656a386b63dc89ef05e369d3d356172a3803f16e5a81cf7c496df8bb6a9"
+    },
+    "asset.icon_flag_crownsonly.dds": {
+      "file": "png/icon_flag_crownsonly-5b86972bef8b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3cd7df9d392361c9c6b04efa99cf2d61a22c7a62929bdc5d79e78ebcbe8c099f"
+    },
+    "asset.icon_flag_instanteffect.dds": {
+      "file": "png/icon_flag_instanteffect-7ebfefc18ee0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "84648da85cd44aec1f05c29c27e7901d6c28fdcc271e12980ec5eaf290c85b8d"
+    },
+    "asset.icon_flag_noauction.dds": {
+      "file": "png/icon_flag_noauction-52dfa52ff416.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5f0855c0f56430a092614a122133c11faf8426bcc7a71f4709dcac3f04f8210b"
+    },
+    "asset.icon_flag_nocombat.dds": {
+      "file": "png/icon_flag_nocombat-09724fa79f9c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c0d3f2a830ed6e6cec4731b27c1d3fcbfae91beb37b73d54f7be2f51b5f3b0c3"
+    },
+    "asset.icon_flag_nodrop.dds": {
+      "file": "png/icon_flag_nodrop-52cefdf9bc84.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "040bf508af2e10e5991a37df0dc21d4e29b97ea1c0f6d6c2380d5d2b12854a8b"
+    },
+    "asset.icon_flag_nodye.dds": {
+      "file": "png/icon_flag_nodye-340904e06610.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "efc17369fa2f986b3a27e47bcadb5e30a3c8b3874a7b296de8be6943f0e38c8f"
+    },
+    "asset.icon_flag_nohatchmaking.dds": {
+      "file": "png/icon_flag_nohatchmaking-58e186afcf46.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a98be2ffbf4e9b4b4f05bdabac3168505f2814a3d29d4b1e50cf4c97d317df34"
+    },
+    "asset.icon_flag_nopvp.dds": {
+      "file": "png/icon_flag_nopvp-f43933ee933c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ddfc96de821815ba5699e38fcbb64cb61264720e40826cc3894ef062e9776964"
+    },
+    "asset.icon_flag_nosell.dds": {
+      "file": "png/icon_flag_nosell-d2bc7f4d549c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3b925a9a150e106dad148e4940bcd0d96bed3c869af9e8e75fceb79f28ec907e"
+    },
+    "asset.icon_flag_noshatter.dds": {
+      "file": "png/icon_flag_noshatter-1ba243d2b7e0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1bee5716ff882412b6cf696d32e82c6a2558e811df747683ee93a03c22b90b8a"
+    },
+    "asset.icon_flag_notrade.dds": {
+      "file": "png/icon_flag_notrade-8f41e9e435bf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5b60d34a9613b36c796124aa69a86f4954f67a30a0868f7ec32467785cb31904"
+    },
+    "asset.icon_flag_pvponly.dds": {
+      "file": "png/icon_flag_pvponly-e9c42b2b6da5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e11716bef37d01da0204c3a75e26c40df738df4aa54d429698a0e479f6a5fb3e"
+    },
+    "asset.icon_flag_subscriberonlyitem.dds": {
+      "file": "png/icon_flag_subscriberonlyitem-e532e5a1b800.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "73f56a6283e8ad3f7abc202695ab2b109b2eb2d5216ed1b4c351b57de06db0fa"
+    },
+    "asset.icon_flag_subscriberonlyitem_freetoplay.dds": {
+      "file": "png/icon_flag_subscriberonlyitem_freetoplay-304f55b400b9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2009036eb5fa4678dd8ad448e0dad52fed3bc1f35cb960e81d59c828537b0ba8"
+    },
+    "asset.icon_flourish.dds": {
+      "file": "png/icon_flourish-87fbc4cfc338.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "50b80a7439f62c8ab2757e709d9e513c68278b85ca754583ab1ed1f732abec63"
+    },
+    "asset.icon_frame.dds": {
+      "file": "png/icon_frame-cd0fedf73b81.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "2a3a328b1735e35334fa82e8ef5b692c749404893ef9baa02f4a966e6a1a57da"
+    },
+    "asset.icon_frame.tga": {
+      "file": "png/icon_frame-0c91e06d39bf.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "6ef1ef1ee96b757224d8fd9ce75a8ddb579690b9d6c57fc75c93fcdb8052864c"
+    },
+    "asset.icon_furniture_sets.dds": {
+      "file": "png/icon_furniture_sets-a57a971ab52a.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "f9e6246820c02242d0cab9625365bfa3362308768d74c94522daf323fcbd07cf"
+    },
+    "asset.icon_gardening.dds": {
+      "file": "png/icon_gardening-cb7b6d742128.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "59d0ecf89673060b489e99901164b1f53505bff9f245e3127e1eec9f9bb1124b"
+    },
+    "asset.icon_guild_decorator.dds": {
+      "file": "png/icon_guild_decorator-d11f274c7b6c.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "eb9817754eb0c4eef779ac7bc5e0abe31f84e560d9b9c7a573b5154f74603031"
+    },
+    "asset.icon_guild_messenger.dds": {
+      "file": "png/icon_guild_messenger-717b1d7cf019.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "50ed4337e939bd0a1c32b99ce705838a60b76410b0072fc61c7af30d04a967c6"
+    },
+    "asset.icon_guild_recruiter.dds": {
+      "file": "png/icon_guild_recruiter-ec4c84fb424d.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "5e5a4b270cb7f6a729d2e14f085b222bd775079a9c44d137c674b6a6938f4fc9"
+    },
+    "asset.icon_guild_sleeping.dds": {
+      "file": "png/icon_guild_sleeping-2dcbaf2731f6.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "cad05400b9ac8adf4daccf847f754611374bc6342a989ac3489286d09ad32a33"
+    },
+    "asset.icon_harvest.dds": {
+      "file": "png/icon_harvest-1bcf679eb713.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "10cc27cf559e9432593bf86fa7c58ed0392268a0f1b9c18743207ce9178d58c2"
+    },
+    "asset.icon_ice.dds": {
+      "file": "png/icon_ice-c113c4f80b8b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c129a10bd05094c2f275b296b599e8600ac8009bd2c88e8a0462483979a81889"
+    },
+    "asset.icon_ice.tga": {
+      "file": "png/icon_ice-bbd7d670283d.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "d1769a53d5444213c1d0c8c178b91b91ceca2bdaf62a709f6553a8872d5b1407"
+    },
+    "asset.icon_icon_monthlygauntlet_mode.dds": {
+      "file": "png/icon_icon_monthlygauntlet_mode-c19fc7db9e20.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1da1c48f6b78dffbd444ce534364fa83a847a14762a208f9de0a7bb9b6c3abfe"
+    },
+    "asset.icon_in_a_group.dds": {
+      "file": "png/icon_in_a_group-4a0273c8f968.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "1b3289dd977cb1aaccd8d1270b031d8744be4cc566bf0ad882fc43de0114c21a"
+    },
+    "asset.icon_incoming.dds": {
+      "file": "png/icon_incoming-b5015dbb442b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "095959dddedf408e695da876c2fd3a2ddfc9b88051467a20df0ece171956da10"
+    },
+    "asset.icon_life.dds": {
+      "file": "png/icon_life-64d476762efc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0881782fb334f6eaa4086e51d6048ceacf6a799184de01b7f574e6f9659b37f9"
+    },
+    "asset.icon_life.tga": {
+      "file": "png/icon_life-86147d3256b2.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f56e4a87e5876322934a22d046f3be2aa9c319bd391df79edd70ec1af8318d84"
+    },
+    "asset.icon_minus.dds": {
+      "file": "png/icon_minus-d555a569e382.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ea942e6ada9c2d6073d145cee304fc4fce018c14b135ceaf7e9f26e3ea30a2c3"
+    },
+    "asset.icon_monthlygauntlet_mode.dds": {
+      "file": "png/icon_monthlygauntlet_mode-4ab887993fe7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b02b781dc8d74eacbdbce790189f63c917b78f3b9b87dd7c90f2fc5d9f4bf9ff"
+    },
+    "asset.icon_moon.dds": {
+      "file": "png/icon_moon-4b1a2f17f4b3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e58d037b0cc93426fac77c32cb1f232eb0abe1134b1594a75be1d2c20d47acd5"
+    },
+    "asset.icon_moon.tga": {
+      "file": "png/icon_moon-a0cb2e2867e2.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "082663feb53dc66daacc61a7d30e4e42e86ea7e7876060f623450e52c52932f8"
+    },
+    "asset.icon_mounthlygauntletcredits.dds": {
+      "file": "png/icon_mounthlygauntletcredits-ec2ab703936d.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "7180e40e40315e8c3bd8dbd2aa19695c5feaa9747b2ed34244fedc0ef390a284"
+    },
+    "asset.icon_music_scrolls.dds": {
+      "file": "png/icon_music_scrolls-70706674d14f.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "db51774a9ef6702e693c9121317fa1fb37a1e2b43f63a00048d85ca36dbebc78"
+    },
+    "asset.icon_myth.dds": {
+      "file": "png/icon_myth-83ee5c18cad2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d6abe9683250ddb1d6422fdbae7c112319cf6feb3453cf0238a0dc9b1ce4f50a"
+    },
+    "asset.icon_myth.tga": {
+      "file": "png/icon_myth-acd68e2b8a4e.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "845ea52b29b81e61de3397d279b1351ba625b22229d2c7783831c84e1457b309"
+    },
+    "asset.icon_need_magic.dds": {
+      "file": "png/icon_need_magic-beeea4010fd2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "af03f56c187aa28bc48ab1cef6922ea128bd5770852e0b216db79643974ce88f"
+    },
+    "asset.icon_need_music.dds": {
+      "file": "png/icon_need_music-8f3f1c3e129a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "94c430ae39d5e7d35569ab51869fea32db70df1eb95c7f27d4124025e6cbe047"
+    },
+    "asset.icon_need_pollination.dds": {
+      "file": "png/icon_need_pollination-f21585a7372b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "cd239446a5db8a8d59bc98cfa402c4c9d40d273d2f3a9f26fcce652ddc549c40"
+    },
+    "asset.icon_need_sunshine.dds": {
+      "file": "png/icon_need_sunshine-ac0fcf80732e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4c11529a38d780c6fc74cbbefaaa9877493f0ab868b16d6c166d055ef9f8e197"
+    },
+    "asset.icon_need_water.dds": {
+      "file": "png/icon_need_water-3f132774891f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c014636199513acd151d51d9ff31b13f323143c5750a50d9172eee1573cd94f1"
+    },
+    "asset.icon_nightbringer.dds": {
+      "file": "png/icon_nightbringer-a31cc5e4738f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "54a0e6f445949cdd1a7c2a27d32d41e6b775338cec4d3abc94218a43698d5c6a"
+    },
+    "asset.icon_nightbringer.tga": {
+      "file": "png/icon_nightbringer-fff1521657ce.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "3eabfdc468c88462c454a7b5dfc84bcd4562abab15807381a9c51a5e42c15b8b"
+    },
+    "asset.icon_outgoing.dds": {
+      "file": "png/icon_outgoing-a9c20c0f6a36.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0133164435b80d8456c61808214b2b11b42314d502ca9bc9cc3fc20838116fb7"
+    },
+    "asset.icon_overhead.dds": {
+      "file": "png/icon_overhead-61fd7d63c14d.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "8aa9dcb30633bbafac925d4365a61e3a4705c3d94acf01772eac206cec84028c"
+    },
+    "asset.icon_overhead02.dds": {
+      "file": "png/icon_overhead02-baab634a36cc.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "99f142ec75014d7de26f1acb0dc5210316b0c9772883c9e361a3459e4209e97c"
+    },
+    "asset.icon_overlay_slash.dds": {
+      "file": "png/icon_overlay_slash-897b8c2f6303.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "be2d9f29c6713c26fb8c16b2f0bd57c1810138b2693d48f3e4266eae545cb993"
+    },
+    "asset.icon_pet_agility.tga": {
+      "file": "png/icon_pet_agility-503edab07d1b.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "e097cac4b3cbbd00c4dcca748171b566abc2c5400310be81ffcbbe86e1735fa7"
+    },
+    "asset.icon_pet_intellect.tga": {
+      "file": "png/icon_pet_intellect-aad2293360c1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5def90a9eb0e2554232e59ccc4c2cd5c57c52d71bdc544f4a191e2c0750995bb"
+    },
+    "asset.icon_pet_power.tga": {
+      "file": "png/icon_pet_power-8fc86aed5707.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5ceedbfbea8c3078f293b10f79afed01223a2728595461dd75993c65b205001b"
+    },
+    "asset.icon_pet_strength.tga": {
+      "file": "png/icon_pet_strength-1a646b0bf840.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4ad1e7ebebf2a6e971cb8475418ee9f2205243b672ce83f6759ffbd471284fe7"
+    },
+    "asset.icon_pet_will.tga": {
+      "file": "png/icon_pet_will-8d939b36e873.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "6b35304d4c3f5f2e9b4b0c283ff0c1cba3443902addc0d08cebd0bb3c27ff11f"
+    },
+    "asset.icon_pip_conversion.dds": {
+      "file": "png/icon_pip_conversion-822ca00eaae6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8af38331d59406ab604b2a693388d27a7e3e3d1be79474ef6c2f252ea00035b9"
+    },
+    "asset.icon_plus.dds": {
+      "file": "png/icon_plus-e9c4d6a9a0ff.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2122abe6d3fd0202b7688476f45e1b547a85ff97d42fdaab8dec2eefd59b8bed"
+    },
+    "asset.icon_pvp_arena_ticket.dds": {
+      "file": "png/icon_pvp_arena_ticket-a58f99fd84df.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "c6cc80992a37fb361f0704e592a9b44a4adaf3f9f66c555e48153462b6524946"
+    },
+    "asset.icon_pvp_blue_arena_ticket.dds": {
+      "file": "png/icon_pvp_blue_arena_ticket-0811bc9b6659.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "d1896c608e94f922f16d826f2c42a2b3ae49aa08715c8ef8cb48d770d75a08f9"
+    },
+    "asset.icon_pvp_card_common.dds": {
+      "file": "png/icon_pvp_card_common-68d6b32e4bb7.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "0dabcbead46fccc52c9a0eba54aa426a544824c4bcb1ffc65fd3354b0c7aa9f1"
+    },
+    "asset.icon_pvp_card_rare.dds": {
+      "file": "png/icon_pvp_card_rare-9a3262903b58.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "771bd22ab8110694e3a37418ff79db5ec68831cf604bd75c1239e8a8bb065e80"
+    },
+    "asset.icon_pvp_card_uncommon.dds": {
+      "file": "png/icon_pvp_card_uncommon-52477c62d46b.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "6ac294b2d45774b1f40defc87ccf3ac54b147811a174341af9a7bdcbac0294bc"
+    },
+    "asset.icon_pvp_extra_arena_ticket.dds": {
+      "file": "png/icon_pvp_extra_arena_ticket-6230f8bdd7f0.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "634a3e96504ed49bb6ee2750eda86199e9a203dc0232b860391fc0e323f28592"
+    },
+    "asset.icon_pvp_extra_blue_arena_ticket.dds": {
+      "file": "png/icon_pvp_extra_blue_arena_ticket-0027f8f9f45e.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "4fc36fe5b64d2904750cdfd1639463fd86116b26d2592e2f8752843c15e1586b"
+    },
+    "asset.icon_pvp_medal_reagent.dds": {
+      "file": "png/icon_pvp_medal_reagent-6b0b50eee413.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "f6b31b91bf5bec2e0e2ca4682cfbfc26ea8676f98a3c5ff41a23ddf665d8ddf6"
+    },
+    "asset.icon_pvp_present.dds": {
+      "file": "png/icon_pvp_present-62410a807c97.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "ea5cc951a3a02e77adcc1527b733ea18183111b791414d6a39ffd3d40e062bd3"
+    },
+    "asset.icon_pvp_trophy_bronze.dds": {
+      "file": "png/icon_pvp_trophy_bronze-ff70839651d9.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "66a24a8e4ee72b160d7b807229f78b0968915042ea908cc9d6098b9ba0f6141d"
+    },
+    "asset.icon_pvp_trophy_gold.dds": {
+      "file": "png/icon_pvp_trophy_gold-58bd8fd035f2.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "3da4dfac87683559ee0c6b817f9c00b3d0b94e6a75a448d2afc0365df5b9e765"
+    },
+    "asset.icon_pvp_trophy_silver.dds": {
+      "file": "png/icon_pvp_trophy_silver-582e2be40fac.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "c074991f0f2d1fd3bc86985b1d63a282ccba18b083306354ee4665c7cd9ebae1"
+    },
+    "asset.icon_radiance.dds": {
+      "file": "png/icon_radiance-ebeb4d2a9a24.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "739f48af4587ed74b333a155653ebcc55000fb28df3cb8be0da760b24bc8000e"
+    },
+    "asset.icon_rareharvest.dds": {
+      "file": "png/icon_rareharvest-4890e1ad4132.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "176a9afabb4259c74fc4399268c3708590b5c56e29a02c02f3ab7a91852d9887"
+    },
+    "asset.icon_reagent.dds": {
+      "file": "png/icon_reagent-65c5da159314.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "40a84dd04fcca26792c8ae6bd9ad2249f5bc539ab395861977b48e0a5ff7f307"
+    },
+    "asset.icon_recipe.dds": {
+      "file": "png/icon_recipe-1bdc7f227007.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "db5f711be1c90cf1460bb7dc964c4e3b4bd0cb3fbe9fda306f6f9ba630c470e4"
+    },
+    "asset.icon_ritual.dds": {
+      "file": "png/icon_ritual-634c904ec086.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "610644de0de01f9d66619d833afdbc717f53872be47622cba75a20f8a8002ba8"
+    },
+    "asset.icon_self.dds": {
+      "file": "png/icon_self-97d1a6fa2f0d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "95ebf4f61d848cc8e6b8ae926e319e9b0f2cf1920c3395f6742e5cc7c64bc5e5"
+    },
+    "asset.icon_shadow.dds": {
+      "file": "png/icon_shadow-11850aed53d4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "75b87963aead826dfad9572183bf78534eb9ce3aba0a9bbb22100f5c9a91134a"
+    },
+    "asset.icon_shadow.tga": {
+      "file": "png/icon_shadow-f7eec56dd7ba.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f63795b4221a5a429a4ee93149c3688f4078075535856669c885da5d40ab2956"
+    },
+    "asset.icon_shadow_pip.dds": {
+      "file": "png/icon_shadow_pip-40b6ef381286.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "731e620a8927f553a5fbda8b2ae1115134dd08cc4e6d214e369c0bfb2ac1a37d"
+    },
+    "asset.icon_shadow_pip02.dds": {
+      "file": "png/icon_shadow_pip02-c9e8d948d39b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "850c7f254719dd0e4e321e315c96474f082668008bdf4f292b210994b8e2e189"
+    },
+    "asset.icon_shield.dds": {
+      "file": "png/icon_shield-8ced919df875.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e081c9a6ae9b856ea24dcd5f2a7993cc079a1a34235d42df3ec5f083b8eb3b2"
+    },
+    "asset.icon_sigil.dds": {
+      "file": "png/icon_sigil-fb3ca7567291.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e79ee562c70613dc8c962728c2a9680cf03667eb525c7b211e3418025908763e"
+    },
+    "asset.icon_slash.dds": {
+      "file": "png/icon_slash-a19392074784.png",
+      "width": 22,
+      "height": 22,
+      "sha256": "81fe05912b0054b7d9d03ee191454fb326fa20bddd4616da6471f4603d9bae8a"
+    },
+    "asset.icon_sm_balance.dds": {
+      "file": "png/icon_sm_balance-58d132878159.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "efc62463ad306e333b8a770c05da401723e082236f4c3ab803fcce7cb4f375dd"
+    },
+    "asset.icon_sm_death.dds": {
+      "file": "png/icon_sm_death-21ec93528ea2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "57b8dd44ee55b26f0aec64a03b0b1d3b9d53a7e2e7d28f27cfd3509970c73a9d"
+    },
+    "asset.icon_sm_fire.dds": {
+      "file": "png/icon_sm_fire-74856b00e5d3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5fb7b5daa45998b2a9c1171d63ce7547e6005998a7bdeffaaaa97fa42807d347"
+    },
+    "asset.icon_sm_ice.dds": {
+      "file": "png/icon_sm_ice-62a1824752b9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "155528980af7f9ca471a49cfd4db5d135a71347c059510b049cf21ff41a370ff"
+    },
+    "asset.icon_sm_life.dds": {
+      "file": "png/icon_sm_life-ee34ccb5fe3b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "572e939c543d3e605216fc69733af8dce2ad4fd832914cd639697adf91c4e4ec"
+    },
+    "asset.icon_sm_myth.dds": {
+      "file": "png/icon_sm_myth-fe5fa4f4de45.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "eb54bb4240de9904fbdda0c07a6c142fd169cbf4572f31ebbb2e6ac3f0bdc808"
+    },
+    "asset.icon_sm_storm.dds": {
+      "file": "png/icon_sm_storm-5bceba6d7b32.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e3506d1e413c89b0a196b8e9c27df9b8c852a85b0fd18a913e8df1dd106cebcb"
+    },
+    "asset.icon_spirit.dds": {
+      "file": "png/icon_spirit-a0446ffa688d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2f3df77b9aa9203a3a733ca6d1f22a1cebb34e97fb4ebddc80db5fcad1f3ce09"
+    },
+    "asset.icon_star.dds": {
+      "file": "png/icon_star-261708810ec8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e2728ebcfec175c9c4a98bb1816284d335726126d35fc5a44c71029ae8eaa7f1"
+    },
+    "asset.icon_star.tga": {
+      "file": "png/icon_star-e60167286de6.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "888fd71285bad02b5f456572def6598e8dffd665df086f7b0e94698c58bcd52a"
+    },
+    "asset.icon_storm.dds": {
+      "file": "png/icon_storm-55e779c3c267.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "58fd8e565b69027802a53f8b97b30b2e34d720d1c5b3d4c1c63d212e8f834952"
+    },
+    "asset.icon_storm.tga": {
+      "file": "png/icon_storm-b1090740dbc1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "8752f74a82d97619762e671b2b463db034ff857d733bae3d382226b25cea9f68"
+    },
+    "asset.icon_sun.dds": {
+      "file": "png/icon_sun-b603f1d9c49c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d19c13b38b3b5f91754a23391352f4fa7b82b91e467efc41bc1cf15bf377ba7f"
+    },
+    "asset.icon_sun.tga": {
+      "file": "png/icon_sun-e665cf9b8fa6.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "3a3216f5f0cf45b600995f9ff8e9485f566722d66d98fc6bb7eeac9ca3c1f4b7"
+    },
+    "asset.icon_teleport.dds": {
+      "file": "png/icon_teleport-5cf90eef2729.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1aa68aaf8a5eca8ed538818f6df597da3dab16bb7b1457710496935dd2ace6ce"
+    },
+    "asset.icon_timer_med.dds": {
+      "file": "png/icon_timer_med-58d1d4a2d602.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "fb80d5f19987cce7090f72f7609183e4f54a45a81e55a47202873ad44af936fe"
+    },
+    "asset.icon_weakness.dds": {
+      "file": "png/icon_weakness-f3d90b2dc598.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "761cc6757035b35935f4edf6a494ebe28e87c1ac9d12ff76a29e1a93216540b0"
+    },
+    "asset.icon_worlddrop.dds": {
+      "file": "png/icon_worlddrop-0d24fbb2fba0.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "a3dfd751a07b42c20d96cea9a10e16ae793812339a3a2ef7d459d19d2417158f"
+    },
+    "asset.icons_all_enemies.dds": {
+      "file": "png/icons_all_enemies-5ff20d6cf99c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4e6a039f3fe42d155989bb707b89865f0c28d7a820969f3717d6f65e9a530f43"
+    },
+    "asset.icons_all_enemies_wide.dds": {
+      "file": "png/icons_all_enemies_wide-926ebf95f10e.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "effb48da062952799fa847e320869a0051ed242e4422913a02c499998701a044"
+    },
+    "asset.icons_all_friends.dds": {
+      "file": "png/icons_all_friends-078a3e2cc2a2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "42b8710bc003f89f56dda0634442a23878282d9ab355a607700848b00cd7d5f0"
+    },
+    "asset.icons_all_friends_wide.dds": {
+      "file": "png/icons_all_friends_wide-fe5ce75d73e0.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "d7155c351ff35577ff12fa8950b44c4474b4d0ef23deec085dff53ffcf121df1"
+    },
+    "asset.icons_dispel.dds": {
+      "file": "png/icons_dispel-e460ddb1ab01.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "697d839a878b240d708d7343f9a1c8896a275fbf982ef1aff167682388134a45"
+    },
+    "asset.icons_minion.dds": {
+      "file": "png/icons_minion-3cd90b384191.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e3cdeefccf3831a01d144712156396e3c2fa1d53637f04853ffdc89fa7157542"
+    },
+    "asset.icons_pests.dds": {
+      "file": "png/icons_pests-3e817ab651ae.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fcad0c9fd68be07f744ff1e4adfce2f8cb32cd2b0ec920db0f5e56105d8ad8d3"
+    },
+    "asset.icons_prevent.dds": {
+      "file": "png/icons_prevent-fca6f04f6ad2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9eae716896ce17e628cb3d7a87f97cad981d75992750b06b4ec8caf2dda7fe6c"
+    },
+    "asset.icons_rounds.dds": {
+      "file": "png/icons_rounds-c575c8bafbd8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "165ff6dbd514198a12e591ef7363b18fc687ca96a7a85217a9e7aae01c9ce55a"
+    },
+    "asset.icons_stun.dds": {
+      "file": "png/icons_stun-a35dafff8c50.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "91bb036395268957d2496d33e1fe67cee18f55761c71d0fa8c6cf69b262a6d17"
+    },
+    "asset.icons_threat.dds": {
+      "file": "png/icons_threat-b5c78f5122de.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0b377bb9a147bd4fd850315dea5d682fb2730fb62153d6a21bc6096cd7ff0fac"
+    },
+    "asset.negative_minion.dds": {
+      "file": "png/negative_minion-826d370305e1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0738bdba6f0b10b03c26127e88fbcfa0f3f2d8c8e3d1ed0da65864b5f8caeb9b"
+    },
+    "asset.pacify.dds": {
+      "file": "png/pacify-0bfd9e8c3467.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "dc414ace6a33a80573be588cd9bb3a268c590cb488f71f1ac94a22ac6d36aadd"
+    },
+    "asset.pet_derby_target_all.dds": {
+      "file": "png/pet_derby_target_all-2413a27a03e4.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "18f9d00f257d7852687e83034dd440837889e5795a2054b2da8241d35f1401a4"
+    },
+    "asset.pet_derby_target_behind.dds": {
+      "file": "png/pet_derby_target_behind-08ed2a3c360b.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "7acafe276dd176a27241e9740bc3cfa7205f4396464335b4ce86fb256441c81a"
+    },
+    "asset.pet_derby_target_front.dds": {
+      "file": "png/pet_derby_target_front-838abd752b3d.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "2f3dde38c272bb98bec6fa39c4abd4ece2f668061b4f5ef58ebb7af38dd77183"
+    },
+    "asset.pet_derby_target_leader.dds": {
+      "file": "png/pet_derby_target_leader-36c8d35f3984.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "bfc4f4feb9f21c7ca690c47942c300c810753e64c63ee1bbe1decacc245aa26b"
+    },
+    "asset.pet_derby_target_self.dds": {
+      "file": "png/pet_derby_target_self-d6c766bd374d.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "741cb536c68e19fc726bddebdfb5e69790102e6ff59422458e3b1097a8754744"
+    },
+    "asset.pip_balance_no_glow.dds": {
+      "file": "png/pip_balance_no_glow-58e2052c124a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e7e1e6b7ad0b7ac96c398012bd30288382959abe037a275d8168d3cf24604ad"
+    },
+    "asset.pip_death_no_glow.dds": {
+      "file": "png/pip_death_no_glow-b01314f9f2f4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8086225e07a5817e0a12dca743834d7255a621e5f8bd14752957d6aa39aee64b"
+    },
+    "asset.pip_fire_no_glow.dds": {
+      "file": "png/pip_fire_no_glow-dab305120af0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "807f7b8be90cc97770c2454eb45886a614be25c1d233ac77b09b56acf5d95665"
+    },
+    "asset.pip_ice_no_glow.dds": {
+      "file": "png/pip_ice_no_glow-76b34c0e8634.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5dd57624d20122aab9869e04cfb25dcaeebded833ade54b44c8c829913498a58"
+    },
+    "asset.pip_life_no_glow.dds": {
+      "file": "png/pip_life_no_glow-c06feba567b4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "229c1a91be41d5eba862cbbb53d3e56d9111cf76ce27a8af89f68ee83e468466"
+    },
+    "asset.pip_myth_no_glow.dds": {
+      "file": "png/pip_myth_no_glow-67549679df18.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "cfe8e16c4f0eb13daf86028c6db4c3015a9b259bc4ed9ace6f8da7ae0e2ff9e1"
+    },
+    "asset.pip_storm_no_glow.dds": {
+      "file": "png/pip_storm_no_glow-960c8d3dafa7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "177c9cec50ea98eac7a306f523ed0545cfa4904c859c3f65569e9840593a7b2e"
+    },
+    "asset.rank_00.tga": {
+      "file": "png/rank_00-37605373210c.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "3f59685bfd23922e01f5645fa3a17af7e9cea736e43694088e17faa6b06d591a"
+    },
+    "asset.rank_01.tga": {
+      "file": "png/rank_01-6c6d8c723d78.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "5e6ce3a9ee43ab0988a8bab63c102da0b87974ff013515dd28d8cea9be20b361"
+    },
+    "asset.rank_02.tga": {
+      "file": "png/rank_02-4cfe476e9044.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "3b2cbbd8dcb5f588731864a94113e6a039bc346130dc19c093172fb508a58bfd"
+    },
+    "asset.rank_03.tga": {
+      "file": "png/rank_03-27917d61d746.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "2192cc1ba36b47c4e9d78dbd78e0753f7886909791446942c5726ed4f336e3e0"
+    },
+    "asset.rank_04.tga": {
+      "file": "png/rank_04-1c90d73dcc50.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "19f7cf3a335c1f6237ed337ab1abb25a76d4d39062123ecfb1efe27cbebbcc22"
+    },
+    "asset.rank_05.tga": {
+      "file": "png/rank_05-b140ed48ab58.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "80bae85db7679cd070055f42b92618a168c64d5b8a11ed3570c4dde6ef1568f7"
+    },
+    "asset.rank_06.tga": {
+      "file": "png/rank_06-859e484ce4e3.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "0562549426fab58319dba452c2e73f35f28c08ad74d1cb189d71d291c07bac71"
+    },
+    "asset.rank_07.tga": {
+      "file": "png/rank_07-cfd0681c2404.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "aeebdb2d216b42233898d5c8134896e6097884392f479447cd0990049adb770b"
+    },
+    "asset.rank_08.tga": {
+      "file": "png/rank_08-333a8329669f.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "b1e46438ad3d229a3a2c7d01f441b0e8e6f010124f514a491af04b2cd4585562"
+    },
+    "asset.rank_09.tga": {
+      "file": "png/rank_09-851de824d76d.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "d4be836710875ba0082993e394939d15612cf2628868fbf666f0bed42025bbaa"
+    },
+    "asset.rank_10.tga": {
+      "file": "png/rank_10-54be806e67aa.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "d8022730034cbc312942b0ace80a1c3a5f38010449627642b340e9568e6b2a75"
+    },
+    "asset.rank_11.tga": {
+      "file": "png/rank_11-e7475c32600f.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "8da010a5df823a677b8874c43b96a129bcd512322fb6f227b679a10db9b150c9"
+    },
+    "asset.rank_12.tga": {
+      "file": "png/rank_12-b58da6926937.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "5a80c1b97ee9c611840217e0ed03013bd600c8ca1f8a4ccae84a1afda6e329d9"
+    },
+    "asset.rank_13.tga": {
+      "file": "png/rank_13-1185be70c191.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "a05f0b10b277a0223d021446303ac64bc845f4b29fd9498670e99b598575719c"
+    },
+    "asset.rank_14.tga": {
+      "file": "png/rank_14-b48ff8df59e9.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "0045176b2844f0ef9bbd554e4976e30c173ccc224399b11b52f051accd6ad543"
+    },
+    "asset.rank_15.tga": {
+      "file": "png/rank_15-9d2dd342477d.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "d3f4f4900da8f781280f38a99b659f77901446c4bfc6e07948f294f320d31d44"
+    },
+    "asset.rank_16.tga": {
+      "file": "png/rank_16-3add08a68792.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "c78882674906af4929f835d46cd0d6705a5762b2e536f87e6d374a3a96fe14ea"
+    },
+    "asset.rank_17.tga": {
+      "file": "png/rank_17-9b55a285029f.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "f48b85e72db54ecd449ec837e7ce33576455b95c54ad75a1812294d6475bd911"
+    },
+    "asset.rank_18.tga": {
+      "file": "png/rank_18-a89dd530248c.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "f5da03cb17027b2f78f1b756b49ee0493ef677218c62eafa4927d3c600e3ad45"
+    },
+    "asset.rank_19.tga": {
+      "file": "png/rank_19-9786fd18eff5.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "8c4ba72e2307e280957302fd0228524efbc0c5ee6d44bf733dc609732d4baa4e"
+    },
+    "asset.rank_20.tga": {
+      "file": "png/rank_20-f39419981c5d.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "46e451f56857b08a69ab54c7c45dc97a88f7a23851bf19612739fb658e347a80"
+    },
+    "asset.rank_minus.tga": {
+      "file": "png/rank_minus-d9ef06a85f7a.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "d6bbbb5cee9b119d81823eb59928fb659311b3ad168e51734a18c24c1b0b44d1"
+    },
+    "asset.rank_plus.tga": {
+      "file": "png/rank_plus-6f7cee38f6bd.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "deff011d097e3cf0897697f4f8a169f4eb79d10e6f0313a00e7cd557948e25d7"
+    },
+    "asset.rank_x.tga": {
+      "file": "png/rank_x-6cbc5a14c9a2.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "cb96a6c12505a6469ed8b44058e792138b518b0bc19b7fe0fa3a135669c104a6"
+    },
+    "asset.sacrifice_minion.dds": {
+      "file": "png/sacrifice_minion-ac84d77012d4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2d65821c8d686e519e690a66af7c26046fd773bb2a8539c42654c8fe2096b7ef"
+    },
+    "asset.sentinalfish_icon.dds": {
+      "file": "png/sentinalfish_icon-483b5de1f475.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "3189febd51447792fe7c471e1c027078e610f96d0607e4eaae74c86edce62576"
+    },
+    "asset.type_absorb.dds": {
+      "file": "png/type_absorb-3160087ca2a1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b812c0760aa1904e3f7a5919a18d82913a396e07c91285818115ea0f9ccf011e"
+    },
+    "asset.type_aoe.dds": {
+      "file": "png/type_aoe-38b7f583422b.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "cd9eae089d04d4706d08a5ab2439bd512017fc83b02f4540178f648b33b42103"
+    },
+    "asset.type_aoe.tga": {
+      "file": "png/type_aoe-aeab0a0cce76.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "efcd1ae9208de36a81b0e25f359e1948f3a025d4bbed84bf00189a3f51a5486d"
+    },
+    "asset.type_aura.dds": {
+      "file": "png/type_aura-80bf7fbf5d81.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "40fc77224d1de780c1cbf1ff2caeaf1477d349ddec58e9192fadb6355ade0175"
+    },
+    "asset.type_aura.tga": {
+      "file": "png/type_aura-5ad12725ddad.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "31a6ce82508c1113fc5a1947a719f469b15b0d953ecbd70b2e2c727df61c69af"
+    },
+    "asset.type_auranegative.dds": {
+      "file": "png/type_auranegative-a7cb7a3f2235.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9149c32e01d226de2e68e6aa2421116150eb4d4b50c21dd2f87aa79434a3dca6"
+    },
+    "asset.type_blade.dds": {
+      "file": "png/type_blade-5f507fc6fba8.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "57f65f996136cbc7cde2ca8aad0f8c9ae5c509c8df08ce7615a0dff7f6cff710"
+    },
+    "asset.type_card_banned.dds": {
+      "file": "png/type_card_banned-524b551b1e64.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ec3932c186665688dded3574850c0d1d6ddd4a35ecabe77a7ff827cba8c1d368"
+    },
+    "asset.type_card_pve.dds": {
+      "file": "png/type_card_pve-dcc040ac095f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4e48c35d32af951f22194f7d25553e80fb0d8912ae3144ce970ba05b50799524"
+    },
+    "asset.type_card_pvp.dds": {
+      "file": "png/type_card_pvp-25a1a209bf2c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b7c74d6ced9a2bc3730255292dd0c41e3537e854bb034ec182832f95277153bf"
+    },
+    "asset.type_charm.dds": {
+      "file": "png/type_charm-1b6ccba07647.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fd5b52d52c99230c2ec01a0c0ab0d1bd118f5804cb43c18a95a5986bfe843221"
+    },
+    "asset.type_charm.tga": {
+      "file": "png/type_charm-4ba393381979.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "fdf25a46f17de3f4151cc1f17dbd8d7021a8f5e193a726762da2f7d44053a4df"
+    },
+    "asset.type_cloak.dds": {
+      "file": "png/type_cloak-ecf3b1e6768b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "042da13d94a1c1d01aeb26fb9348f7c83e238a728a9f01aa0b26f41a1c82df8a"
+    },
+    "asset.type_cloak.tga": {
+      "file": "png/type_cloak-f68a3ca22c1b.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "c692b4badd401e1ccce0b158cc19163df8114b832d282473e340fd6db3b05465"
+    },
+    "asset.type_curse.dds": {
+      "file": "png/type_curse-2386baf840dc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "36f3e134e7fe0bbb3f6e36d692fea168578813bee4c6463e0b63184e58191d97"
+    },
+    "asset.type_curse.tga": {
+      "file": "png/type_curse-35f5a6f468f9.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "1bb9576cecf31085a1b2fed07fcd81911bb46b4c368fd9af9c2311d32325cde3"
+    },
+    "asset.type_damage.dds": {
+      "file": "png/type_damage-062ce716e16c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e00efe5d436b7e2a06b0074925b07e0197bc6f97c4bd4d1a2300130d6ffa391b"
+    },
+    "asset.type_damage.tga": {
+      "file": "png/type_damage-9081cbfe55b7.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "c97da80db6be8c2efae11e1f7ca417d0b31f85f498e56a7792f57a96e91eb988"
+    },
+    "asset.type_damage_flat.dds": {
+      "file": "png/type_damage_flat-aa6be14f1de2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5f967cdce9cba9159bceeea22b451e3e44cffd0a5c3e23ace6edeea8d2463488"
+    },
+    "asset.type_damageovertime.dds": {
+      "file": "png/type_damageovertime-102a3db34bb6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9a80bb04f1dd298c57fb15a0037cb97cc2273fe0a196325f2d01d0ce2b33e9ac"
+    },
+    "asset.type_deferreddamage.dds": {
+      "file": "png/type_deferreddamage-1a23b44c2ea0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a28e48453fa4c346a1e9742b31b3998081d101736c378d8523313fe22e788194"
+    },
+    "asset.type_enchantment.dds": {
+      "file": "png/type_enchantment-affdd17ab290.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b5e9918ef1e69fc0f97bb9259b49c572dd73b01f273386a8f971e04cf5c1d4aa"
+    },
+    "asset.type_enchantment.tga": {
+      "file": "png/type_enchantment-b0c569b5a6d3.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4a171db94b9bc683375ddb5767fd449866be97f35ba4938eb4770e4b9d07f9c4"
+    },
+    "asset.type_fishing_catching.dds": {
+      "file": "png/type_fishing_catching-52b23ecfd43b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "aca081f93fe6252bc1c89d9dd3f117e3f8bfb49148748863974500ecc8ad0195"
+    },
+    "asset.type_fishing_predator.dds": {
+      "file": "png/type_fishing_predator-674bcb40c756.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fe0114d3680e9a8d627ddfa82ea8a4ae18997acd2428ea6793971631b083bc35"
+    },
+    "asset.type_fishing_utility.dds": {
+      "file": "png/type_fishing_utility-8494e6db0e8c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "657f186e1de27d560f2aa79ed203473e84533f643a6923ed9e4e8f4cff2aecf9"
+    },
+    "asset.type_frame.dds": {
+      "file": "png/type_frame-bda5d94dbbb8.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "d9fe2db53949fb1819175c27ff64d983c9bc2eb8c793be550bb3171e40077ea0"
+    },
+    "asset.type_frame.tga": {
+      "file": "png/type_frame-d0ca77e45432.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "a49d6989cf4b273947c0dbc9650f8abb2c7cf8dec814df2c91190f529cd49da1"
+    },
+    "asset.type_frame_base_item.dds": {
+      "file": "png/type_frame_base_item-50d3c4574571.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "6744b5c43adc980f2b8b8d71fa1cb7acc882a73060e53080b87b545a6f3b766a"
+    },
+    "asset.type_frame_may_cast.dds": {
+      "file": "png/type_frame_may_cast-9855b74e3225.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "6503ff71faf4b1f20ddc83e7bb997ee2d2bdd5c390f371cd3372b6e98f1a2a6b"
+    },
+    "asset.type_frame_normal.dds": {
+      "file": "png/type_frame_normal-957315d5f540.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "d9fe2db53949fb1819175c27ff64d983c9bc2eb8c793be550bb3171e40077ea0"
+    },
+    "asset.type_frame_set_bonus.dds": {
+      "file": "png/type_frame_set_bonus-b63cdc46b422.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "59f7b73002551e08d91ad54669d65c93674ffa1fd72da62a3a622314814e500a"
+    },
+    "asset.type_frame_socket.dds": {
+      "file": "png/type_frame_socket-02ce75a20590.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "12be622951ef04e1e8abed5806fc77966ec8f6d3d8eae4ace85eddfbcdbde8b5"
+    },
+    "asset.type_frame_will_cast.dds": {
+      "file": "png/type_frame_will_cast-cfab983e5429.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "9dae53798695ddf1a3bae092d331d8e04fa3eba63a50f998bf3ceb885f2cc5a3"
+    },
+    "asset.type_garden_growth.dds": {
+      "file": "png/type_garden_growth-75419e625c06.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "da67598df61d128272f3b2fee1e5f1d55f62c2f04dd23ca344c2861b61aba575"
+    },
+    "asset.type_garden_pest.dds": {
+      "file": "png/type_garden_pest-b6313f25caec.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "17d2690dde49aad7328ffe1ff17e43816792f8b60f0cbdc65a6fa5017a217603"
+    },
+    "asset.type_garden_soil.dds": {
+      "file": "png/type_garden_soil-c2248e77b719.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fab5d5dfc4c2a7b919d3a4704083f5d4212edbb941330602dae784be3740b944"
+    },
+    "asset.type_garden_utility.dds": {
+      "file": "png/type_garden_utility-cc3e0343162a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4b90682ebdd2856505fdc56c7145a23a53263d65054a839df4bb0ef9a91c4cda"
+    },
+    "asset.type_global.dds": {
+      "file": "png/type_global-d9546ff7e758.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7691edc27c1d78cb847b78eae60fb2075fbae5eec1742a5b111b259994ffe89d"
+    },
+    "asset.type_global.tga": {
+      "file": "png/type_global-75256884fb7a.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4dd095f9983446fbdb20f1639af087e7f2a8e57aa2ef27a4ca3f1c8b5a83d410"
+    },
+    "asset.type_heal.dds": {
+      "file": "png/type_heal-3b6ad3a2d13d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d317b573ef56f0e9b0582393576b3b309cb320483f47d23339fa25543c638cea"
+    },
+    "asset.type_heal.tga": {
+      "file": "png/type_heal-73ac1ad31a7e.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "075902ae6ef9d4df6ecd4e06a29e26859028cad89c1227216b58138d90d372a3"
+    },
+    "asset.type_healovertime.dds": {
+      "file": "png/type_healovertime-0024329bef45.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6410845316be096727ba60e803d925cb4021546bac9118e1ab7d218b98365fa8"
+    },
+    "asset.type_incoming.dds": {
+      "file": "png/type_incoming-1afd8d8a4481.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "095959dddedf408e695da876c2fd3a2ddfc9b88051467a20df0ece171956da10"
+    },
+    "asset.type_jinx.dds": {
+      "file": "png/type_jinx-23a59fb54bed.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "41fb69b98a67cab0878d56cebdaad054d9a850685ff6808d6cdf5a61fe08d780"
+    },
+    "asset.type_jinx.tga": {
+      "file": "png/type_jinx-bb1ace0302cc.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "33b809c7a7ed5500778889bab905305c3c903db0a90b106d21b8b1287d82ee2f"
+    },
+    "asset.type_levelreqpvp.dds": {
+      "file": "png/type_levelreqpvp-172e726fa776.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "701b8291a5ca293a30a320d32ac10836ba5d336e2516fcec7a1e78cf2ea40bc7"
+    },
+    "asset.type_luck_fishing.dds": {
+      "file": "png/type_luck_fishing-353f724a0974.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9258a07efae039cb6daf36ba1ac2eada7a6664f336d5b20c1647673947249f69"
+    },
+    "asset.type_manipulation.dds": {
+      "file": "png/type_manipulation-b4e2a1b0ff99.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d83ee3c6e45f495111c40c9fb41409c72c2f09738b617fb73b037ba0b55e7738"
+    },
+    "asset.type_manipulation.tga": {
+      "file": "png/type_manipulation-4c87b87b4e09.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "bd2dfb6fa34f16c5306570cb4999a58761a3c09d8f4d765ec858d3f9471e3d4f"
+    },
+    "asset.type_maxenergy.dds": {
+      "file": "png/type_maxenergy-40442da53504.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8f6cd8133faeb5c37ab9c4b2d065e4868f67a663e36a3f1811431946eec503bc"
+    },
+    "asset.type_maxhealth.dds": {
+      "file": "png/type_maxhealth-23cdc0713b85.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3ddef235c75801353b50c592133e902123733f9d10bc9d5f5b52e76b8a81ebfb"
+    },
+    "asset.type_maxhealth.tga": {
+      "file": "png/type_maxhealth-651814e54e25.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4b1d1c3b6fe77c02247bcfd3dcbc4b23edcf421cea5930fe6dd2f07e1a097c30"
+    },
+    "asset.type_maxmana.dds": {
+      "file": "png/type_maxmana-4bfca6ae13aa.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "50e9fd03cb65b4726af6fa262db3c794832ab89bf05a5e5c94ebd1fb09215990"
+    },
+    "asset.type_maxmana.tga": {
+      "file": "png/type_maxmana-fbfee0c1bcf9.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "66f1357cff7b326c802241f7a839a289b3abf79c6507528f52367f40dc1beb98"
+    },
+    "asset.type_mutate.dds": {
+      "file": "png/type_mutate-8ae97d48eb49.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "04789593d7d3fee1e4b12b5a8c6e2f271be26b4981199ce42f72b0577e9ef9b1"
+    },
+    "asset.type_mutate.tga": {
+      "file": "png/type_mutate-33917dce41ab.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f4f7ba40dbae6b242d161a8f69578f390ecb44f8d7c56a533b22894d6dbddaa1"
+    },
+    "asset.type_outgoing.dds": {
+      "file": "png/type_outgoing-c99543bb407d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0133164435b80d8456c61808214b2b11b42314d502ca9bc9cc3fc20838116fb7"
+    },
+    "asset.type_pabsorb.dds": {
+      "file": "png/type_pabsorb-21c709cf7ece.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6cdd5b35246f0a52c3f2f11713027c926bfd7abe91e9de79c016f68534031df3"
+    },
+    "asset.type_pblade.dds": {
+      "file": "png/type_pblade-6f3f99279c3d.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "2a13d90f71140921a558520662ee68d7e92cec1f590eb35b30f7cd3e51eeb3b4"
+    },
+    "asset.type_pcharm.dds": {
+      "file": "png/type_pcharm-750ac34a188d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9bc37f93eb293d805815adbb972b59e5ce02f4c6f4a527362340e06c004d2354"
+    },
+    "asset.type_pcurse.dds": {
+      "file": "png/type_pcurse-02f62ef4fb64.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4a11b64899498713a2f0045ca1cd3be591f0a89751fe56c7b5ca53ead2e79bcd"
+    },
+    "asset.type_pdamageovertime.dds": {
+      "file": "png/type_pdamageovertime-a3676c0215c9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1a1717ddcb92c34fe65f8825231314975fb0fec4d4223ccada1bd106267ffffe"
+    },
+    "asset.type_pdeferreddamage.dds": {
+      "file": "png/type_pdeferreddamage-7b419ae6b3fd.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "81b7fa38f34cf4014c9bf559a30338fce8dcbeff248fdfdcc1be8a0b6ee05524"
+    },
+    "asset.type_phealovertime.dds": {
+      "file": "png/type_phealovertime-0c666027e290.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "238780b53ad5018f06051e3a89cab1e2d3abb148329767ce80cd46977a623457"
+    },
+    "asset.type_pip.dds": {
+      "file": "png/type_pip-6e7f80a20372.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "df7484649c193c35cbb68f0e73b6c698d4e210d3dfe9a4cc13e0fc6f0690382a"
+    },
+    "asset.type_pip.tga": {
+      "file": "png/type_pip-d3301fd294a3.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "23a8d2c1d850fd447f2c0b2a980f9f459243811792336e324627dd105c9ba1ef"
+    },
+    "asset.type_pip_shadow.dds": {
+      "file": "png/type_pip_shadow-bf9cd776d2d9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "810d63764cacba8184208872b17bdb7593b03af7751aab57d9fe768977bdd574"
+    },
+    "asset.type_pjinx.dds": {
+      "file": "png/type_pjinx-bde9d1d346ae.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "0494913735f567b7501196a012456efa85fdf2a2987f34d0871a57c572ce55bf"
+    },
+    "asset.type_polymorph.dds": {
+      "file": "png/type_polymorph-4184005cf66c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "45fdaf5c5ecac1d55ff08d1ef907b9500872eb9661de17851f2906623fbc73a6"
+    },
+    "asset.type_polymorph.tga": {
+      "file": "png/type_polymorph-5bb9b3991d1d.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f6eb0fe263dbaae7597b31688cc8740ff4f1c6fb48a2f27b5db24a28c8a7c246"
+    },
+    "asset.type_powerpips.dds": {
+      "file": "png/type_powerpips-006dbf0054e7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "779afc506224eef08e805ed304bb4ee79e6629a79104e879fe046e610db5adbf"
+    },
+    "asset.type_powerpips.tga": {
+      "file": "png/type_powerpips-02c5719f54b1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "ffed86f3205069f7d2a21b0f63f7f3ec9f230f2a19cd93ed1acfacf0c3273f18"
+    },
+    "asset.type_ptrap.dds": {
+      "file": "png/type_ptrap-56b99778fbe1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7b4b1866d6e4916a6d44b0f828662c2ac21a24c18cbbb6a4b42487a840376f98"
+    },
+    "asset.type_pward.dds": {
+      "file": "png/type_pward-8c33185bf90b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "19e1f623ad1babbf0ba38ed3aa3e55f3ae7c24ab9ce0c0b3f14d15c166639595"
+    },
+    "asset.type_random.dds": {
+      "file": "png/type_random-f0d10d2cec5e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bf210b05659d0b42b2fdec3471ddc99d7d9ce01508f28f1ce2673c166dd7fffe"
+    },
+    "asset.type_resist.dds": {
+      "file": "png/type_resist-d2741e19da57.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "891cb31524c70db2da795ec15b0c0816f4dda7323bafb7175bf236f87cf178db"
+    },
+    "asset.type_resist.tga": {
+      "file": "png/type_resist-2db530987f4f.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "00c54fd6e878859c0a1e8f1d7d105f7024d6d2f25f1c920c6f3ad059b1a04dd4"
+    },
+    "asset.type_resist_flat.dds": {
+      "file": "png/type_resist_flat-63317ba6e310.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a08c4406c89fdac856531876b0933d22e9c9b139aaa984616096c6f04ec1828b"
+    },
+    "asset.type_shadow_creature.dds": {
+      "file": "png/type_shadow_creature-91eadff55a3e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0326729e95d21356b7de6ce632aa98e1d269fd1d5eca6d98d77af5fd6f4fbde3"
+    },
+    "asset.type_shadow_minion.dds": {
+      "file": "png/type_shadow_minion-11bed1a38090.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0a97594f8de461ad125c4cd57a790291085b34f4e5ad7119fae29f04a9b51d4e"
+    },
+    "asset.type_shadow_self.dds": {
+      "file": "png/type_shadow_self-7727713354bc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "02a8b4a49ae40dac052b4b9b82db2a815fafee6bfc76bbb1dfbe8ae5d69196f0"
+    },
+    "asset.type_speed_effect.dds": {
+      "file": "png/type_speed_effect-12d3ff2e324b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "13494bfe6ef21fbf5e6ce835bb879a6fa5c33314fd13d09a9f6050700924b50f"
+    },
+    "asset.type_steal.dds": {
+      "file": "png/type_steal-35850f3268ea.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "37a1fb48dcb142863484baf96a00138ad9d98e9d1dde61a50ab6513805b1b27b"
+    },
+    "asset.type_steal.tga": {
+      "file": "png/type_steal-1bb7d55ec9ea.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "0f595ae034bc1102abd09a2dc72557c229fb99e47ad89588e0627d983600241f"
+    },
+    "asset.type_stun_resist.dds": {
+      "file": "png/type_stun_resist-6b10814ae591.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7fe26f972502e514338cbefe30feac1cef55152b2cf5b063c6315e712191d0f8"
+    },
+    "asset.type_trap.dds": {
+      "file": "png/type_trap-8fc2030b949d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "824fa0f6f756069d38a7fa93c974efd7569c92c9e69c350b16b0b14cd127580a"
+    },
+    "asset.type_ward.dds": {
+      "file": "png/type_ward-29aa38bc2cb5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "dc1715069289df850164f8921bdffb17316f378d367391467a3ac1f81984ec5a"
+    },
+    "asset.type_ward.tga": {
+      "file": "png/type_ward-1e55ec7e5b8a.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "3b5780ce9d31e1be164c227524d6f477af1a4f63207c876b3ce6a6b84e566a5e"
+    },
+    "asset.type_wisp_bonus_health.dds": {
+      "file": "png/type_wisp_bonus_health-38e4afddeedf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9ac3b0e823bee6b89360e6d6050015bb237ba3bf86d9891bdc45b1c946a3dba7"
+    },
+    "asset.type_wisp_bonus_mana.dds": {
+      "file": "png/type_wisp_bonus_mana-e3624cc43379.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d24875fd7d78038c06f46ab70e10de4520a1b67b044b3c0920bae3876f755260"
+    },
+    "asset.type_x1_pvp.dds": {
+      "file": "png/type_x1_pvp-cf4b0e106794.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "03ed866c0c58e8eb49fe99244591f6b84a0ce893085cb867f86cd3ed1e82f36c"
+    },
+    "asset.word_slash.dds": {
+      "file": "png/word_slash-d6a10dd341b3.png",
+      "width": 64,
+      "height": 8,
+      "sha256": "a6ece625e2a49eaa364a537b3b5316cb4eb228055595fee82b34dcba8093b37e"
+    },
+    "flag.crownsonly": {
+      "file": "png/icon_flag_crownsonly-5b86972bef8b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3cd7df9d392361c9c6b04efa99cf2d61a22c7a62929bdc5d79e78ebcbe8c099f"
+    },
+    "flag.noauction": {
+      "file": "png/icon_flag_noauction-52dfa52ff416.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5f0855c0f56430a092614a122133c11faf8426bcc7a71f4709dcac3f04f8210b"
+    },
+    "flag.nodrop": {
+      "file": "png/icon_flag_nodrop-52cefdf9bc84.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "040bf508af2e10e5991a37df0dc21d4e29b97ea1c0f6d6c2380d5d2b12854a8b"
+    },
+    "flag.nodye": {
+      "file": "png/icon_flag_nodye-340904e06610.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "efc17369fa2f986b3a27e47bcadb5e30a3c8b3874a7b296de8be6943f0e38c8f"
+    },
+    "flag.nopvp": {
+      "file": "png/icon_flag_nopvp-f43933ee933c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ddfc96de821815ba5699e38fcbb64cb61264720e40826cc3894ef062e9776964"
+    },
+    "flag.nosell": {
+      "file": "png/icon_flag_nosell-d2bc7f4d549c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3b925a9a150e106dad148e4940bcd0d96bed3c869af9e8e75fceb79f28ec907e"
+    },
+    "flag.notrade": {
+      "file": "png/icon_flag_notrade-8f41e9e435bf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5b60d34a9613b36c796124aa69a86f4954f67a30a0868f7ec32467785cb31904"
+    },
+    "flag.pvponly": {
+      "file": "png/icon_flag_pvponly-e9c42b2b6da5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e11716bef37d01da0204c3a75e26c40df738df4aa54d429698a0e479f6a5fb3e"
+    },
+    "misc.drop": {
+      "file": "png/icon_worlddrop-0d24fbb2fba0.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "a3dfd751a07b42c20d96cea9a10e16ae793812339a3a2ef7d459d19d2417158f"
+    },
+    "misc.fishing": {
+      "file": "png/icon_fishing-c2e603e5b26f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fdc3fb0ac61c46c8b4f8b6fc063393a52a8c391f4cf2bca93a5912ab5a7feda7"
+    },
+    "misc.gardening": {
+      "file": "png/icon_gardening-cb7b6d742128.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "59d0ecf89673060b489e99901164b1f53505bff9f245e3127e1eec9f9bb1124b"
+    },
+    "misc.reagent": {
+      "file": "png/icon_reagent-65c5da159314.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "40a84dd04fcca26792c8ae6bd9ad2249f5bc539ab395861977b48e0a5ff7f307"
+    },
+    "misc.recipe": {
+      "file": "png/icon_recipe-1bdc7f227007.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "db5f711be1c90cf1460bb7dc964c4e3b4bd0cb3fbe9fda306f6f9ba630c470e4"
+    },
+    "pet.agility": {
+      "file": "png/icon_pet_agility-503edab07d1b.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "e097cac4b3cbbd00c4dcca748171b566abc2c5400310be81ffcbbe86e1735fa7"
+    },
+    "pet.intellect": {
+      "file": "png/icon_pet_intellect-aad2293360c1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5def90a9eb0e2554232e59ccc4c2cd5c57c52d71bdc544f4a191e2c0750995bb"
+    },
+    "pet.power": {
+      "file": "png/icon_pet_power-8fc86aed5707.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5ceedbfbea8c3078f293b10f79afed01223a2728595461dd75993c65b205001b"
+    },
+    "pet.strength": {
+      "file": "png/icon_pet_strength-1a646b0bf840.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4ad1e7ebebf2a6e971cb8475418ee9f2205243b672ce83f6759ffbd471284fe7"
+    },
+    "pet.will": {
+      "file": "png/icon_pet_will-8d939b36e873.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "6b35304d4c3f5f2e9b4b0c283ff0c1cba3443902addc0d08cebd0bb3c27ff11f"
+    },
+    "pip.balance": {
+      "file": "png/pip_balance_no_glow-58e2052c124a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e7e1e6b7ad0b7ac96c398012bd30288382959abe037a275d8168d3cf24604ad"
+    },
+    "pip.death": {
+      "file": "png/pip_death_no_glow-b01314f9f2f4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8086225e07a5817e0a12dca743834d7255a621e5f8bd14752957d6aa39aee64b"
+    },
+    "pip.fire": {
+      "file": "png/pip_fire_no_glow-dab305120af0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "807f7b8be90cc97770c2454eb45886a614be25c1d233ac77b09b56acf5d95665"
+    },
+    "pip.ice": {
+      "file": "png/pip_ice_no_glow-76b34c0e8634.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5dd57624d20122aab9869e04cfb25dcaeebded833ade54b44c8c829913498a58"
+    },
+    "pip.life": {
+      "file": "png/pip_life_no_glow-c06feba567b4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "229c1a91be41d5eba862cbbb53d3e56d9111cf76ce27a8af89f68ee83e468466"
+    },
+    "pip.myth": {
+      "file": "png/pip_myth_no_glow-67549679df18.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "cfe8e16c4f0eb13daf86028c6db4c3015a9b259bc4ed9ace6f8da7ae0e2ff9e1"
+    },
+    "pip.normal": {
+      "file": "png/type_pip-6e7f80a20372.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "df7484649c193c35cbb68f0e73b6c698d4e210d3dfe9a4cc13e0fc6f0690382a"
+    },
+    "pip.power": {
+      "file": "png/type_powerpips-006dbf0054e7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "779afc506224eef08e805ed304bb4ee79e6629a79104e879fe046e610db5adbf"
+    },
+    "pip.shadow": {
+      "file": "png/icon_shadow_pip-40b6ef381286.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "731e620a8927f553a5fbda8b2ae1115134dd08cc4e6d214e369c0bfb2ac1a37d"
+    },
+    "pip.storm": {
+      "file": "png/pip_storm_no_glow-960c8d3dafa7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "177c9cec50ea98eac7a306f523ed0545cfa4904c859c3f65569e9840593a7b2e"
+    },
+    "school.balance": {
+      "file": "png/icon_balance-6a5be6fc6789.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6dd81a75cff005622d0070dc5d67cea2ac9c6aaffcec5d653550215027d2dd87"
+    },
+    "school.cantrips": {
+      "file": "png/icon_cantrips-05c95659b7f0.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "b12045f8a438f4803e83a99a026ef86b37d66fd6b699246375d203306dba36b7"
+    },
+    "school.death": {
+      "file": "png/icon_death-c8ac348164bc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ddbc4682888b52c062f604041311408893a0e55370419796632772295caff1d4"
+    },
+    "school.elemental": {
+      "file": "png/icon_elemental-6b0f5e902fe1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bf70a9e7c6767b28bd530dd357619cb359aaf58e80933c316d6a8f5eaa63862f"
+    },
+    "school.fire": {
+      "file": "png/icon_fire-da0a7df5e97f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "39201d5dc6343bf7920575dcadbf6f4a366c02019ba05921c241bf8e60fcd8d0"
+    },
+    "school.fishing": {
+      "file": "png/icon_fishing-c2e603e5b26f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fdc3fb0ac61c46c8b4f8b6fc063393a52a8c391f4cf2bca93a5912ab5a7feda7"
+    },
+    "school.gardening": {
+      "file": "png/icon_gardening-cb7b6d742128.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "59d0ecf89673060b489e99901164b1f53505bff9f245e3127e1eec9f9bb1124b"
+    },
+    "school.ice": {
+      "file": "png/icon_ice-c113c4f80b8b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c129a10bd05094c2f275b296b599e8600ac8009bd2c88e8a0462483979a81889"
+    },
+    "school.life": {
+      "file": "png/icon_life-64d476762efc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0881782fb334f6eaa4086e51d6048ceacf6a799184de01b7f574e6f9659b37f9"
+    },
+    "school.moon": {
+      "file": "png/icon_moon-4b1a2f17f4b3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e58d037b0cc93426fac77c32cb1f232eb0abe1134b1594a75be1d2c20d47acd5"
+    },
+    "school.myth": {
+      "file": "png/icon_myth-83ee5c18cad2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d6abe9683250ddb1d6422fdbae7c112319cf6feb3453cf0238a0dc9b1ce4f50a"
+    },
+    "school.shadow": {
+      "file": "png/icon_shadow-11850aed53d4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "75b87963aead826dfad9572183bf78534eb9ce3aba0a9bbb22100f5c9a91134a"
+    },
+    "school.spirit": {
+      "file": "png/icon_spirit-a0446ffa688d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2f3df77b9aa9203a3a733ca6d1f22a1cebb34e97fb4ebddc80db5fcad1f3ce09"
+    },
+    "school.star": {
+      "file": "png/icon_star-261708810ec8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e2728ebcfec175c9c4a98bb1816284d335726126d35fc5a44c71029ae8eaa7f1"
+    },
+    "school.storm": {
+      "file": "png/icon_storm-55e779c3c267.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "58fd8e565b69027802a53f8b97b30b2e34d720d1c5b3d4c1c63d212e8f834952"
+    },
+    "school.sun": {
+      "file": "png/icon_sun-b603f1d9c49c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d19c13b38b3b5f91754a23391352f4fa7b82b91e467efc41bc1cf15bf377ba7f"
+    },
+    "school.universal": {
+      "file": "png/icon_all-df51b5ad931a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ebb82a70028609e2a20b88374c02d3b398b8b329ce6cc270f50e58156b07b3d5"
+    },
+    "socket.circle": {
+      "file": "png/gem_circle-790b091adbb8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "223c3399b33f696fa13e1ea8e4cc4099b40f176032f25e253f94a54ebf31fdeb"
+    },
+    "socket.circle.locked": {
+      "file": "png/gem_circlelocked-3ea89a2ee309.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "93fd99c8f6a1dffcdb677eef7dae3214372c6ef5008936404edc646e1fa4826d"
+    },
+    "socket.octagon": {
+      "file": "png/gem_octagon-445fd3a43c3d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d003c8e937f49d3b807bead30c4f290a3b855a3bb2b056656749948e0faa041c"
+    },
+    "socket.octagon.locked": {
+      "file": "png/gem_octagonlocked-20edcaf951f4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "676c0a3aee7337c8ada5e74fdc02621da089376c5527f9f755531ed284d4c956"
+    },
+    "socket.square": {
+      "file": "png/gem_square-83e6bd5fd130.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5e8369cf985c1a5fd5f228b9bcc14ca1b6bd7effa73ad8c977ac3ca941e99fdd"
+    },
+    "socket.square.locked": {
+      "file": "png/gem_squarelocked-d5dfc3523b6b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0bac95599b6dfa50a7a3778b311d3a5aac17f1bb351e75d0717f34aa5263fffb"
+    },
+    "socket.triangle": {
+      "file": "png/gem_triangle-2c153e99ff4e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fa515075a961624434c15e229756947fbe1182344b5ebec94fd6ece9a5af6633"
+    },
+    "socket.triangle.locked": {
+      "file": "png/gem_trianglelocked-4c7149789971.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bb9bbe15bc34cff104ea4d97292c3c69b5f94938e557adafb63a984c44a1714d"
+    },
+    "spell.absorb": {
+      "file": "png/type_absorb-3160087ca2a1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b812c0760aa1904e3f7a5919a18d82913a396e07c91285818115ea0f9ccf011e"
+    },
+    "spell.aoe": {
+      "file": "png/type_aoe-aeab0a0cce76.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "efcd1ae9208de36a81b0e25f359e1948f3a025d4bbed84bf00189a3f51a5486d"
+    },
+    "spell.aura": {
+      "file": "png/type_aura-80bf7fbf5d81.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "40fc77224d1de780c1cbf1ff2caeaf1477d349ddec58e9192fadb6355ade0175"
+    },
+    "spell.blade": {
+      "file": "png/type_blade-5f507fc6fba8.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "57f65f996136cbc7cde2ca8aad0f8c9ae5c509c8df08ce7615a0dff7f6cff710"
+    },
+    "spell.damage": {
+      "file": "png/type_damage-062ce716e16c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e00efe5d436b7e2a06b0074925b07e0197bc6f97c4bd4d1a2300130d6ffa391b"
+    },
+    "spell.dispel": {
+      "file": "png/icons_dispel-e460ddb1ab01.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "697d839a878b240d708d7343f9a1c8896a275fbf982ef1aff167682388134a45"
+    },
+    "spell.dot": {
+      "file": "png/type_damageovertime-102a3db34bb6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9a80bb04f1dd298c57fb15a0037cb97cc2273fe0a196325f2d01d0ce2b33e9ac"
+    },
+    "spell.enchant": {
+      "file": "png/type_enchantment-affdd17ab290.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b5e9918ef1e69fc0f97bb9259b49c572dd73b01f273386a8f971e04cf5c1d4aa"
+    },
+    "spell.global": {
+      "file": "png/type_global-d9546ff7e758.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7691edc27c1d78cb847b78eae60fb2075fbae5eec1742a5b111b259994ffe89d"
+    },
+    "spell.heal": {
+      "file": "png/type_heal-3b6ad3a2d13d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d317b573ef56f0e9b0582393576b3b309cb320483f47d23339fa25543c638cea"
+    },
+    "spell.hot": {
+      "file": "png/type_healovertime-0024329bef45.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6410845316be096727ba60e803d925cb4021546bac9118e1ab7d218b98365fa8"
+    },
+    "spell.minion": {
+      "file": "png/icons_minion-3cd90b384191.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e3cdeefccf3831a01d144712156396e3c2fa1d53637f04853ffdc89fa7157542"
+    },
+    "spell.polymorph": {
+      "file": "png/type_polymorph-4184005cf66c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "45fdaf5c5ecac1d55ff08d1ef907b9500872eb9661de17851f2906623fbc73a6"
+    },
+    "spell.shield": {
+      "file": "png/type_ward-29aa38bc2cb5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "dc1715069289df850164f8921bdffb17316f378d367391467a3ac1f81984ec5a"
+    },
+    "spell.stun": {
+      "file": "png/icons_stun-a35dafff8c50.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "91bb036395268957d2496d33e1fe67cee18f55761c71d0fa8c6cf69b262a6d17"
+    },
+    "spell.trap": {
+      "file": "png/type_trap-8fc2030b949d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "824fa0f6f756069d38a7fa93c974efd7569c92c9e69c350b16b0b14cd127580a"
+    },
+    "spell.weakness": {
+      "file": "png/icon_weakness-f3d90b2dc598.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "761cc6757035b35935f4edf6a494ebe28e87c1ac9d12ff76a29e1a93216540b0"
+    },
+    "stat.accuracy": {
+      "file": "png/icon_accuracy-eaf4fd624cf5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f73a648280c9083db6fd2b364b10b43287843e324c20b0c623e96fa9f99f5bb0"
+    },
+    "stat.archmastery": {
+      "file": "png/icon_archmastery-da3d6537ddb3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a16b68de16c1ab20a581d21965b71b7bb3d04f3862d673d548cc5cde282341b5"
+    },
+    "stat.block": {
+      "file": "png/icon_blockrating-2cc7c25132d0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "48b374ca6f01249b49d789842d0f1f35389d1fee7e3b1e3df81921ace3fbad4f"
+    },
+    "stat.critical": {
+      "file": "png/icon_criticalrating-4bf2b88ee6ec.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7b6d043776b265cdc7be7d34b6fa949f3339cd784e3df13f2510b99870146fb4"
+    },
+    "stat.damage": {
+      "file": "png/type_damage-062ce716e16c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e00efe5d436b7e2a06b0074925b07e0197bc6f97c4bd4d1a2300130d6ffa391b"
+    },
+    "stat.energy": {
+      "file": "png/type_maxenergy-40442da53504.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8f6cd8133faeb5c37ab9c4b2d065e4868f67a663e36a3f1811431946eec503bc"
+    },
+    "stat.flat_damage": {
+      "file": "png/type_damage_flat-aa6be14f1de2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5f967cdce9cba9159bceeea22b451e3e44cffd0a5c3e23ace6edeea8d2463488"
+    },
+    "stat.flat_resist": {
+      "file": "png/type_resist_flat-63317ba6e310.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a08c4406c89fdac856531876b0933d22e9c9b139aaa984616096c6f04ec1828b"
+    },
+    "stat.heal": {
+      "file": "png/type_heal-3b6ad3a2d13d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d317b573ef56f0e9b0582393576b3b309cb320483f47d23339fa25543c638cea"
+    },
+    "stat.health": {
+      "file": "png/type_maxhealth-23cdc0713b85.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3ddef235c75801353b50c592133e902123733f9d10bc9d5f5b52e76b8a81ebfb"
+    },
+    "stat.incoming": {
+      "file": "png/icon_incoming-b5015dbb442b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "095959dddedf408e695da876c2fd3a2ddfc9b88051467a20df0ece171956da10"
+    },
+    "stat.mana": {
+      "file": "png/type_maxmana-4bfca6ae13aa.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "50e9fd03cb65b4726af6fa262db3c794832ab89bf05a5e5c94ebd1fb09215990"
+    },
+    "stat.outgoing": {
+      "file": "png/icon_outgoing-a9c20c0f6a36.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0133164435b80d8456c61808214b2b11b42314d502ca9bc9cc3fc20838116fb7"
+    },
+    "stat.pierce": {
+      "file": "png/icon_armor_penetration-231e45d18a7b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fa25c2566650c446157b0e09a7625f93ad6b6c0df1f40893b7ad019d345dfbcd"
+    },
+    "stat.pip_conversion": {
+      "file": "png/icon_pip_conversion-822ca00eaae6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8af38331d59406ab604b2a693388d27a7e3e3d1be79474ef6c2f252ea00035b9"
+    },
+    "stat.power_pip": {
+      "file": "png/type_powerpips-006dbf0054e7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "779afc506224eef08e805ed304bb4ee79e6629a79104e879fe046e610db5adbf"
+    },
+    "stat.resist": {
+      "file": "png/type_resist-d2741e19da57.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "891cb31524c70db2da795ec15b0c0816f4dda7323bafb7175bf236f87cf178db"
+    },
+    "stat.speed": {
+      "file": "png/type_speed_effect-12d3ff2e324b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "13494bfe6ef21fbf5e6ce835bb879a6fa5c33314fd13d09a9f6050700924b50f"
+    },
+    "stat.stun_resist": {
+      "file": "png/type_stun_resist-6b10814ae591.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7fe26f972502e514338cbefe30feac1cef55152b2cf5b063c6315e712191d0f8"
+    },
+    "target.enemies": {
+      "file": "png/icons_all_enemies-5ff20d6cf99c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4e6a039f3fe42d155989bb707b89865f0c28d7a820969f3717d6f65e9a530f43"
+    },
+    "target.friends": {
+      "file": "png/icons_all_friends-078a3e2cc2a2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "42b8710bc003f89f56dda0634442a23878282d9ab355a607700848b00cd7d5f0"
+    },
+    "target.self": {
+      "file": "png/icon_self-97d1a6fa2f0d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "95ebf4f61d848cc8e6b8ae926e319e9b0f2cf1920c3395f6742e5cc7c64bc5e5"
+    }
+  },
+  "files": [
+    {
+      "file": "png/card_health_bar-da8c73ebbcfb.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "63c01552c1bf9c015adb5feda66ff3492a1e7c5b0064ae086bfcbfb6d8d4fff6",
+      "source": "Icons/Card_health_bar.dds"
+    },
+    {
+      "file": "png/description_chromatic_caster_school-ac6f5c389d98.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2fb7857eb58387410eb5d083a708a8aa463165263df65ca113bbd78399f6cd1f",
+      "source": "Icons/Description/Description_Chromatic_Caster_School.tga"
+    },
+    {
+      "file": "png/description_chromatic_target_school-58e52f95ee3e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f84a322ca865804e71dab9b96b4e5af56e5b75f195ec6c219d9561ab9064ed9a",
+      "source": "Icons/Description/Description_Chromatic_Target_School.tga"
+    },
+    {
+      "file": "png/description_select_enemy-92e4b6f71dc9.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "c499d8c94a9abfa86b0e493086f541ee7cd20e5bd0d38d0d189bc4d41194ae51",
+      "source": "Icons/Description/Description_Select_Enemy.dds"
+    },
+    {
+      "file": "png/description_select_enemy-386f153f1204.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "e1677bf8a0834385c0e6a480a03d22c69b15956f57e5d210ba4ec40e29f6dcb4",
+      "source": "Icons/Description/Description_Select_Enemy.tga"
+    },
+    {
+      "file": "png/description_select_friend-928ed199dbbd.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "5cf63b8bb9c30cfcbe74a3c205f700d251ae5eaed082ac76989f53194d34ff71",
+      "source": "Icons/Description/Description_Select_Friend.dds"
+    },
+    {
+      "file": "png/frame-17ec259949f3.png",
+      "width": 128,
+      "height": 64,
+      "sha256": "79335de6a9ea91f467a0a49c23de79e598367c6b81c9576558007b63cfae1e89",
+      "source": "Icons/Frame.dds"
+    },
+    {
+      "file": "png/gem_circle-790b091adbb8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "223c3399b33f696fa13e1ea8e4cc4099b40f176032f25e253f94a54ebf31fdeb",
+      "source": "Icons/Gem_Circle.dds"
+    },
+    {
+      "file": "png/gem_circlelocked-3ea89a2ee309.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "93fd99c8f6a1dffcdb677eef7dae3214372c6ef5008936404edc646e1fa4826d",
+      "source": "Icons/Gem_CircleLocked.dds"
+    },
+    {
+      "file": "png/gem_octagon-445fd3a43c3d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d003c8e937f49d3b807bead30c4f290a3b855a3bb2b056656749948e0faa041c",
+      "source": "Icons/Gem_Octagon.dds"
+    },
+    {
+      "file": "png/gem_octagonlocked-20edcaf951f4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "676c0a3aee7337c8ada5e74fdc02621da089376c5527f9f755531ed284d4c956",
+      "source": "Icons/Gem_OctagonLocked.dds"
+    },
+    {
+      "file": "png/gem_square-83e6bd5fd130.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5e8369cf985c1a5fd5f228b9bcc14ca1b6bd7effa73ad8c977ac3ca941e99fdd",
+      "source": "Icons/Gem_Square.dds"
+    },
+    {
+      "file": "png/gem_squarelocked-d5dfc3523b6b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0bac95599b6dfa50a7a3778b311d3a5aac17f1bb351e75d0717f34aa5263fffb",
+      "source": "Icons/Gem_SquareLocked.dds"
+    },
+    {
+      "file": "png/gem_triangle-2c153e99ff4e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fa515075a961624434c15e229756947fbe1182344b5ebec94fd6ece9a5af6633",
+      "source": "Icons/Gem_Triangle.dds"
+    },
+    {
+      "file": "png/gem_trianglelocked-4c7149789971.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bb9bbe15bc34cff104ea4d97292c3c69b5f94938e557adafb63a984c44a1714d",
+      "source": "Icons/Gem_TriangleLocked.dds"
+    },
+    {
+      "file": "png/global_balefrost-f5863c13dc48.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "144947b5d0e6de0de6911b8619fa50ad2ddbba695aa560ed575b03e9a34acce1",
+      "source": "Icons/Global_Balefrost.tga"
+    },
+    {
+      "file": "png/global_bloodmoon-9f3902485a4c.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "14309ebbfe7d3b77db78f03a432d24dca5984d3c07f746cbacbada099aed3b4b",
+      "source": "Icons/Global_BloodMoon.tga"
+    },
+    {
+      "file": "png/global_darkwind-d2095a5202a9.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "b1554cf11641b81726a99cdf650a87e3d274751e14cbab394f57849240e2cc9c",
+      "source": "Icons/Global_Darkwind.tga"
+    },
+    {
+      "file": "png/global_doomgloom-e214d8bc4be4.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "d7843f918d37a8d0e666bab4c1051933f93758a400ec71e476ccba9ccd9b2c34",
+      "source": "Icons/Global_DoomGloom.tga"
+    },
+    {
+      "file": "png/global_generic-e4b02d27225e.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "ca2c03dde1d13c35e3e54dc55e02ddebdbb30ca93481da99fdf994b0fec05fcc",
+      "source": "Icons/Global_Generic.tga"
+    },
+    {
+      "file": "png/global_sanctuary-3e3064fefe9c.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "dc57d554ef8dfe3b0277a27be3b2a9eccf3ba972c82cea1d200e4d284e92d9ea",
+      "source": "Icons/Global_Sanctuary.tga"
+    },
+    {
+      "file": "png/global_shroud-d24f9bb251c6.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "c5554fe704829db866f50a0932b5fff88e0d99c37aa8261087fa64eeed9f724f",
+      "source": "Icons/Global_Shroud.tga"
+    },
+    {
+      "file": "png/global_wyldfire-eb968367522f.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "6991f84f99ad55a1141f6f83e75d6ef7a1ee851d25919213f2c49968878d6d06",
+      "source": "Icons/Global_Wyldfire.tga"
+    },
+    {
+      "file": "png/health-eca73374e2a5.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "e5b79b4539b48707bb73f933f65577b2abd86018e8727f88ce19f3479241a6d4",
+      "source": "Icons/Health.dds"
+    },
+    {
+      "file": "png/icon_accuracy-eaf4fd624cf5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f73a648280c9083db6fd2b364b10b43287843e324c20b0c623e96fa9f99f5bb0",
+      "source": "Icons/Icon_Accuracy.dds"
+    },
+    {
+      "file": "png/icon_accuracy-3cc2a2999114.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "023d0b66de49787a9905854302e9e64e998415fd280f75bd17399f8a787800f5",
+      "source": "Icons/Icon_Accuracy.tga"
+    },
+    {
+      "file": "png/icon_advanced_mode-82636732a392.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1da1c48f6b78dffbd444ce534364fa83a847a14762a208f9de0a7bb9b6c3abfe",
+      "source": "Icons/Icon_Advanced_Mode.dds"
+    },
+    {
+      "file": "png/icon_adventure_island_large_house-104d1c4ea8ac.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e0d89a3f2968a2e5e103b748197ac25b2ac9af686492ee330706a67c1695504",
+      "source": "Icons/Icon_Adventure_Island_Large_House.dds"
+    },
+    {
+      "file": "png/icon_adventure_island_medium_house-880b7e25e105.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c0467ad2d2da3d44e786b3557096dfc8c65f9b77dcf95e02490c1aa5696886b1",
+      "source": "Icons/Icon_Adventure_Island_Medium_House.dds"
+    },
+    {
+      "file": "png/icon_adventure_island_museum-e8acc5728d8e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e5ee72bc04377700475d018ad3a6f441ea83971cbfc592493084a4ca23da192b",
+      "source": "Icons/Icon_Adventure_Island_Museum.dds"
+    },
+    {
+      "file": "png/icon_adventure_island_pvp-f8360bcc5c10.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "488c5e409513dc86d133d8aa181ac3653479abd394f7bc91f8d5f3fecb0641b3",
+      "source": "Icons/Icon_Adventure_Island_PvP.dds"
+    },
+    {
+      "file": "png/icon_adventure_island_raid-ec218ae5ea00.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9459705674170009535e7d9dc3c7de247cea7e7e8fce3cce331d9e92a3f43ae1",
+      "source": "Icons/Icon_Adventure_Island_Raid.dds"
+    },
+    {
+      "file": "png/icon_adventure_island_small_house-9cf261370e88.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f69c18130dff71b14dc8de59a6aa0a2a279df6d8461dedacf2c6dbde5ad3f26e",
+      "source": "Icons/Icon_Adventure_Island_Small_House.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_beastmoon-c621b3ed48cf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "98e97101d32c101aab9ce47defcc32ab7b7aa4d5c78bb98050b0ceb9ae1f01f5",
+      "source": "Icons/Icon_Adventure_Party_Beastmoon.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_combat-0cb7f7029095.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "32932587a47317ae368cc7fb55445bafdb89e18fb5aa07413a7bee8da141884c",
+      "source": "Icons/Icon_Adventure_Party_Combat.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_derby-555efd9aad1c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2994dac4ab67da3e148c6eb9284dbd12ffa18da4ba14ca4b765703d3675dc93e",
+      "source": "Icons/Icon_Adventure_Party_Derby.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_dungeon-71b617f6af63.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ea3d30790c444209c86b31ba61830a228f3fa9ac73820b1a1d3c84d87437b4fd",
+      "source": "Icons/Icon_Adventure_Party_Dungeon.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_hatching-96e69554e714.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "34f4007e0d9f62162c064fd97f3c3214e70839eae2301b8990d136251d26db2a",
+      "source": "Icons/Icon_Adventure_Party_Hatching.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_housing_game-1448f39a84cc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a2cb6b11103f56ab116193d57f190b89d912db9196afe88c761874dce8f6c232",
+      "source": "Icons/Icon_Adventure_Party_Housing_Game.dds"
+    },
+    {
+      "file": "png/icon_adventure_party_pvp-fb0ae6175c51.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "84247966ce983095301d7eda27798569fd959928a834e2f5c871bc351330b42c",
+      "source": "Icons/Icon_Adventure_Party_PvP.dds"
+    },
+    {
+      "file": "png/icon_afterlife-e60ceb820a0b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "08df03d42f0c7b2ed8dc2c84880cd535be9ac3c18ecbb68c92f6de429767dd2b",
+      "source": "Icons/Icon_Afterlife.dds"
+    },
+    {
+      "file": "png/icon_alchemy-181ba061006c.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "1892ef9d85edb9ce8fe118c504eb0b46592fa1235a3ecfe74d0b24a5abf8861b",
+      "source": "Icons/Icon_Alchemy.dds"
+    },
+    {
+      "file": "png/icon_all-df51b5ad931a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ebb82a70028609e2a20b88374c02d3b398b8b329ce6cc270f50e58156b07b3d5",
+      "source": "Icons/Icon_All.dds"
+    },
+    {
+      "file": "png/icon_all-89d464138a68.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "c7b872084dca9bb39cfb89a58b8762d7c4a9cea6888cde1e90aec9259cbb5949",
+      "source": "Icons/Icon_All.tga"
+    },
+    {
+      "file": "png/icon_all_enemies_square-222b33745dfe.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e1a9f3e9bcf76bcee5da7d15607b32b7ff4b3dd2426625a72372566b057a0d7",
+      "source": "Icons/Icon_All_Enemies_Square.dds"
+    },
+    {
+      "file": "png/icon_all_friends_square-94e9266293a6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e611eef9d976b031320d7894da5fb83bae58c6062f6b0ce28803f09683523882",
+      "source": "Icons/Icon_All_Friends_Square.dds"
+    },
+    {
+      "file": "png/icon_archmastery-da3d6537ddb3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a16b68de16c1ab20a581d21965b71b7bb3d04f3862d673d548cc5cde282341b5",
+      "source": "Icons/Icon_Archmastery.dds"
+    },
+    {
+      "file": "png/icon_armor_penetration-231e45d18a7b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fa25c2566650c446157b0e09a7625f93ad6b6c0df1f40893b7ad019d345dfbcd",
+      "source": "Icons/Icon_Armor_Penetration.dds"
+    },
+    {
+      "file": "png/icon_art_default_emote-ea79a69ee910.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d5f06712ac387d2daa611821e76472e98ce1660fc95de4b15d65d350d96ba4a3",
+      "source": "Icons/Icon_Art_Default_Emote.dds"
+    },
+    {
+      "file": "png/icon_art_member_emote-86f003432998.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "72050211fc46c66e6985e4b8c0fb5abbc8bf6109a63beabc2f6b454e98a02f86",
+      "source": "Icons/Icon_Art_Member_Emote.dds"
+    },
+    {
+      "file": "png/icon_balance-6a5be6fc6789.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6dd81a75cff005622d0070dc5d67cea2ac9c6aaffcec5d653550215027d2dd87",
+      "source": "Icons/Icon_Balance.dds"
+    },
+    {
+      "file": "png/icon_balance-2fa80b9b0886.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "a4ceba56e6b51d10f07aecbb2c364f7741940cbd77666b74800ae10f032dc3ca",
+      "source": "Icons/Icon_Balance.tga"
+    },
+    {
+      "file": "png/icon_blockrating-2cc7c25132d0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "48b374ca6f01249b49d789842d0f1f35389d1fee7e3b1e3df81921ace3fbad4f",
+      "source": "Icons/Icon_BlockRating.dds"
+    },
+    {
+      "file": "png/icon_blockrating-4516fcc016a9.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5ac6ab5f82f416eb5df142e582900a419d9f01a726e7023c3525a534fe2ec2b8",
+      "source": "Icons/Icon_BlockRating.tga"
+    },
+    {
+      "file": "png/icon_booster-7850f2ff3180.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "fbc8cac49f9334f430fb5689cd2b9512bf95e86a8316ae38c22fbc2a108ea329",
+      "source": "Icons/Icon_Booster.dds"
+    },
+    {
+      "file": "png/icon_building_blocks-bc2172668739.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "4297d0c1ea6a3d04ccaa3449b309cb52b0064a16010b855feb6f4d46a3e7d244",
+      "source": "Icons/Icon_Building_Blocks.dds"
+    },
+    {
+      "file": "png/icon_button_equipradialmenu-b2d0cbbc71c1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0b769a78faf0ba5ded63fe60a10877971e4a6712fdd87eec0dcfda8d00438e34",
+      "source": "Icons/Icon_Button_EquipRadialMenu.dds"
+    },
+    {
+      "file": "png/icon_button_equipvictorydance-ff5066174cba.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0d7b4d631a414ad2eaefc0d83f02bc268a090c87371d76c57b4311a5bd17f1e9",
+      "source": "Icons/Icon_Button_EquipVictoryDance.dds"
+    },
+    {
+      "file": "png/icon_button_equipvictorydanceandradialmenu-d2f08374deb4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c35b8c6db73c2516b7db82536b0f156f19e4a78384ec563c9487cd8550a27917",
+      "source": "Icons/Icon_Button_EquipVictoryDanceAndRadialMenu.dds"
+    },
+    {
+      "file": "png/icon_cantrips-05c95659b7f0.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "b12045f8a438f4803e83a99a026ef86b37d66fd6b699246375d203306dba36b7",
+      "source": "Icons/Icon_Cantrips.dds"
+    },
+    {
+      "file": "png/icon_chromatic_caster_school-7132dbd27c5b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "f4304e49574135b78cc56352b1e08af2a4abc4d2429246e7757f9d1f251f8541",
+      "source": "Icons/Icon_Chromatic_Caster_School.dds"
+    },
+    {
+      "file": "png/icon_chromatic_target_school-6378fb2fe0e5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5159e2739d397c8a7048f814bdb7c1b6528b2c9e67c5b9430f1f837f92df47d6",
+      "source": "Icons/Icon_Chromatic_Target_School.dds"
+    },
+    {
+      "file": "png/icon_clothing_sets-b9f5ace21834.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "9794c52f029ead89ecd2c8627ec5dd7ee3a55dce3317d7b832cd2cbc437aabba",
+      "source": "Icons/Icon_Clothing_Sets.dds"
+    },
+    {
+      "file": "png/icon_criticalrating-4bf2b88ee6ec.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7b6d043776b265cdc7be7d34b6fa949f3339cd784e3df13f2510b99870146fb4",
+      "source": "Icons/Icon_CriticalRating.dds"
+    },
+    {
+      "file": "png/icon_criticalrating-a0a2b0187d74.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "12ae4d8558ee0e2f99d87e4dfd98cc6d768f35957fc6249a008b986c34c73fab",
+      "source": "Icons/Icon_CriticalRating.tga"
+    },
+    {
+      "file": "png/icon_damage_or_drain-858cdbcea8f7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "41a4dbb3f9dec273df9da1c11d7f4eb704394adb7d331647b882f3ec3405ec19",
+      "source": "Icons/Icon_Damage_or_Drain.dds"
+    },
+    {
+      "file": "png/icon_daybreaker-d1e0cb0da9d0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1a100361168055bbdd9a586204d4e410dfa8ea7bf05a8836e32e215c8bec352d",
+      "source": "Icons/Icon_Daybreaker.dds"
+    },
+    {
+      "file": "png/icon_daybreaker-f78dade66d23.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f0d709d7340b9187e07aae96c6ec2b34b12362a9609c2ddddee507fad4331414",
+      "source": "Icons/Icon_Daybreaker.tga"
+    },
+    {
+      "file": "png/icon_death-c8ac348164bc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ddbc4682888b52c062f604041311408893a0e55370419796632772295caff1d4",
+      "source": "Icons/Icon_Death.dds"
+    },
+    {
+      "file": "png/icon_death-3b1ea401e70d.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f85734b1f1618c9cec222ac27b86425421cafe43a96fd857103054848b73256f",
+      "source": "Icons/Icon_Death.tga"
+    },
+    {
+      "file": "png/icon_dispel02-0f78d922b00b.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "de105df6fc6d5f98c4337c758305e65ee7d9abb5a6c6d9c08ddb18003777de8d",
+      "source": "Icons/Icon_Dispel02.dds"
+    },
+    {
+      "file": "png/icon_elemental-6b0f5e902fe1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bf70a9e7c6767b28bd530dd357619cb359aaf58e80933c316d6a8f5eaa63862f",
+      "source": "Icons/Icon_Elemental.dds"
+    },
+    {
+      "file": "png/icon_fire-da0a7df5e97f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "39201d5dc6343bf7920575dcadbf6f4a366c02019ba05921c241bf8e60fcd8d0",
+      "source": "Icons/Icon_Fire.dds"
+    },
+    {
+      "file": "png/icon_fire-6ed01d7d425f.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "2bbbc2cde48194d80fa61d4c267ba0e896d181a3cac2e98771157c7c8fdd25f9",
+      "source": "Icons/Icon_Fire.tga"
+    },
+    {
+      "file": "png/icon_fishing-c2e603e5b26f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fdc3fb0ac61c46c8b4f8b6fc063393a52a8c391f4cf2bca93a5912ab5a7feda7",
+      "source": "Icons/Icon_Fishing.dds"
+    },
+    {
+      "file": "png/icon_flag_arenapointsonly-ead6637fc736.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fcc9d5c45d1f64a145b8e418546cd5f15586459e550fc9a8921d3b49e6a737ea",
+      "source": "Icons/Icon_Flag_ArenaPointsOnly.dds"
+    },
+    {
+      "file": "png/icon_flag_bluearenapointsonly-7d8aebb3936f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "18b93656a386b63dc89ef05e369d3d356172a3803f16e5a81cf7c496df8bb6a9",
+      "source": "Icons/Icon_Flag_BlueArenaPointsOnly.dds"
+    },
+    {
+      "file": "png/icon_flag_crownsonly-5b86972bef8b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3cd7df9d392361c9c6b04efa99cf2d61a22c7a62929bdc5d79e78ebcbe8c099f",
+      "source": "Icons/Icon_Flag_CrownsOnly.dds"
+    },
+    {
+      "file": "png/icon_flag_instanteffect-7ebfefc18ee0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "84648da85cd44aec1f05c29c27e7901d6c28fdcc271e12980ec5eaf290c85b8d",
+      "source": "Icons/Icon_Flag_InstantEffect.dds"
+    },
+    {
+      "file": "png/icon_flag_noauction-52dfa52ff416.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5f0855c0f56430a092614a122133c11faf8426bcc7a71f4709dcac3f04f8210b",
+      "source": "Icons/Icon_Flag_NoAuction.dds"
+    },
+    {
+      "file": "png/icon_flag_nocombat-09724fa79f9c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c0d3f2a830ed6e6cec4731b27c1d3fcbfae91beb37b73d54f7be2f51b5f3b0c3",
+      "source": "Icons/Icon_Flag_NoCombat.dds"
+    },
+    {
+      "file": "png/icon_flag_nodrop-52cefdf9bc84.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "040bf508af2e10e5991a37df0dc21d4e29b97ea1c0f6d6c2380d5d2b12854a8b",
+      "source": "Icons/Icon_Flag_NoDrop.dds"
+    },
+    {
+      "file": "png/icon_flag_nodye-340904e06610.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "efc17369fa2f986b3a27e47bcadb5e30a3c8b3874a7b296de8be6943f0e38c8f",
+      "source": "Icons/Icon_Flag_NoDye.dds"
+    },
+    {
+      "file": "png/icon_flag_nohatchmaking-58e186afcf46.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a98be2ffbf4e9b4b4f05bdabac3168505f2814a3d29d4b1e50cf4c97d317df34",
+      "source": "Icons/Icon_Flag_NoHatchmaking.dds"
+    },
+    {
+      "file": "png/icon_flag_nopvp-f43933ee933c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ddfc96de821815ba5699e38fcbb64cb61264720e40826cc3894ef062e9776964",
+      "source": "Icons/Icon_Flag_NoPVP.dds"
+    },
+    {
+      "file": "png/icon_flag_nosell-d2bc7f4d549c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3b925a9a150e106dad148e4940bcd0d96bed3c869af9e8e75fceb79f28ec907e",
+      "source": "Icons/Icon_Flag_NoSell.dds"
+    },
+    {
+      "file": "png/icon_flag_noshatter-1ba243d2b7e0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1bee5716ff882412b6cf696d32e82c6a2558e811df747683ee93a03c22b90b8a",
+      "source": "Icons/Icon_Flag_NoShatter.dds"
+    },
+    {
+      "file": "png/icon_flag_notrade-8f41e9e435bf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5b60d34a9613b36c796124aa69a86f4954f67a30a0868f7ec32467785cb31904",
+      "source": "Icons/Icon_Flag_NoTrade.dds"
+    },
+    {
+      "file": "png/icon_flag_pvponly-e9c42b2b6da5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e11716bef37d01da0204c3a75e26c40df738df4aa54d429698a0e479f6a5fb3e",
+      "source": "Icons/Icon_Flag_PVPOnly.dds"
+    },
+    {
+      "file": "png/icon_flag_subscriberonlyitem-e532e5a1b800.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "73f56a6283e8ad3f7abc202695ab2b109b2eb2d5216ed1b4c351b57de06db0fa",
+      "source": "Icons/Icon_Flag_SubscriberOnlyItem.dds"
+    },
+    {
+      "file": "png/icon_flag_subscriberonlyitem_freetoplay-304f55b400b9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2009036eb5fa4678dd8ad448e0dad52fed3bc1f35cb960e81d59c828537b0ba8",
+      "source": "Icons/Icon_Flag_SubscriberOnlyItem_FreeToPlay.dds"
+    },
+    {
+      "file": "png/icon_flourish-87fbc4cfc338.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "50b80a7439f62c8ab2757e709d9e513c68278b85ca754583ab1ed1f732abec63",
+      "source": "Icons/Icon_Flourish.dds"
+    },
+    {
+      "file": "png/icon_frame-cd0fedf73b81.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "2a3a328b1735e35334fa82e8ef5b692c749404893ef9baa02f4a966e6a1a57da",
+      "source": "Icons/Icon_Frame.dds"
+    },
+    {
+      "file": "png/icon_frame-0c91e06d39bf.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "6ef1ef1ee96b757224d8fd9ce75a8ddb579690b9d6c57fc75c93fcdb8052864c",
+      "source": "Icons/Icon_Frame.tga"
+    },
+    {
+      "file": "png/icon_furniture_sets-a57a971ab52a.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "f9e6246820c02242d0cab9625365bfa3362308768d74c94522daf323fcbd07cf",
+      "source": "Icons/Icon_Furniture_Sets.dds"
+    },
+    {
+      "file": "png/icon_gardening-cb7b6d742128.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "59d0ecf89673060b489e99901164b1f53505bff9f245e3127e1eec9f9bb1124b",
+      "source": "Icons/Icon_Gardening.dds"
+    },
+    {
+      "file": "png/icon_guild_decorator-d11f274c7b6c.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "eb9817754eb0c4eef779ac7bc5e0abe31f84e560d9b9c7a573b5154f74603031",
+      "source": "Icons/Icon_Guild_Decorator.dds"
+    },
+    {
+      "file": "png/icon_guild_messenger-717b1d7cf019.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "50ed4337e939bd0a1c32b99ce705838a60b76410b0072fc61c7af30d04a967c6",
+      "source": "Icons/Icon_Guild_Messenger.dds"
+    },
+    {
+      "file": "png/icon_guild_recruiter-ec4c84fb424d.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "5e5a4b270cb7f6a729d2e14f085b222bd775079a9c44d137c674b6a6938f4fc9",
+      "source": "Icons/Icon_Guild_Recruiter.dds"
+    },
+    {
+      "file": "png/icon_guild_sleeping-2dcbaf2731f6.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "cad05400b9ac8adf4daccf847f754611374bc6342a989ac3489286d09ad32a33",
+      "source": "Icons/Icon_Guild_Sleeping.dds"
+    },
+    {
+      "file": "png/icon_harvest-1bcf679eb713.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "10cc27cf559e9432593bf86fa7c58ed0392268a0f1b9c18743207ce9178d58c2",
+      "source": "Icons/Icon_Harvest.dds"
+    },
+    {
+      "file": "png/icon_ice-c113c4f80b8b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c129a10bd05094c2f275b296b599e8600ac8009bd2c88e8a0462483979a81889",
+      "source": "Icons/Icon_Ice.dds"
+    },
+    {
+      "file": "png/icon_ice-bbd7d670283d.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "d1769a53d5444213c1d0c8c178b91b91ceca2bdaf62a709f6553a8872d5b1407",
+      "source": "Icons/Icon_Ice.tga"
+    },
+    {
+      "file": "png/icon_icon_monthlygauntlet_mode-c19fc7db9e20.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1da1c48f6b78dffbd444ce534364fa83a847a14762a208f9de0a7bb9b6c3abfe",
+      "source": "Icons/Icon_Icon_MonthlyGauntlet_Mode.dds"
+    },
+    {
+      "file": "png/icon_in_a_group-4a0273c8f968.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "1b3289dd977cb1aaccd8d1270b031d8744be4cc566bf0ad882fc43de0114c21a",
+      "source": "Icons/Icon_In_A_Group.dds"
+    },
+    {
+      "file": "png/icon_incoming-b5015dbb442b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "095959dddedf408e695da876c2fd3a2ddfc9b88051467a20df0ece171956da10",
+      "source": "Icons/Icon_Incoming.dds"
+    },
+    {
+      "file": "png/icon_life-64d476762efc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0881782fb334f6eaa4086e51d6048ceacf6a799184de01b7f574e6f9659b37f9",
+      "source": "Icons/Icon_Life.dds"
+    },
+    {
+      "file": "png/icon_life-86147d3256b2.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f56e4a87e5876322934a22d046f3be2aa9c319bd391df79edd70ec1af8318d84",
+      "source": "Icons/Icon_Life.tga"
+    },
+    {
+      "file": "png/icon_minus-d555a569e382.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ea942e6ada9c2d6073d145cee304fc4fce018c14b135ceaf7e9f26e3ea30a2c3",
+      "source": "Icons/Icon_Minus.dds"
+    },
+    {
+      "file": "png/icon_monthlygauntlet_mode-4ab887993fe7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b02b781dc8d74eacbdbce790189f63c917b78f3b9b87dd7c90f2fc5d9f4bf9ff",
+      "source": "Icons/Icon_MonthlyGauntlet_Mode.dds"
+    },
+    {
+      "file": "png/icon_moon-4b1a2f17f4b3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e58d037b0cc93426fac77c32cb1f232eb0abe1134b1594a75be1d2c20d47acd5",
+      "source": "Icons/Icon_Moon.dds"
+    },
+    {
+      "file": "png/icon_moon-a0cb2e2867e2.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "082663feb53dc66daacc61a7d30e4e42e86ea7e7876060f623450e52c52932f8",
+      "source": "Icons/Icon_Moon.tga"
+    },
+    {
+      "file": "png/icon_mounthlygauntletcredits-ec2ab703936d.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "7180e40e40315e8c3bd8dbd2aa19695c5feaa9747b2ed34244fedc0ef390a284",
+      "source": "Icons/Icon_MounthlyGauntletCredits.dds"
+    },
+    {
+      "file": "png/icon_music_scrolls-70706674d14f.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "db51774a9ef6702e693c9121317fa1fb37a1e2b43f63a00048d85ca36dbebc78",
+      "source": "Icons/Icon_Music_Scrolls.dds"
+    },
+    {
+      "file": "png/icon_myth-83ee5c18cad2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d6abe9683250ddb1d6422fdbae7c112319cf6feb3453cf0238a0dc9b1ce4f50a",
+      "source": "Icons/Icon_Myth.dds"
+    },
+    {
+      "file": "png/icon_myth-acd68e2b8a4e.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "845ea52b29b81e61de3397d279b1351ba625b22229d2c7783831c84e1457b309",
+      "source": "Icons/Icon_Myth.tga"
+    },
+    {
+      "file": "png/icon_need_magic-beeea4010fd2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "af03f56c187aa28bc48ab1cef6922ea128bd5770852e0b216db79643974ce88f",
+      "source": "Icons/Icon_Need_Magic.dds"
+    },
+    {
+      "file": "png/icon_need_music-8f3f1c3e129a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "94c430ae39d5e7d35569ab51869fea32db70df1eb95c7f27d4124025e6cbe047",
+      "source": "Icons/Icon_Need_Music.dds"
+    },
+    {
+      "file": "png/icon_need_pollination-f21585a7372b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "cd239446a5db8a8d59bc98cfa402c4c9d40d273d2f3a9f26fcce652ddc549c40",
+      "source": "Icons/Icon_Need_Pollination.dds"
+    },
+    {
+      "file": "png/icon_need_sunshine-ac0fcf80732e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4c11529a38d780c6fc74cbbefaaa9877493f0ab868b16d6c166d055ef9f8e197",
+      "source": "Icons/Icon_Need_Sunshine.dds"
+    },
+    {
+      "file": "png/icon_need_water-3f132774891f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "c014636199513acd151d51d9ff31b13f323143c5750a50d9172eee1573cd94f1",
+      "source": "Icons/Icon_Need_Water.dds"
+    },
+    {
+      "file": "png/icon_nightbringer-a31cc5e4738f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "54a0e6f445949cdd1a7c2a27d32d41e6b775338cec4d3abc94218a43698d5c6a",
+      "source": "Icons/Icon_Nightbringer.dds"
+    },
+    {
+      "file": "png/icon_nightbringer-fff1521657ce.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "3eabfdc468c88462c454a7b5dfc84bcd4562abab15807381a9c51a5e42c15b8b",
+      "source": "Icons/Icon_Nightbringer.tga"
+    },
+    {
+      "file": "png/icon_outgoing-a9c20c0f6a36.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0133164435b80d8456c61808214b2b11b42314d502ca9bc9cc3fc20838116fb7",
+      "source": "Icons/Icon_Outgoing.dds"
+    },
+    {
+      "file": "png/icon_overhead-61fd7d63c14d.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "8aa9dcb30633bbafac925d4365a61e3a4705c3d94acf01772eac206cec84028c",
+      "source": "Icons/Icon_Overhead.dds"
+    },
+    {
+      "file": "png/icon_overhead02-baab634a36cc.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "99f142ec75014d7de26f1acb0dc5210316b0c9772883c9e361a3459e4209e97c",
+      "source": "Icons/Icon_Overhead02.dds"
+    },
+    {
+      "file": "png/icon_overlay_slash-897b8c2f6303.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "be2d9f29c6713c26fb8c16b2f0bd57c1810138b2693d48f3e4266eae545cb993",
+      "source": "Icons/Icon_Overlay_Slash.dds"
+    },
+    {
+      "file": "png/icon_pet_agility-503edab07d1b.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "e097cac4b3cbbd00c4dcca748171b566abc2c5400310be81ffcbbe86e1735fa7",
+      "source": "Icons/Icon_Pet_Agility.tga"
+    },
+    {
+      "file": "png/icon_pet_intellect-aad2293360c1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5def90a9eb0e2554232e59ccc4c2cd5c57c52d71bdc544f4a191e2c0750995bb",
+      "source": "Icons/Icon_Pet_Intellect.tga"
+    },
+    {
+      "file": "png/icon_pet_power-8fc86aed5707.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "5ceedbfbea8c3078f293b10f79afed01223a2728595461dd75993c65b205001b",
+      "source": "Icons/Icon_Pet_Power.tga"
+    },
+    {
+      "file": "png/icon_pet_strength-1a646b0bf840.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4ad1e7ebebf2a6e971cb8475418ee9f2205243b672ce83f6759ffbd471284fe7",
+      "source": "Icons/Icon_Pet_Strength.tga"
+    },
+    {
+      "file": "png/icon_pet_will-8d939b36e873.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "6b35304d4c3f5f2e9b4b0c283ff0c1cba3443902addc0d08cebd0bb3c27ff11f",
+      "source": "Icons/Icon_Pet_Will.tga"
+    },
+    {
+      "file": "png/icon_pip_conversion-822ca00eaae6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8af38331d59406ab604b2a693388d27a7e3e3d1be79474ef6c2f252ea00035b9",
+      "source": "Icons/Icon_Pip_Conversion.dds"
+    },
+    {
+      "file": "png/icon_plus-e9c4d6a9a0ff.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2122abe6d3fd0202b7688476f45e1b547a85ff97d42fdaab8dec2eefd59b8bed",
+      "source": "Icons/Icon_Plus.dds"
+    },
+    {
+      "file": "png/icon_pvp_arena_ticket-a58f99fd84df.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "c6cc80992a37fb361f0704e592a9b44a4adaf3f9f66c555e48153462b6524946",
+      "source": "Icons/Icon_PvP_Arena_Ticket.dds"
+    },
+    {
+      "file": "png/icon_pvp_blue_arena_ticket-0811bc9b6659.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "d1896c608e94f922f16d826f2c42a2b3ae49aa08715c8ef8cb48d770d75a08f9",
+      "source": "Icons/Icon_PvP_Blue_Arena_Ticket.dds"
+    },
+    {
+      "file": "png/icon_pvp_card_common-68d6b32e4bb7.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "0dabcbead46fccc52c9a0eba54aa426a544824c4bcb1ffc65fd3354b0c7aa9f1",
+      "source": "Icons/Icon_PvP_Card_Common.dds"
+    },
+    {
+      "file": "png/icon_pvp_card_rare-9a3262903b58.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "771bd22ab8110694e3a37418ff79db5ec68831cf604bd75c1239e8a8bb065e80",
+      "source": "Icons/Icon_PvP_Card_Rare.dds"
+    },
+    {
+      "file": "png/icon_pvp_card_uncommon-52477c62d46b.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "6ac294b2d45774b1f40defc87ccf3ac54b147811a174341af9a7bdcbac0294bc",
+      "source": "Icons/Icon_PvP_Card_Uncommon.dds"
+    },
+    {
+      "file": "png/icon_pvp_extra_arena_ticket-6230f8bdd7f0.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "634a3e96504ed49bb6ee2750eda86199e9a203dc0232b860391fc0e323f28592",
+      "source": "Icons/Icon_PvP_Extra_Arena_Ticket.dds"
+    },
+    {
+      "file": "png/icon_pvp_extra_blue_arena_ticket-0027f8f9f45e.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "4fc36fe5b64d2904750cdfd1639463fd86116b26d2592e2f8752843c15e1586b",
+      "source": "Icons/Icon_PvP_Extra_Blue_Arena_Ticket.dds"
+    },
+    {
+      "file": "png/icon_pvp_medal_reagent-6b0b50eee413.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "f6b31b91bf5bec2e0e2ca4682cfbfc26ea8676f98a3c5ff41a23ddf665d8ddf6",
+      "source": "Icons/Icon_PvP_Medal_Reagent.dds"
+    },
+    {
+      "file": "png/icon_pvp_present-62410a807c97.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "ea5cc951a3a02e77adcc1527b733ea18183111b791414d6a39ffd3d40e062bd3",
+      "source": "Icons/Icon_PvP_Present.dds"
+    },
+    {
+      "file": "png/icon_pvp_trophy_bronze-ff70839651d9.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "66a24a8e4ee72b160d7b807229f78b0968915042ea908cc9d6098b9ba0f6141d",
+      "source": "Icons/Icon_PvP_Trophy_Bronze.dds"
+    },
+    {
+      "file": "png/icon_pvp_trophy_gold-58bd8fd035f2.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "3da4dfac87683559ee0c6b817f9c00b3d0b94e6a75a448d2afc0365df5b9e765",
+      "source": "Icons/Icon_PvP_Trophy_Gold.dds"
+    },
+    {
+      "file": "png/icon_pvp_trophy_silver-582e2be40fac.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "c074991f0f2d1fd3bc86985b1d63a282ccba18b083306354ee4665c7cd9ebae1",
+      "source": "Icons/Icon_PvP_Trophy_Silver.dds"
+    },
+    {
+      "file": "png/icon_radiance-ebeb4d2a9a24.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "739f48af4587ed74b333a155653ebcc55000fb28df3cb8be0da760b24bc8000e",
+      "source": "Icons/Icon_Radiance.dds"
+    },
+    {
+      "file": "png/icon_rareharvest-4890e1ad4132.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "176a9afabb4259c74fc4399268c3708590b5c56e29a02c02f3ab7a91852d9887",
+      "source": "Icons/Icon_RareHarvest.dds"
+    },
+    {
+      "file": "png/icon_reagent-65c5da159314.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "40a84dd04fcca26792c8ae6bd9ad2249f5bc539ab395861977b48e0a5ff7f307",
+      "source": "Icons/Icon_Reagent.dds"
+    },
+    {
+      "file": "png/icon_recipe-1bdc7f227007.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "db5f711be1c90cf1460bb7dc964c4e3b4bd0cb3fbe9fda306f6f9ba630c470e4",
+      "source": "Icons/Icon_Recipe.dds"
+    },
+    {
+      "file": "png/icon_ritual-634c904ec086.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "610644de0de01f9d66619d833afdbc717f53872be47622cba75a20f8a8002ba8",
+      "source": "Icons/Icon_Ritual.dds"
+    },
+    {
+      "file": "png/icon_sm_balance-58d132878159.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "efc62463ad306e333b8a770c05da401723e082236f4c3ab803fcce7cb4f375dd",
+      "source": "Icons/Icon_SM_Balance.dds"
+    },
+    {
+      "file": "png/icon_sm_death-21ec93528ea2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "57b8dd44ee55b26f0aec64a03b0b1d3b9d53a7e2e7d28f27cfd3509970c73a9d",
+      "source": "Icons/Icon_SM_Death.dds"
+    },
+    {
+      "file": "png/icon_sm_fire-74856b00e5d3.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5fb7b5daa45998b2a9c1171d63ce7547e6005998a7bdeffaaaa97fa42807d347",
+      "source": "Icons/Icon_SM_Fire.dds"
+    },
+    {
+      "file": "png/icon_sm_ice-62a1824752b9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "155528980af7f9ca471a49cfd4db5d135a71347c059510b049cf21ff41a370ff",
+      "source": "Icons/Icon_SM_Ice.dds"
+    },
+    {
+      "file": "png/icon_sm_life-ee34ccb5fe3b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "572e939c543d3e605216fc69733af8dce2ad4fd832914cd639697adf91c4e4ec",
+      "source": "Icons/Icon_SM_Life.dds"
+    },
+    {
+      "file": "png/icon_sm_myth-fe5fa4f4de45.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "eb54bb4240de9904fbdda0c07a6c142fd169cbf4572f31ebbb2e6ac3f0bdc808",
+      "source": "Icons/Icon_SM_Myth.dds"
+    },
+    {
+      "file": "png/icon_sm_storm-5bceba6d7b32.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e3506d1e413c89b0a196b8e9c27df9b8c852a85b0fd18a913e8df1dd106cebcb",
+      "source": "Icons/Icon_SM_Storm.dds"
+    },
+    {
+      "file": "png/icon_self-97d1a6fa2f0d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "95ebf4f61d848cc8e6b8ae926e319e9b0f2cf1920c3395f6742e5cc7c64bc5e5",
+      "source": "Icons/Icon_Self.dds"
+    },
+    {
+      "file": "png/icon_shadow-11850aed53d4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "75b87963aead826dfad9572183bf78534eb9ce3aba0a9bbb22100f5c9a91134a",
+      "source": "Icons/Icon_Shadow.dds"
+    },
+    {
+      "file": "png/icon_shadow-f7eec56dd7ba.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f63795b4221a5a429a4ee93149c3688f4078075535856669c885da5d40ab2956",
+      "source": "Icons/Icon_Shadow.tga"
+    },
+    {
+      "file": "png/icon_shadow_pip-40b6ef381286.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "731e620a8927f553a5fbda8b2ae1115134dd08cc4e6d214e369c0bfb2ac1a37d",
+      "source": "Icons/Icon_Shadow_Pip.dds"
+    },
+    {
+      "file": "png/icon_shadow_pip02-c9e8d948d39b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "850c7f254719dd0e4e321e315c96474f082668008bdf4f292b210994b8e2e189",
+      "source": "Icons/Icon_Shadow_Pip02.dds"
+    },
+    {
+      "file": "png/icon_shield-8ced919df875.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e081c9a6ae9b856ea24dcd5f2a7993cc079a1a34235d42df3ec5f083b8eb3b2",
+      "source": "Icons/Icon_Shield.dds"
+    },
+    {
+      "file": "png/icon_sigil-fb3ca7567291.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e79ee562c70613dc8c962728c2a9680cf03667eb525c7b211e3418025908763e",
+      "source": "Icons/Icon_Sigil.dds"
+    },
+    {
+      "file": "png/icon_slash-a19392074784.png",
+      "width": 22,
+      "height": 22,
+      "sha256": "81fe05912b0054b7d9d03ee191454fb326fa20bddd4616da6471f4603d9bae8a",
+      "source": "Icons/Icon_Slash.dds"
+    },
+    {
+      "file": "png/icon_spirit-a0446ffa688d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2f3df77b9aa9203a3a733ca6d1f22a1cebb34e97fb4ebddc80db5fcad1f3ce09",
+      "source": "Icons/Icon_Spirit.dds"
+    },
+    {
+      "file": "png/icon_star-261708810ec8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e2728ebcfec175c9c4a98bb1816284d335726126d35fc5a44c71029ae8eaa7f1",
+      "source": "Icons/Icon_Star.dds"
+    },
+    {
+      "file": "png/icon_star-e60167286de6.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "888fd71285bad02b5f456572def6598e8dffd665df086f7b0e94698c58bcd52a",
+      "source": "Icons/Icon_Star.tga"
+    },
+    {
+      "file": "png/icon_storm-55e779c3c267.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "58fd8e565b69027802a53f8b97b30b2e34d720d1c5b3d4c1c63d212e8f834952",
+      "source": "Icons/Icon_Storm.dds"
+    },
+    {
+      "file": "png/icon_storm-b1090740dbc1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "8752f74a82d97619762e671b2b463db034ff857d733bae3d382226b25cea9f68",
+      "source": "Icons/Icon_Storm.tga"
+    },
+    {
+      "file": "png/icon_sun-b603f1d9c49c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d19c13b38b3b5f91754a23391352f4fa7b82b91e467efc41bc1cf15bf377ba7f",
+      "source": "Icons/Icon_Sun.dds"
+    },
+    {
+      "file": "png/icon_sun-e665cf9b8fa6.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "3a3216f5f0cf45b600995f9ff8e9485f566722d66d98fc6bb7eeac9ca3c1f4b7",
+      "source": "Icons/Icon_Sun.tga"
+    },
+    {
+      "file": "png/icon_teleport-5cf90eef2729.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1aa68aaf8a5eca8ed538818f6df597da3dab16bb7b1457710496935dd2ace6ce",
+      "source": "Icons/Icon_Teleport.dds"
+    },
+    {
+      "file": "png/icon_timer_med-58d1d4a2d602.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "fb80d5f19987cce7090f72f7609183e4f54a45a81e55a47202873ad44af936fe",
+      "source": "Icons/Icon_Timer_Med.dds"
+    },
+    {
+      "file": "png/icon_weakness-f3d90b2dc598.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "761cc6757035b35935f4edf6a494ebe28e87c1ac9d12ff76a29e1a93216540b0",
+      "source": "Icons/Icon_Weakness.dds"
+    },
+    {
+      "file": "png/icon_worlddrop-0d24fbb2fba0.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "a3dfd751a07b42c20d96cea9a10e16ae793812339a3a2ef7d459d19d2417158f",
+      "source": "Icons/Icon_WorldDrop.dds"
+    },
+    {
+      "file": "png/icons_all_enemies-5ff20d6cf99c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4e6a039f3fe42d155989bb707b89865f0c28d7a820969f3717d6f65e9a530f43",
+      "source": "Icons/Icons_All_Enemies.dds"
+    },
+    {
+      "file": "png/icons_all_enemies_wide-926ebf95f10e.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "effb48da062952799fa847e320869a0051ed242e4422913a02c499998701a044",
+      "source": "Icons/Icons_All_Enemies_Wide.dds"
+    },
+    {
+      "file": "png/icons_all_friends-078a3e2cc2a2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "42b8710bc003f89f56dda0634442a23878282d9ab355a607700848b00cd7d5f0",
+      "source": "Icons/Icons_All_Friends.dds"
+    },
+    {
+      "file": "png/icons_all_friends_wide-fe5ce75d73e0.png",
+      "width": 64,
+      "height": 32,
+      "sha256": "d7155c351ff35577ff12fa8950b44c4474b4d0ef23deec085dff53ffcf121df1",
+      "source": "Icons/Icons_All_Friends_Wide.dds"
+    },
+    {
+      "file": "png/icons_dispel-e460ddb1ab01.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "697d839a878b240d708d7343f9a1c8896a275fbf982ef1aff167682388134a45",
+      "source": "Icons/Icons_Dispel.dds"
+    },
+    {
+      "file": "png/icons_minion-3cd90b384191.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e3cdeefccf3831a01d144712156396e3c2fa1d53637f04853ffdc89fa7157542",
+      "source": "Icons/Icons_Minion.dds"
+    },
+    {
+      "file": "png/icons_pests-3e817ab651ae.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fcad0c9fd68be07f744ff1e4adfce2f8cb32cd2b0ec920db0f5e56105d8ad8d3",
+      "source": "Icons/Icons_Pests.dds"
+    },
+    {
+      "file": "png/icons_prevent-fca6f04f6ad2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9eae716896ce17e628cb3d7a87f97cad981d75992750b06b4ec8caf2dda7fe6c",
+      "source": "Icons/Icons_Prevent.dds"
+    },
+    {
+      "file": "png/icons_rounds-c575c8bafbd8.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "165ff6dbd514198a12e591ef7363b18fc687ca96a7a85217a9e7aae01c9ce55a",
+      "source": "Icons/Icons_Rounds.dds"
+    },
+    {
+      "file": "png/icons_stun-a35dafff8c50.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "91bb036395268957d2496d33e1fe67cee18f55761c71d0fa8c6cf69b262a6d17",
+      "source": "Icons/Icons_Stun.dds"
+    },
+    {
+      "file": "png/icons_threat-b5c78f5122de.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0b377bb9a147bd4fd850315dea5d682fb2730fb62153d6a21bc6096cd7ff0fac",
+      "source": "Icons/Icons_Threat.dds"
+    },
+    {
+      "file": "png/pet_derby_target_all-2413a27a03e4.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "18f9d00f257d7852687e83034dd440837889e5795a2054b2da8241d35f1401a4",
+      "source": "Icons/Pet_Derby_Target_All.dds"
+    },
+    {
+      "file": "png/pet_derby_target_behind-08ed2a3c360b.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "7acafe276dd176a27241e9740bc3cfa7205f4396464335b4ce86fb256441c81a",
+      "source": "Icons/Pet_Derby_Target_Behind.dds"
+    },
+    {
+      "file": "png/pet_derby_target_front-838abd752b3d.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "2f3dde38c272bb98bec6fa39c4abd4ece2f668061b4f5ef58ebb7af38dd77183",
+      "source": "Icons/Pet_Derby_Target_Front.dds"
+    },
+    {
+      "file": "png/pet_derby_target_leader-36c8d35f3984.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "bfc4f4feb9f21c7ca690c47942c300c810753e64c63ee1bbe1decacc245aa26b",
+      "source": "Icons/Pet_Derby_Target_Leader.dds"
+    },
+    {
+      "file": "png/pet_derby_target_self-d6c766bd374d.png",
+      "width": 24,
+      "height": 24,
+      "sha256": "741cb536c68e19fc726bddebdfb5e69790102e6ff59422458e3b1097a8754744",
+      "source": "Icons/Pet_Derby_Target_Self.dds"
+    },
+    {
+      "file": "png/rank_00-37605373210c.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "3f59685bfd23922e01f5645fa3a17af7e9cea736e43694088e17faa6b06d591a",
+      "source": "Icons/Rank_00.tga"
+    },
+    {
+      "file": "png/rank_01-6c6d8c723d78.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "5e6ce3a9ee43ab0988a8bab63c102da0b87974ff013515dd28d8cea9be20b361",
+      "source": "Icons/Rank_01.tga"
+    },
+    {
+      "file": "png/rank_02-4cfe476e9044.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "3b2cbbd8dcb5f588731864a94113e6a039bc346130dc19c093172fb508a58bfd",
+      "source": "Icons/Rank_02.tga"
+    },
+    {
+      "file": "png/rank_03-27917d61d746.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "2192cc1ba36b47c4e9d78dbd78e0753f7886909791446942c5726ed4f336e3e0",
+      "source": "Icons/Rank_03.tga"
+    },
+    {
+      "file": "png/rank_04-1c90d73dcc50.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "19f7cf3a335c1f6237ed337ab1abb25a76d4d39062123ecfb1efe27cbebbcc22",
+      "source": "Icons/Rank_04.tga"
+    },
+    {
+      "file": "png/rank_05-b140ed48ab58.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "80bae85db7679cd070055f42b92618a168c64d5b8a11ed3570c4dde6ef1568f7",
+      "source": "Icons/Rank_05.tga"
+    },
+    {
+      "file": "png/rank_06-859e484ce4e3.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "0562549426fab58319dba452c2e73f35f28c08ad74d1cb189d71d291c07bac71",
+      "source": "Icons/Rank_06.tga"
+    },
+    {
+      "file": "png/rank_07-cfd0681c2404.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "aeebdb2d216b42233898d5c8134896e6097884392f479447cd0990049adb770b",
+      "source": "Icons/Rank_07.tga"
+    },
+    {
+      "file": "png/rank_08-333a8329669f.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "b1e46438ad3d229a3a2c7d01f441b0e8e6f010124f514a491af04b2cd4585562",
+      "source": "Icons/Rank_08.tga"
+    },
+    {
+      "file": "png/rank_09-851de824d76d.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "d4be836710875ba0082993e394939d15612cf2628868fbf666f0bed42025bbaa",
+      "source": "Icons/Rank_09.tga"
+    },
+    {
+      "file": "png/rank_10-54be806e67aa.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "d8022730034cbc312942b0ace80a1c3a5f38010449627642b340e9568e6b2a75",
+      "source": "Icons/Rank_10.tga"
+    },
+    {
+      "file": "png/rank_11-e7475c32600f.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "8da010a5df823a677b8874c43b96a129bcd512322fb6f227b679a10db9b150c9",
+      "source": "Icons/Rank_11.tga"
+    },
+    {
+      "file": "png/rank_12-b58da6926937.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "5a80c1b97ee9c611840217e0ed03013bd600c8ca1f8a4ccae84a1afda6e329d9",
+      "source": "Icons/Rank_12.tga"
+    },
+    {
+      "file": "png/rank_13-1185be70c191.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "a05f0b10b277a0223d021446303ac64bc845f4b29fd9498670e99b598575719c",
+      "source": "Icons/Rank_13.tga"
+    },
+    {
+      "file": "png/rank_14-b48ff8df59e9.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "0045176b2844f0ef9bbd554e4976e30c173ccc224399b11b52f051accd6ad543",
+      "source": "Icons/Rank_14.tga"
+    },
+    {
+      "file": "png/rank_15-9d2dd342477d.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "d3f4f4900da8f781280f38a99b659f77901446c4bfc6e07948f294f320d31d44",
+      "source": "Icons/Rank_15.tga"
+    },
+    {
+      "file": "png/rank_16-3add08a68792.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "c78882674906af4929f835d46cd0d6705a5762b2e536f87e6d374a3a96fe14ea",
+      "source": "Icons/Rank_16.tga"
+    },
+    {
+      "file": "png/rank_17-9b55a285029f.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "f48b85e72db54ecd449ec837e7ce33576455b95c54ad75a1812294d6475bd911",
+      "source": "Icons/Rank_17.tga"
+    },
+    {
+      "file": "png/rank_18-a89dd530248c.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "f5da03cb17027b2f78f1b756b49ee0493ef677218c62eafa4927d3c600e3ad45",
+      "source": "Icons/Rank_18.tga"
+    },
+    {
+      "file": "png/rank_19-9786fd18eff5.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "8c4ba72e2307e280957302fd0228524efbc0c5ee6d44bf733dc609732d4baa4e",
+      "source": "Icons/Rank_19.tga"
+    },
+    {
+      "file": "png/rank_20-f39419981c5d.png",
+      "width": 16,
+      "height": 15,
+      "sha256": "46e451f56857b08a69ab54c7c45dc97a88f7a23851bf19612739fb658e347a80",
+      "source": "Icons/Rank_20.tga"
+    },
+    {
+      "file": "png/rank_minus-d9ef06a85f7a.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "d6bbbb5cee9b119d81823eb59928fb659311b3ad168e51734a18c24c1b0b44d1",
+      "source": "Icons/Rank_Minus.tga"
+    },
+    {
+      "file": "png/rank_plus-6f7cee38f6bd.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "deff011d097e3cf0897697f4f8a169f4eb79d10e6f0313a00e7cd557948e25d7",
+      "source": "Icons/Rank_Plus.tga"
+    },
+    {
+      "file": "png/rank_x-6cbc5a14c9a2.png",
+      "width": 12,
+      "height": 15,
+      "sha256": "cb96a6c12505a6469ed8b44058e792138b518b0bc19b7fe0fa3a135669c104a6",
+      "source": "Icons/Rank_X.tga"
+    },
+    {
+      "file": "png/type_aoe-38b7f583422b.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "cd9eae089d04d4706d08a5ab2439bd512017fc83b02f4540178f648b33b42103",
+      "source": "Icons/Type_AOE.dds"
+    },
+    {
+      "file": "png/type_aoe-aeab0a0cce76.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "efcd1ae9208de36a81b0e25f359e1948f3a025d4bbed84bf00189a3f51a5486d",
+      "source": "Icons/Type_AOE.tga"
+    },
+    {
+      "file": "png/type_absorb-3160087ca2a1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b812c0760aa1904e3f7a5919a18d82913a396e07c91285818115ea0f9ccf011e",
+      "source": "Icons/Type_Absorb.dds"
+    },
+    {
+      "file": "png/type_aura-80bf7fbf5d81.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "40fc77224d1de780c1cbf1ff2caeaf1477d349ddec58e9192fadb6355ade0175",
+      "source": "Icons/Type_Aura.dds"
+    },
+    {
+      "file": "png/type_aura-5ad12725ddad.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "31a6ce82508c1113fc5a1947a719f469b15b0d953ecbd70b2e2c727df61c69af",
+      "source": "Icons/Type_Aura.tga"
+    },
+    {
+      "file": "png/type_auranegative-a7cb7a3f2235.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9149c32e01d226de2e68e6aa2421116150eb4d4b50c21dd2f87aa79434a3dca6",
+      "source": "Icons/Type_AuraNegative.dds"
+    },
+    {
+      "file": "png/type_blade-5f507fc6fba8.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "57f65f996136cbc7cde2ca8aad0f8c9ae5c509c8df08ce7615a0dff7f6cff710",
+      "source": "Icons/Type_Blade.dds"
+    },
+    {
+      "file": "png/type_card_banned-524b551b1e64.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "ec3932c186665688dded3574850c0d1d6ddd4a35ecabe77a7ff827cba8c1d368",
+      "source": "Icons/Type_Card_Banned.dds"
+    },
+    {
+      "file": "png/type_card_pve-dcc040ac095f.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4e48c35d32af951f22194f7d25553e80fb0d8912ae3144ce970ba05b50799524",
+      "source": "Icons/Type_Card_PVE.dds"
+    },
+    {
+      "file": "png/type_card_pvp-25a1a209bf2c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b7c74d6ced9a2bc3730255292dd0c41e3537e854bb034ec182832f95277153bf",
+      "source": "Icons/Type_Card_PVP.dds"
+    },
+    {
+      "file": "png/type_charm-1b6ccba07647.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fd5b52d52c99230c2ec01a0c0ab0d1bd118f5804cb43c18a95a5986bfe843221",
+      "source": "Icons/Type_Charm.dds"
+    },
+    {
+      "file": "png/type_charm-4ba393381979.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "fdf25a46f17de3f4151cc1f17dbd8d7021a8f5e193a726762da2f7d44053a4df",
+      "source": "Icons/Type_Charm.tga"
+    },
+    {
+      "file": "png/type_cloak-ecf3b1e6768b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "042da13d94a1c1d01aeb26fb9348f7c83e238a728a9f01aa0b26f41a1c82df8a",
+      "source": "Icons/Type_Cloak.dds"
+    },
+    {
+      "file": "png/type_cloak-f68a3ca22c1b.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "c692b4badd401e1ccce0b158cc19163df8114b832d282473e340fd6db3b05465",
+      "source": "Icons/Type_Cloak.tga"
+    },
+    {
+      "file": "png/type_curse-2386baf840dc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "36f3e134e7fe0bbb3f6e36d692fea168578813bee4c6463e0b63184e58191d97",
+      "source": "Icons/Type_Curse.dds"
+    },
+    {
+      "file": "png/type_curse-35f5a6f468f9.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "1bb9576cecf31085a1b2fed07fcd81911bb46b4c368fd9af9c2311d32325cde3",
+      "source": "Icons/Type_Curse.tga"
+    },
+    {
+      "file": "png/type_damage-062ce716e16c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "e00efe5d436b7e2a06b0074925b07e0197bc6f97c4bd4d1a2300130d6ffa391b",
+      "source": "Icons/Type_Damage.dds"
+    },
+    {
+      "file": "png/type_damage-9081cbfe55b7.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "c97da80db6be8c2efae11e1f7ca417d0b31f85f498e56a7792f57a96e91eb988",
+      "source": "Icons/Type_Damage.tga"
+    },
+    {
+      "file": "png/type_damageovertime-102a3db34bb6.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9a80bb04f1dd298c57fb15a0037cb97cc2273fe0a196325f2d01d0ce2b33e9ac",
+      "source": "Icons/Type_DamageOverTime.dds"
+    },
+    {
+      "file": "png/type_damage_flat-aa6be14f1de2.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5f967cdce9cba9159bceeea22b451e3e44cffd0a5c3e23ace6edeea8d2463488",
+      "source": "Icons/Type_Damage_Flat.dds"
+    },
+    {
+      "file": "png/type_deferreddamage-1a23b44c2ea0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a28e48453fa4c346a1e9742b31b3998081d101736c378d8523313fe22e788194",
+      "source": "Icons/Type_DeferredDamage.dds"
+    },
+    {
+      "file": "png/type_enchantment-affdd17ab290.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "b5e9918ef1e69fc0f97bb9259b49c572dd73b01f273386a8f971e04cf5c1d4aa",
+      "source": "Icons/Type_Enchantment.dds"
+    },
+    {
+      "file": "png/type_enchantment-b0c569b5a6d3.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4a171db94b9bc683375ddb5767fd449866be97f35ba4938eb4770e4b9d07f9c4",
+      "source": "Icons/Type_Enchantment.tga"
+    },
+    {
+      "file": "png/type_fishing_catching-52b23ecfd43b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "aca081f93fe6252bc1c89d9dd3f117e3f8bfb49148748863974500ecc8ad0195",
+      "source": "Icons/Type_Fishing_Catching.dds"
+    },
+    {
+      "file": "png/type_fishing_predator-674bcb40c756.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fe0114d3680e9a8d627ddfa82ea8a4ae18997acd2428ea6793971631b083bc35",
+      "source": "Icons/Type_Fishing_Predator.dds"
+    },
+    {
+      "file": "png/type_fishing_utility-8494e6db0e8c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "657f186e1de27d560f2aa79ed203473e84533f643a6923ed9e4e8f4cff2aecf9",
+      "source": "Icons/Type_Fishing_Utility.dds"
+    },
+    {
+      "file": "png/type_frame-bda5d94dbbb8.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "d9fe2db53949fb1819175c27ff64d983c9bc2eb8c793be550bb3171e40077ea0",
+      "source": "Icons/Type_Frame.dds"
+    },
+    {
+      "file": "png/type_frame-d0ca77e45432.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "a49d6989cf4b273947c0dbc9650f8abb2c7cf8dec814df2c91190f529cd49da1",
+      "source": "Icons/Type_Frame.tga"
+    },
+    {
+      "file": "png/type_frame_base_item-50d3c4574571.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "6744b5c43adc980f2b8b8d71fa1cb7acc882a73060e53080b87b545a6f3b766a",
+      "source": "Icons/Type_Frame_Base_Item.dds"
+    },
+    {
+      "file": "png/type_frame_may_cast-9855b74e3225.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "6503ff71faf4b1f20ddc83e7bb997ee2d2bdd5c390f371cd3372b6e98f1a2a6b",
+      "source": "Icons/Type_Frame_May_Cast.dds"
+    },
+    {
+      "file": "png/type_frame_normal-957315d5f540.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "d9fe2db53949fb1819175c27ff64d983c9bc2eb8c793be550bb3171e40077ea0",
+      "source": "Icons/Type_Frame_Normal.dds"
+    },
+    {
+      "file": "png/type_frame_set_bonus-b63cdc46b422.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "59f7b73002551e08d91ad54669d65c93674ffa1fd72da62a3a622314814e500a",
+      "source": "Icons/Type_Frame_Set_Bonus.dds"
+    },
+    {
+      "file": "png/type_frame_socket-02ce75a20590.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "12be622951ef04e1e8abed5806fc77966ec8f6d3d8eae4ace85eddfbcdbde8b5",
+      "source": "Icons/Type_Frame_Socket.dds"
+    },
+    {
+      "file": "png/type_frame_will_cast-cfab983e5429.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "9dae53798695ddf1a3bae092d331d8e04fa3eba63a50f998bf3ceb885f2cc5a3",
+      "source": "Icons/Type_Frame_Will_Cast.dds"
+    },
+    {
+      "file": "png/type_garden_growth-75419e625c06.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "da67598df61d128272f3b2fee1e5f1d55f62c2f04dd23ca344c2861b61aba575",
+      "source": "Icons/Type_Garden_Growth.dds"
+    },
+    {
+      "file": "png/type_garden_pest-b6313f25caec.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "17d2690dde49aad7328ffe1ff17e43816792f8b60f0cbdc65a6fa5017a217603",
+      "source": "Icons/Type_Garden_Pest.dds"
+    },
+    {
+      "file": "png/type_garden_soil-c2248e77b719.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "fab5d5dfc4c2a7b919d3a4704083f5d4212edbb941330602dae784be3740b944",
+      "source": "Icons/Type_Garden_Soil.dds"
+    },
+    {
+      "file": "png/type_garden_utility-cc3e0343162a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4b90682ebdd2856505fdc56c7145a23a53263d65054a839df4bb0ef9a91c4cda",
+      "source": "Icons/Type_Garden_Utility.dds"
+    },
+    {
+      "file": "png/type_global-d9546ff7e758.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7691edc27c1d78cb847b78eae60fb2075fbae5eec1742a5b111b259994ffe89d",
+      "source": "Icons/Type_Global.dds"
+    },
+    {
+      "file": "png/type_global-75256884fb7a.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4dd095f9983446fbdb20f1639af087e7f2a8e57aa2ef27a4ca3f1c8b5a83d410",
+      "source": "Icons/Type_Global.tga"
+    },
+    {
+      "file": "png/type_heal-3b6ad3a2d13d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d317b573ef56f0e9b0582393576b3b309cb320483f47d23339fa25543c638cea",
+      "source": "Icons/Type_Heal.dds"
+    },
+    {
+      "file": "png/type_heal-73ac1ad31a7e.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "075902ae6ef9d4df6ecd4e06a29e26859028cad89c1227216b58138d90d372a3",
+      "source": "Icons/Type_Heal.tga"
+    },
+    {
+      "file": "png/type_healovertime-0024329bef45.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6410845316be096727ba60e803d925cb4021546bac9118e1ab7d218b98365fa8",
+      "source": "Icons/Type_HealOverTime.dds"
+    },
+    {
+      "file": "png/type_incoming-1afd8d8a4481.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "095959dddedf408e695da876c2fd3a2ddfc9b88051467a20df0ece171956da10",
+      "source": "Icons/Type_Incoming.dds"
+    },
+    {
+      "file": "png/type_jinx-23a59fb54bed.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "41fb69b98a67cab0878d56cebdaad054d9a850685ff6808d6cdf5a61fe08d780",
+      "source": "Icons/Type_Jinx.dds"
+    },
+    {
+      "file": "png/type_jinx-bb1ace0302cc.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "33b809c7a7ed5500778889bab905305c3c903db0a90b106d21b8b1287d82ee2f",
+      "source": "Icons/Type_Jinx.tga"
+    },
+    {
+      "file": "png/type_levelreqpvp-172e726fa776.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "701b8291a5ca293a30a320d32ac10836ba5d336e2516fcec7a1e78cf2ea40bc7",
+      "source": "Icons/Type_LevelReqPvP.dds"
+    },
+    {
+      "file": "png/type_luck_fishing-353f724a0974.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9258a07efae039cb6daf36ba1ac2eada7a6664f336d5b20c1647673947249f69",
+      "source": "Icons/Type_Luck_Fishing.dds"
+    },
+    {
+      "file": "png/type_manipulation-b4e2a1b0ff99.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d83ee3c6e45f495111c40c9fb41409c72c2f09738b617fb73b037ba0b55e7738",
+      "source": "Icons/Type_Manipulation.dds"
+    },
+    {
+      "file": "png/type_manipulation-4c87b87b4e09.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "bd2dfb6fa34f16c5306570cb4999a58761a3c09d8f4d765ec858d3f9471e3d4f",
+      "source": "Icons/Type_Manipulation.tga"
+    },
+    {
+      "file": "png/type_maxenergy-40442da53504.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8f6cd8133faeb5c37ab9c4b2d065e4868f67a663e36a3f1811431946eec503bc",
+      "source": "Icons/Type_MaxEnergy.dds"
+    },
+    {
+      "file": "png/type_maxhealth-23cdc0713b85.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "3ddef235c75801353b50c592133e902123733f9d10bc9d5f5b52e76b8a81ebfb",
+      "source": "Icons/Type_MaxHealth.dds"
+    },
+    {
+      "file": "png/type_maxhealth-651814e54e25.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "4b1d1c3b6fe77c02247bcfd3dcbc4b23edcf421cea5930fe6dd2f07e1a097c30",
+      "source": "Icons/Type_MaxHealth.tga"
+    },
+    {
+      "file": "png/type_maxmana-4bfca6ae13aa.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "50e9fd03cb65b4726af6fa262db3c794832ab89bf05a5e5c94ebd1fb09215990",
+      "source": "Icons/Type_MaxMana.dds"
+    },
+    {
+      "file": "png/type_maxmana-fbfee0c1bcf9.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "66f1357cff7b326c802241f7a839a289b3abf79c6507528f52367f40dc1beb98",
+      "source": "Icons/Type_MaxMana.tga"
+    },
+    {
+      "file": "png/type_mutate-8ae97d48eb49.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "04789593d7d3fee1e4b12b5a8c6e2f271be26b4981199ce42f72b0577e9ef9b1",
+      "source": "Icons/Type_Mutate.dds"
+    },
+    {
+      "file": "png/type_mutate-33917dce41ab.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f4f7ba40dbae6b242d161a8f69578f390ecb44f8d7c56a533b22894d6dbddaa1",
+      "source": "Icons/Type_Mutate.tga"
+    },
+    {
+      "file": "png/type_outgoing-c99543bb407d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0133164435b80d8456c61808214b2b11b42314d502ca9bc9cc3fc20838116fb7",
+      "source": "Icons/Type_Outgoing.dds"
+    },
+    {
+      "file": "png/type_pip-6e7f80a20372.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "df7484649c193c35cbb68f0e73b6c698d4e210d3dfe9a4cc13e0fc6f0690382a",
+      "source": "Icons/Type_Pip.dds"
+    },
+    {
+      "file": "png/type_pip-d3301fd294a3.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "23a8d2c1d850fd447f2c0b2a980f9f459243811792336e324627dd105c9ba1ef",
+      "source": "Icons/Type_Pip.tga"
+    },
+    {
+      "file": "png/type_pip_shadow-bf9cd776d2d9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "810d63764cacba8184208872b17bdb7593b03af7751aab57d9fe768977bdd574",
+      "source": "Icons/Type_Pip_Shadow.dds"
+    },
+    {
+      "file": "png/type_polymorph-4184005cf66c.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "45fdaf5c5ecac1d55ff08d1ef907b9500872eb9661de17851f2906623fbc73a6",
+      "source": "Icons/Type_Polymorph.dds"
+    },
+    {
+      "file": "png/type_polymorph-5bb9b3991d1d.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "f6eb0fe263dbaae7597b31688cc8740ff4f1c6fb48a2f27b5db24a28c8a7c246",
+      "source": "Icons/Type_Polymorph.tga"
+    },
+    {
+      "file": "png/type_powerpips-006dbf0054e7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "779afc506224eef08e805ed304bb4ee79e6629a79104e879fe046e610db5adbf",
+      "source": "Icons/Type_PowerPips.dds"
+    },
+    {
+      "file": "png/type_powerpips-02c5719f54b1.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "ffed86f3205069f7d2a21b0f63f7f3ec9f230f2a19cd93ed1acfacf0c3273f18",
+      "source": "Icons/Type_PowerPips.tga"
+    },
+    {
+      "file": "png/type_random-f0d10d2cec5e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "bf210b05659d0b42b2fdec3471ddc99d7d9ce01508f28f1ce2673c166dd7fffe",
+      "source": "Icons/Type_Random.dds"
+    },
+    {
+      "file": "png/type_resist-d2741e19da57.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "891cb31524c70db2da795ec15b0c0816f4dda7323bafb7175bf236f87cf178db",
+      "source": "Icons/Type_Resist.dds"
+    },
+    {
+      "file": "png/type_resist-2db530987f4f.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "00c54fd6e878859c0a1e8f1d7d105f7024d6d2f25f1c920c6f3ad059b1a04dd4",
+      "source": "Icons/Type_Resist.tga"
+    },
+    {
+      "file": "png/type_resist_flat-63317ba6e310.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "a08c4406c89fdac856531876b0933d22e9c9b139aaa984616096c6f04ec1828b",
+      "source": "Icons/Type_Resist_Flat.dds"
+    },
+    {
+      "file": "png/type_shadow_creature-91eadff55a3e.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0326729e95d21356b7de6ce632aa98e1d269fd1d5eca6d98d77af5fd6f4fbde3",
+      "source": "Icons/Type_Shadow_Creature.dds"
+    },
+    {
+      "file": "png/type_shadow_minion-11bed1a38090.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0a97594f8de461ad125c4cd57a790291085b34f4e5ad7119fae29f04a9b51d4e",
+      "source": "Icons/Type_Shadow_Minion.dds"
+    },
+    {
+      "file": "png/type_shadow_self-7727713354bc.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "02a8b4a49ae40dac052b4b9b82db2a815fafee6bfc76bbb1dfbe8ae5d69196f0",
+      "source": "Icons/Type_Shadow_Self.dds"
+    },
+    {
+      "file": "png/type_speed_effect-12d3ff2e324b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "13494bfe6ef21fbf5e6ce835bb879a6fa5c33314fd13d09a9f6050700924b50f",
+      "source": "Icons/Type_Speed_Effect.dds"
+    },
+    {
+      "file": "png/type_steal-35850f3268ea.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "37a1fb48dcb142863484baf96a00138ad9d98e9d1dde61a50ab6513805b1b27b",
+      "source": "Icons/Type_Steal.dds"
+    },
+    {
+      "file": "png/type_steal-1bb7d55ec9ea.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "0f595ae034bc1102abd09a2dc72557c229fb99e47ad89588e0627d983600241f",
+      "source": "Icons/Type_Steal.tga"
+    },
+    {
+      "file": "png/type_stun_resist-6b10814ae591.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7fe26f972502e514338cbefe30feac1cef55152b2cf5b063c6315e712191d0f8",
+      "source": "Icons/Type_Stun_Resist.dds"
+    },
+    {
+      "file": "png/type_trap-8fc2030b949d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "824fa0f6f756069d38a7fa93c974efd7569c92c9e69c350b16b0b14cd127580a",
+      "source": "Icons/Type_Trap.dds"
+    },
+    {
+      "file": "png/type_ward-29aa38bc2cb5.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "dc1715069289df850164f8921bdffb17316f378d367391467a3ac1f81984ec5a",
+      "source": "Icons/Type_Ward.dds"
+    },
+    {
+      "file": "png/type_ward-1e55ec7e5b8a.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "3b5780ce9d31e1be164c227524d6f477af1a4f63207c876b3ce6a6b84e566a5e",
+      "source": "Icons/Type_Ward.tga"
+    },
+    {
+      "file": "png/type_wisp_bonus_health-38e4afddeedf.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9ac3b0e823bee6b89360e6d6050015bb237ba3bf86d9891bdc45b1c946a3dba7",
+      "source": "Icons/Type_Wisp_Bonus_health.dds"
+    },
+    {
+      "file": "png/type_wisp_bonus_mana-e3624cc43379.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "d24875fd7d78038c06f46ab70e10de4520a1b67b044b3c0920bae3876f755260",
+      "source": "Icons/Type_Wisp_Bonus_mana.dds"
+    },
+    {
+      "file": "png/type_pabsorb-21c709cf7ece.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "6cdd5b35246f0a52c3f2f11713027c926bfd7abe91e9de79c016f68534031df3",
+      "source": "Icons/Type_pAbsorb.dds"
+    },
+    {
+      "file": "png/type_pblade-6f3f99279c3d.png",
+      "width": 16,
+      "height": 16,
+      "sha256": "2a13d90f71140921a558520662ee68d7e92cec1f590eb35b30f7cd3e51eeb3b4",
+      "source": "Icons/Type_pBlade.dds"
+    },
+    {
+      "file": "png/type_pcharm-750ac34a188d.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9bc37f93eb293d805815adbb972b59e5ce02f4c6f4a527362340e06c004d2354",
+      "source": "Icons/Type_pCharm.dds"
+    },
+    {
+      "file": "png/type_pcurse-02f62ef4fb64.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "4a11b64899498713a2f0045ca1cd3be591f0a89751fe56c7b5ca53ead2e79bcd",
+      "source": "Icons/Type_pCurse.dds"
+    },
+    {
+      "file": "png/type_pdamageovertime-a3676c0215c9.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "1a1717ddcb92c34fe65f8825231314975fb0fec4d4223ccada1bd106267ffffe",
+      "source": "Icons/Type_pDamageOverTime.dds"
+    },
+    {
+      "file": "png/type_pdeferreddamage-7b419ae6b3fd.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "81b7fa38f34cf4014c9bf559a30338fce8dcbeff248fdfdcc1be8a0b6ee05524",
+      "source": "Icons/Type_pDeferredDamage.dds"
+    },
+    {
+      "file": "png/type_phealovertime-0c666027e290.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "238780b53ad5018f06051e3a89cab1e2d3abb148329767ce80cd46977a623457",
+      "source": "Icons/Type_pHealOverTime.dds"
+    },
+    {
+      "file": "png/type_pjinx-bde9d1d346ae.png",
+      "width": 20,
+      "height": 20,
+      "sha256": "0494913735f567b7501196a012456efa85fdf2a2987f34d0871a57c572ce55bf",
+      "source": "Icons/Type_pJinx.dds"
+    },
+    {
+      "file": "png/type_ptrap-56b99778fbe1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "7b4b1866d6e4916a6d44b0f828662c2ac21a24c18cbbb6a4b42487a840376f98",
+      "source": "Icons/Type_pTrap.dds"
+    },
+    {
+      "file": "png/type_pward-8c33185bf90b.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "19e1f623ad1babbf0ba38ed3aa3e55f3ae7c24ab9ce0c0b3f14d15c166639595",
+      "source": "Icons/Type_pWard.dds"
+    },
+    {
+      "file": "png/type_x1_pvp-cf4b0e106794.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "03ed866c0c58e8eb49fe99244591f6b84a0ce893085cb867f86cd3ed1e82f36c",
+      "source": "Icons/Type_x1_PvP.dds"
+    },
+    {
+      "file": "png/word_slash-d6a10dd341b3.png",
+      "width": 64,
+      "height": 8,
+      "sha256": "a6ece625e2a49eaa364a537b3b5316cb4eb228055595fee82b34dcba8093b37e",
+      "source": "Icons/Word_Slash.dds"
+    },
+    {
+      "file": "png/add-card-to-deck-9a96ac14597e.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "2c746546fde56933913d19c31474ccdb8792ef40f8a10e0873da0f3ec100b337",
+      "source": "Icons/add-card-to-deck.dds"
+    },
+    {
+      "file": "png/add-card-to-hand-6a8d17ecd182.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "48028d2848d06100c4b2b56a78e099c6fb6ec28c4eafd4346d2a52c0533ca929",
+      "source": "Icons/add-card-to-hand.dds"
+    },
+    {
+      "file": "png/negative_minion-826d370305e1.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "0738bdba6f0b10b03c26127e88fbcfa0f3f2d8c8e3d1ed0da65864b5f8caeb9b",
+      "source": "Icons/negative_minion.dds"
+    },
+    {
+      "file": "png/pacify-0bfd9e8c3467.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "dc414ace6a33a80573be588cd9bb3a268c590cb488f71f1ac94a22ac6d36aadd",
+      "source": "Icons/pacify.dds"
+    },
+    {
+      "file": "png/pip_balance_no_glow-58e2052c124a.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "9e7e1e6b7ad0b7ac96c398012bd30288382959abe037a275d8168d3cf24604ad",
+      "source": "Icons/pip_balance_no_glow.dds"
+    },
+    {
+      "file": "png/pip_death_no_glow-b01314f9f2f4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "8086225e07a5817e0a12dca743834d7255a621e5f8bd14752957d6aa39aee64b",
+      "source": "Icons/pip_death_no_glow.dds"
+    },
+    {
+      "file": "png/pip_fire_no_glow-dab305120af0.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "807f7b8be90cc97770c2454eb45886a614be25c1d233ac77b09b56acf5d95665",
+      "source": "Icons/pip_fire_no_glow.dds"
+    },
+    {
+      "file": "png/pip_ice_no_glow-76b34c0e8634.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "5dd57624d20122aab9869e04cfb25dcaeebded833ade54b44c8c829913498a58",
+      "source": "Icons/pip_ice_no_glow.dds"
+    },
+    {
+      "file": "png/pip_life_no_glow-c06feba567b4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "229c1a91be41d5eba862cbbb53d3e56d9111cf76ce27a8af89f68ee83e468466",
+      "source": "Icons/pip_life_no_glow.dds"
+    },
+    {
+      "file": "png/pip_myth_no_glow-67549679df18.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "cfe8e16c4f0eb13daf86028c6db4c3015a9b259bc4ed9ace6f8da7ae0e2ff9e1",
+      "source": "Icons/pip_myth_no_glow.dds"
+    },
+    {
+      "file": "png/pip_storm_no_glow-960c8d3dafa7.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "177c9cec50ea98eac7a306f523ed0545cfa4904c859c3f65569e9840593a7b2e",
+      "source": "Icons/pip_storm_no_glow.dds"
+    },
+    {
+      "file": "png/sacrifice_minion-ac84d77012d4.png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2d65821c8d686e519e690a66af7c26046fd773bb2a8539c42654c8fe2096b7ef",
+      "source": "Icons/sacrifice_minion.dds"
+    },
+    {
+      "file": "png/sentinalfish_icon-483b5de1f475.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "3189febd51447792fe7c471e1c027078e610f96d0607e4eaae74c86edce62576",
+      "source": "Icons/sentinalfish_Icon.dds"
+    }
+  ]
+}

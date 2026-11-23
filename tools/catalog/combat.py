@@ -17,7 +17,7 @@ REVISION = "3c24847d111387fc0b34772b548f74e80089599f"
 SCHOOLS = ("fire", "ice", "storm", "myth", "life", "death", "balance", "star", "sun", "moon", "shadow")
 MAX_STATS = 512
 MAX_SAFE_INTEGER = 9007199254740991
-STAT_ICONS = {"health": "stat.health", "mana": "stat.mana", "damage": "stat.damage", "flat_damage": "stat.damage", "resist": "stat.resist", "flat_resist": "stat.resist", "critical": "stat.critical", "block": "stat.block", "accuracy": "stat.accuracy", "pierce": "stat.pierce", "incoming": "stat.incoming", "outgoing": "stat.outgoing", "power_pip": "pip.power", "power_pips": "pip.power", "pips": "pip.normal", "shadow_pips": "pip.shadow"}
+STAT_ICONS = {"health": "stat.health", "mana": "stat.mana", "damage": "stat.damage", "flat_damage": "stat.flat_damage", "resist": "stat.resist", "flat_resist": "stat.flat_resist", "critical": "stat.critical", "block": "stat.block", "accuracy": "stat.accuracy", "pierce": "stat.pierce", "incoming": "stat.incoming", "outgoing": "stat.outgoing", "power_pip": "pip.power", "power_pips": "pip.power", "pips": "pip.normal", "shadow_pips": "pip.shadow"}
 
 # Complete display/order map from the fixed upstream revision; labels translated
 # to Chinese. 'exported_rating' retains uncertain units instead of inventing a

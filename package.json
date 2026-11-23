@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-wizard101",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Kimerith 中文版 Koishi 插件：完整查询命令、法术效果树、战斗计算、QQ 官方 Bot / Discord 原生交互",
   "main": "lib/index.cjs",
   "types": "lib/index.d.ts",
@@ -10,6 +10,7 @@
   },
   "files": [
     "lib",
+    "assets/icons",
     "tools/**/*.cjs",
     "tools/**/*.py",
     "tools/**/README.md",

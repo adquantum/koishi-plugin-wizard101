@@ -1,8 +1,8 @@
 # 配置与使用手册
 
-本文对应 **0.3.0**。默认命令前缀为 `wiz`，可在 `command` 中修改。新增的 Kimerith 兼容路由、旧百科 / 词典入口、平台交互使用同一份本地词典和资料包。
+本文对应 **0.3.1**。默认命令前缀为 `wiz`，可在 `command` 中修改。新增的 Kimerith 兼容路由、旧百科 / 词典入口、平台交互使用同一份本地词典和资料包。
 
-本项目提供源码，尚未发布 npm 包或 Koishi 插件市场条目。从源码安装的方法见[首页](../README.md#快速开始)。环境要求为 Node.js ≥22、Koishi `^4.18.11`；一次性数据库导入使用 Python ≥3.10，图标转换另需 Pillow。机器人正常运行不需要 Python。
+本项目提供源码，尚未发布 npm 包或 Koishi 插件市场条目。从源码安装的方法见[首页](../README.md#快速开始)。环境要求为 Node.js ≥22、Koishi `^4.18.11`；一次性数据库导入使用 Python ≥3.10，转换自定义图标另需 Pillow；内置图标可直接使用。机器人正常运行不需要 Python。
 
 ## 准备自己的数据
 
@@ -10,11 +10,11 @@
 | --- | --- | --- |
 | 中英词典 | 汉化名称、描述、界面 / 对话文本，文件与 key 引用 | `data/wizard101/locale-zh.json.gz` |
 | 游戏资料包 | 装备数值、法术效果、怪物装备 / 牌组、宠物、鱼类、属性上限 | `data/wizard101/catalog.json.gz` |
-| 小图标 | 学派、魔豆、属性等原版图标 | `data/wizard101/icons/manifest.json` |
+| 小图标 | 随包的 323 个原版 PNG 与语义清单 | 插件内 `assets/icons/manifest.json`；兼容已有自定义数据目录 |
 | 中文字体 | PNG 中文文字 | 自动发现，或 `fontPath` 指定 |
 | 原版画像 | 法术 / 怪物等可选 PNG 缩略图 | `data/wizard101/portraits` |
 
-这些数据互不替代。只有汉化文本时，可进行中英词典查询；数值图鉴和 `mob.calc` 还需要游戏资料库。公开源码及安装包不包含游戏或完整汉化内容。
+这些数据互不替代。只有汉化文本时，可进行中英词典查询；数值图鉴和 `mob.calc` 还需要游戏资料库。公开源码及安装包包含默认小图标，不包含完整游戏数据库、完整汉化词典、画像或字体。
 
 ```sh
 node tools/locale/import.cjs \
@@ -28,11 +28,9 @@ python3 tools/catalog/from-sqlite.py \
   --version "自己确认的游戏或资料版本" \
   --output /absolute/path/to/koishi-app/data/wizard101/catalog.json.gz
 
-python3 -m pip install Pillow
-python3 tools/icons/import.py \
-  --input /path/to/Icons.zip \
-  --output /absolute/path/to/koishi-app/data/wizard101/icons
 ```
+
+默认小图标已经安装到插件包中，不需要执行图标转换。要使用自己的图标版本，可参照[图标导入工具](../tools/icons/README.md)生成清单。
 
 `--decks` 和 `--locale` 可省略。推荐提供中文词典，使名称和法术原始说明在导入时得到可靠翻译；没有唯一译文时保留原文。即使省略词典，效果层级、目标、状态和条件结构也有中文解释。`--version` 不填时标为“未标注”，不会把导入日期当作游戏版本。
 
@@ -40,7 +38,7 @@ LANG 输入使用 UTF-16LE；空行可能属于字段，不应预先删空行。
 
 ## 基础配置
 
-所有相对路径以 **Koishi 应用根目录**为准，也可写绝对路径。`localePath/catalogPath/iconPath/portraitPath` 留空分别采用上表默认位置；`fontPath` 留空自动发现 Noto CJK、微软雅黑等中文字体。
+用户填写的相对路径以 **Koishi 应用根目录**为准，也可写绝对路径。`localePath/catalogPath/portraitPath` 留空采用上表默认位置。`iconPath` 留空时，已有且有效的 `data/wizard101/icons/manifest.json` 优先；旧清单缺失或损坏则使用插件包内 `assets/icons/manifest.json`，损坏时保留状态提示。填写 `iconPath` 可选用独立自定义清单，加载失败时保留文字标签并报告错误。内置资源按插件安装位置定位，不要求把图片复制进 Koishi 工作目录。`fontPath` 留空自动发现 Noto CJK、微软雅黑等中文字体。
 
 ```yaml
 plugins:
@@ -52,7 +50,7 @@ plugins:
     catalogPath: data/wizard101/catalog.json.gz
     dataSource: hybrid
     replyMode: auto
-    iconPath: data/wizard101/icons/manifest.json
+    iconPath: '' # 默认内置图标；已有 data/wizard101/icons 时优先使用
     fontPath: ''
     portraitPath: data/wizard101/portraits
     nativeDiscordEnabled: false
@@ -239,7 +237,7 @@ aliases:
 
 ## 图卡、分页与原生交互
 
-`replyMode: auto` 在 QQ 群 / C2C、QQ 频道和 Discord 尝试 PNG，其他平台返回文字；可显式选 `text` 或 `image`。小图标缺失时保留文字标签，中文字体不可用时回退文字。图片默认预算 2 MiB，发送失败只进行一次文字回退，不重复请求 API。
+`replyMode: auto` 在 QQ 群 / C2C、QQ 频道和 Discord 尝试 PNG，其他平台返回文字；可显式选 `text` 或 `image`。默认小图标随包加载；某个语义键缺图时保留文字标签，中文字体不可用时回退文字。图片默认预算 2 MiB，发送失败只进行一次文字回退，不重复请求 API。
 
 原图由 `portraitPath` 指定的本地 PNG 目录读取；数据库中的路径只用于生成文件名。文件名、PNG 格式、尺寸和实际路径均会校验，不跟随外部 URL。准备方法见[原图说明](../tools/catalog/README.md#原版画像与缩略图)。
 
@@ -262,14 +260,14 @@ Wizard404 查询需要自己的只读 API Key 和可联系的 User-Agent；本�
 
 ```sh
 export W404_API_KEY='REPLACE_LOCALLY_WITH_YOUR_PRIVATE_KEY'
-export W404_USER_AGENT='MyWizardWiki/0.3.0 (replace-with-your-contact@example.com)'
+export W404_USER_AGENT='MyWizardWiki/0.3.1 (replace-with-your-contact@example.com)'
 ```
 
 PowerShell 当前会话可用：
 
 ```powershell
 $env:W404_API_KEY = 'REPLACE_LOCALLY_WITH_YOUR_PRIVATE_KEY'
-$env:W404_USER_AGENT = 'MyWizardWiki/0.3.0 (replace-with-your-contact@example.com)'
+$env:W404_USER_AGENT = 'MyWizardWiki/0.3.1 (replace-with-your-contact@example.com)'
 ```
 
 变量须对实际 Koishi 进程可见。systemd 使用服务自己的环境文件，容器通过运行时环境注入，GUI 启动器按其设置配置；不要把个人终端里的变量误认为已传给后台服务。QQ AppSecret、Discord Token 和 Wizard404 Key 用途不同，不可互换。
@@ -303,7 +301,7 @@ node tools/probe-api.cjs --type spell --query "Fire Cat" --search-param q --out 
 | `catalogPath` | 空 | 默认数值资料包路径 |
 | `dataSource` | `hybrid` | 原有查询入口的本地 / API 策略 |
 | `replyMode` | `auto` | 自动图卡 / 文字；可选 text、image |
-| `iconPath` | 空 | 小图标 manifest |
+| `iconPath` | 空 | 优先已有 data/wizard101/icons，否则内置图标；可指定自定义 manifest |
 | `fontPath` | 空 | 中文 TTF / OTF / TTC；空则自动发现 |
 | `portraitPath` | 空 | 本地 PNG 原图目录 |
 | `nativeDiscordEnabled` | `false` | 挂载原生交互；不会自动注册命令 |
@@ -341,6 +339,7 @@ node tools/probe-api.cjs --type spell --query "Fire Cat" --search-param q --out 
 | 宠物天赋分组不符 | 核对数据是否遵循前 10 行普通天赋约定，不手工猜分组补数据 |
 | find 返回相近名字 | 查看顶部匹配提示；用 --search-by ID 或 Object 精确定位 |
 | 只发文字 | 检查 replyMode、中文字体和图片发送权限；小图标缺失不等于词典缺失 |
+| 图卡没有小图标 | 检查显式 iconPath 是否有效；留空可自动使用随包图标，并兼容已有有效旧清单 |
 | 没显示原图 | 核对 portraitPath 和导出 portrait 文件名；只接收受限的本地 PNG |
 | Slash 不出现 | 检查 nativeDiscordEnabled、适配器 slash:false、应用授权、同步作用域、管理员用户权限和 wiz.sync 结果 |
 | 同步提示名称冲突 | 保留其他插件命令；恢复本插件归属文件或选择未占用命名空间 |

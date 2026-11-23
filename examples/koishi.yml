@@ -1,5 +1,5 @@
 # 合并到现有 Koishi 配置的 plugins 下，不要覆盖原来的适配器或其他插件。
-# 路径相对于实际 Koishi 应用根目录；公开源码包不附游戏数据。
+# 用户填写的相对路径以 Koishi 应用根目录为准；小图标已内置，词典与数据库需自行导入。
 # Wizard404 凭据推荐由服务环境 W404_API_KEY / W404_USER_AGENT 提供。
 # 当前版本从源码 npm pack 安装，尚未发布 npm / 插件市场条目。
 plugins:
@@ -30,7 +30,7 @@ plugins:
     catalogPath: '' # 默认 data/wizard101/catalog.json.gz；0.3 新字段需重导出
     dataSource: hybrid # 只控制旧百科入口；15 条参考路由中的图鉴固定查本地
     replyMode: auto
-    iconPath: '' # 默认 data/wizard101/icons/manifest.json
+    iconPath: '' # 优先已有有效 data/wizard101/icons/manifest.json；缺失或损坏则使用内置图标
     fontPath: '' # 自动找中文字体，或填写自己的 TTF / OTF / TTC
     portraitPath: '' # 默认 data/wizard101/portraits，只读取本地 PNG
 

@@ -1,8 +1,8 @@
 # 第三方代码、资料与来源
 
-## 0.3 整体许可
+## 0.3 程序代码许可
 
-`koishi-plugin-wizard101` 0.3 整包按 **GPL-3.0-only** 提供，完整文本见 [LICENSE](LICENSE)。本版移植了 Kimerith-WindHammer 的相关代码与映射，不再沿用 0.2 文档中“独立实现、未移植、整包 MIT”的说明。
+`koishi-plugin-wizard101` 0.3 系列程序代码按 **GPL-3.0-only** 提供，完整文本见 [LICENSE](LICENSE)。0.3.1 随附的 Wizard101 小图标保留各自权利归属，见下文素材说明。本版移植了 Kimerith-WindHammer 的相关代码与映射，不再沿用 0.2 文档中“独立实现、未移植、整包 MIT”的说明。
 
 早期本项目原创部分的 MIT 版权与许可通知保留在 [LICENSES/MIT-legacy.txt](LICENSES/MIT-legacy.txt)。它用于保留该部分既有通知，不能把包含 GPL 移植代码的 0.3 整包表述为 MIT。新增和修改的兼容代码遵循本仓库整包许可，并保留相应来源说明。
 
@@ -33,13 +33,21 @@
 
 [MajorPain1/wizdb](https://github.com/MajorPain1/wizdb) 的公开 schema、属性导出与记录规则用于读取用户自己的 `items.db` / `decks.db`。本地导入器只读输入库，保留来源版本、原始 ID、单位和未解释字段。参考格式及实现说明见[数据库导入文档](tools/catalog/README.md)。
 
-公开仓库和由源码生成的公开安装包不包含原始 SQLite、WAD、LANG、汉化全文词典、原版 DDS / TGA / PNG 或字体。`data/*-example.json` 等示例使用合成数据，不作为正式游戏资料。
+公开仓库和由源码生成的安装包包含 `assets/icons` 中列出的 PNG 小图标与清单，不包含原始 SQLite、WAD、LANG、汉化全文词典、原始 DDS / TGA、完整画像库或字体。`data/*-example.json` 等数值与文本示例使用合成数据，不作为正式游戏资料。
 
 ## Wizard101 文本、汉化与图片
 
+### 随包小图标
+
+0.3.1 将项目提供的 `Icons.zip` 转换结果收录于 `assets/icons`，同时进入 GitHub 源码和 `npm pack` 安装包：**323 个 PNG 及对应的图标索引、语义别名**。来源为所提供的 Wizard101 原版图标；转换工具为本仓库 `tools/icons/import.py`，转换保留原有颜色、透明度与尺寸。清单记录原资源路径、PNG 尺寸和 SHA-256，方便核对对应关系。
+
+这些 PNG 用于学派、魔豆、属性、状态、宝石槽与宠物五维等资料卡元素。它们不是本项目原创美术，不以代码的 GPL-3.0-only 或历史 MIT 许可重新授权。原始 DDS / TGA 和 `Icons.zip` 不随包分发，完整法术插画、宠物 / 怪物画像也不在这套小图标中。
+
+### 其他本地素材
+
 Wizard101 游戏文字和素材归 KingsIsle Entertainment 或相应权利人；社区译文归相应译者或授权主体。部署者应使用自己有权使用的资源。导入、格式转换、中文索引或 PNG 渲染不会给这些内容重新授予 GPL、MIT 或其他代码许可。
 
-用户提供的画像仅在本地 `portraitPath` 中读取；字体使用系统已安装字体或部署者指定文件，不复制系统字体进入源码包。资源更新、资料准确性和素材使用范围与插件代码许可分别处理。
+未随包提供的画像仅在部署者的本地 `portraitPath` 中读取；字体使用系统已安装字体或部署者指定文件，不复制系统字体进入源码包。资源更新、资料准确性和素材使用范围与插件代码许可分别处理。
 
 ## Wizard404
 

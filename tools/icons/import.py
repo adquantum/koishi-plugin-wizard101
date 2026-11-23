@@ -140,6 +140,8 @@ def semantic_names() -> dict[str, str]:
         "target.friends": "Icons_All_Friends", "misc.recipe": "Icon_Recipe",
         "misc.reagent": "Icon_Reagent", "misc.fishing": "Icon_Fishing",
         "misc.gardening": "Icon_Gardening", "misc.drop": "Icon_WorldDrop",
+        "school.gardening": "Icon_Gardening", "school.fishing": "Icon_Fishing",
+        "school.cantrips": "Icon_Cantrips",
     }
     for school in ("fire", "ice", "storm", "myth", "life", "death", "balance", "sun", "moon", "star", "shadow"):
         names[f"school.{school}"] = f"Icon_{school.title()}"

@@ -1,10 +1,16 @@
-# 导入原版图标与生成图片卡片
+# 内置图标、自定义导入与图片卡片
 
-公开仓库不附带 Wizard101 原版图标。请从自己有权使用的游戏资源准备 `Icons.zip` 或图标目录，在本地执行一次转换。插件运行时只读取转换后的 PNG 和清单，不需要 Python，也不会下载远程图片。
+**0.3.1 已将默认原版小图标放入 GitHub 和安装包。** `assets/icons` 包含 323 个 PNG 及对应的图标索引、语义别名；PNG 合计约 1 MiB。安装插件后即可用这套资源生成带图标的卡片，无需额外准备 `Icons.zip` 或运行转换。插件只读取本地 PNG 和清单，不会从网络下载图标。
 
-## 1. 转换 DDS / TGA / PNG
+## 默认加载与自定义图标
 
-需要 Python 3.10 或更新版本，以及 Pillow。本轮验证使用 Pillow 13.0.0；转换器支持 Pillow 能解码的 DDS、TGA 和 PNG，已验证 DDS DXT1/DXT3/DXT5。
+Koishi 的 `iconPath` 留空时，优先兼容应用目录已有且有效的 `data/wizard101/icons/manifest.json`。该旧清单缺失或损坏时读取插件自身的 `assets/icons/manifest.json`；损坏原因仍保留在渲染器状态中。显式填写 `iconPath` 会选择独立自定义清单，加载失败时保留文字标签并报告错误。自定义清单和内置清单分别使用，不合并图标键；用户填写的相对路径以 Koishi 应用根目录为准。内置清单按插件安装目录定位，源码运行和从 `npm pack` 安装均不要求复制图片到当前工作目录。
+
+要替换或补充图标时，再按下面流程转换自己的资源。中文字体仍需由运行环境提供，见“配置中文字体”。
+
+## 1. 可选：转换自己的 DDS / TGA / PNG
+
+仅自定义转换需要 Python 3.10 或更新版本，以及 Pillow。本轮验证使用 Pillow 13.0.0；转换器支持 Pillow 能解码的 DDS、TGA 和 PNG，已验证 DDS DXT1/DXT3/DXT5。
 
 ```bash
 python -m pip install Pillow
@@ -49,7 +55,8 @@ sudo apt-get install fonts-noto-cjk
 const { CardRenderer } = require('./lib/cards.cjs')
 
 const renderer = new CardRenderer({
-  iconPath: '/absolute/path/to/koishi-app/data/wizard101/icons/manifest.json',
+  // 不指定 iconPath 时使用插件内置图标。自定义时可填写：
+  // iconPath: '/absolute/path/to/koishi-app/data/wizard101/icons/manifest.json',
   // fontPath: '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
   maxRows: 28,
   maxImageBytes: 2 * 1024 * 1024,
@@ -77,7 +84,7 @@ renderer.dispose()
 
 `renderTextCard(text, options)` 可以将已有纯文本结果转换成同风格卡片。`render()` 会自动换行、限制字段长度、行数与高度；过长内容在图片中显示省略提示，完整内容仍应通过文字分页获取。单实例只同时进行一次渲染，忙碌或失效时抛出 `code === 'WIZ_CARD_UNAVAILABLE'` 的错误；调用方保留文字回退即可。
 
-`status()` 返回初始化、中文字体、可用图标键数量和脱敏原因，不返回服务器路径。缺少或无效的图标清单不阻止生成卡片，卡片仍保留文字标签；缺字体则停止生成图片。仅支持本地清单引用的 PNG：拒绝越界路径、远程 URL、伪装成 PNG 的 SVG、超大尺寸和不匹配的 SHA-256。
+`status()` 返回初始化、中文字体、可用图标键数量和脱敏原因，不返回服务器路径。默认使用随包图标；某个语义键缺图或显式自定义清单加载失败时保留文字标签。缺字体则停止生成图片。仅支持本地清单引用的 PNG：拒绝越界路径、远程 URL、伪装成 PNG 的 SVG、超大尺寸和不匹配的 SHA-256。
 
 ## 4. 语义图标键
 
@@ -98,4 +105,4 @@ renderer.dispose()
 
 缺少某张原图时，对应语义键不会生成。图标包并不保证包含装备槽、物品外观、法术插画或宠物头像；卡片不会用不相关图标冒充这些图片。
 
-原始图标、转换后的完整目录和用户字体应放在 Koishi 数据目录，不能提交到本项目的公开 Git 仓库或 npm 包。代码许可证不授予这些素材的再分发权，详见根目录 `THIRD_PARTY_NOTICES.md`。
+随包公开的资源限于 `assets/icons` 中的 PNG 和清单，并保留 Wizard101 / KingsIsle Entertainment 或相应权利人的素材归属。自定义图标版本、原始 DDS / TGA、画像和用户字体放在自己的 Koishi 数据目录。程序代码许可不为这些素材重新授予 GPL 或 MIT 权限，详见 [THIRD_PARTY_NOTICES.md](../../THIRD_PARTY_NOTICES.md)。

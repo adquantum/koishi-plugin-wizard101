@@ -4,11 +4,11 @@
 
 从自己的 Wizard101 汉化 WAD / UTF-16LE LANG 建立中英词典，从 `wizdb` 数据库导入装备、法术、怪物、宠物、鱼类和属性上限。玩家可用中文或英文查询，查看中文法术效果、怪物本体与全部关联装备的属性，以及带原版图标和可选原图的 PNG 资料卡。另保留 Wizard404 在线百科查询。
 
-**当前为 0.3.0，提供源码和本地打包安装流程，尚未发布到 npm 或 Koishi 插件市场。** 已实现 [Kimerith-WindHammer 固定提交 `3c24847d`](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f) 的全部 15 条公开命令路由，并移植、适配相关算法；代码采用 **GPL-3.0-only**。这里的“全部”指该提交的命令和已定义处理分支，不表示已经取得完整游戏数据库或验证当前游戏服务器的所有行为。
+**当前为 0.3.1，提供源码和本地打包安装流程，尚未发布到 npm 或 Koishi 插件市场。** 已实现 [Kimerith-WindHammer 固定提交 `3c24847d`](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f) 的全部 15 条公开命令路由，并移植、适配相关算法；代码采用 **GPL-3.0-only**。这里的“全部”指该提交的命令和已定义处理分支，不表示已经取得完整游戏数据库或验证当前游戏服务器的所有行为。
 
 自动化使用合成 SQLite、合成资料和实际官方适配器的本地替身。**尚未使用真实机器人账号完成 QQ / Discord 在线验收，也未使用有效 API Key 完成 Wizard404 远程联调；完整真实游戏数据库尚待部署者导入验收。** 在线按名搜索与 Discord 原生命令默认关闭。
 
-公开仓库及本地生成的安装包不附带 WAD、LANG 全文、完整词典、游戏数据库、原版贴图、字体或密钥。请导入自己有权使用的资源。
+**原版小图标已随仓库和安装包提供。** `assets/icons` 包含 323 个 PNG 及对应语义清单，可直接用于学派、魔豆、属性、宠物五维和状态等图卡元素。默认配置无需再下载或转换 `Icons.zip`。完整词典、游戏数据库、法术 / 怪物画像、字体和密钥仍由部署者准备；素材来源和权属见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 [快速开始](#快速开始) · [完整使用手册](docs/usage.md) · [15 路由功能对照](docs/reference-parity.md) · [QQ / Discord 接入](docs/platforms.md) · [原生命令与按钮](docs/native-interactions.md)
 
@@ -30,13 +30,13 @@
 
 上游本身没有单独说明的 33 个效果枚举，以及未知条件或字段，会保留原名、原值和提示，不生成猜测说明。怪物关联表不完整时拒绝目标伤害计算。细节见[功能对照](docs/reference-parity.md)及[数据库导入说明](tools/catalog/README.md)。
 
-运行时只需要 Node.js / Koishi，不需要 Python、数据库服务器或大模型服务。Python 仅用于离线导入；游戏文本、数值资料、小图标和原图分别配置。
+运行时只需要 Node.js / Koishi，不需要 Python、数据库服务器或大模型服务。Python 仅用于离线导入；小图标已内置，游戏文本、数值资料和可选原图分别配置。
 
 ## 快速开始
 
 ### 1. 从源码安装
 
-需要 **Node.js ≥22**、**Koishi `^4.18.11`**。数据库导入需要 **Python ≥3.10**；图标转换另需 Pillow，图卡渲染需可用的中文字体。
+需要 **Node.js ≥22**、**Koishi `^4.18.11`**。数据库导入需要 **Python ≥3.10**；仅在转换自定义图标时另需 Pillow，使用内置图标不需要转换工具。图卡渲染仍需可用的中文字体。
 
 ```sh
 git clone https://github.com/adquantum/koishi-plugin-wizard101.git
@@ -50,7 +50,7 @@ npm pack
 完整测试环境也需 Python ≥3.10、Pillow 和中文字体。Linux 可安装 `fonts-noto-cjk`。在实际运行 Koishi 的应用目录安装本地生成的包：
 
 ```sh
-npm install --save /absolute/path/to/koishi-plugin-wizard101/koishi-plugin-wizard101-0.3.0.tgz
+npm install --save /absolute/path/to/koishi-plugin-wizard101/koishi-plugin-wizard101-0.3.1.tgz
 ```
 
 ### 2. 准备中文词典和游戏资料
@@ -72,14 +72,11 @@ python3 tools/catalog/from-sqlite.py \
   --version "自己确认的游戏或资料版本" \
   --output /absolute/path/to/koishi-app/data/wizard101/catalog.json.gz
 
-# 可选：原版小图标转换，仅此步骤需要 Pillow
-python3 -m pip install Pillow
-python3 tools/icons/import.py \
-  --input /path/to/Icons.zip \
-  --output /absolute/path/to/koishi-app/data/wizard101/icons
 ```
 
 LANG 按 UTF-16LE 读取，空行可能是有效字段；不要先删除空行或改编码。本地化 key 也不是百科条目 ID。`--locale` 只采用可唯一确定的翻译，未匹配的名称和原说明继续保留原文；结构性效果和状态术语仍有中文解释。
+
+`iconPath` 留空即可加载随包的小图标。已有有效 `data/wizard101/icons/manifest.json` 的部署继续优先使用该自定义目录；该旧清单缺失或损坏时回退到内置图标，损坏原因保留在状态信息中。需要替换或补充图标时可使用[图标导入工具](tools/icons/README.md)。
 
 可选的法术 / 怪物原图放入本地目录，通过 `portraitPath` 配置。导入器根据数据库 `image_file/image` 生成 PNG 文件名，机器人只读取本地 PNG，不下载原图。命名和限制见[导入说明](tools/catalog/README.md#原版画像与缩略图)。
 
@@ -93,7 +90,7 @@ plugins:
     command: wiz
     localePath: data/wizard101/locale-zh.json.gz
     catalogPath: data/wizard101/catalog.json.gz
-    iconPath: data/wizard101/icons/manifest.json
+    iconPath: '' # 留空使用随包图标；兼容已有 data/wizard101/icons
     fontPath: ''
     portraitPath: data/wizard101/portraits
     dataSource: hybrid
@@ -143,13 +140,19 @@ Discord 原生命令须把官方适配器设为 **`slash: false`**，再开启�
 
 `wiz.calc` 中 `critical/block` 是**评级**，不是手动暴击倍率；`buffs` 以空格按顺序输入，`P` 为大写后缀。计算器复现固定上游算法，包括逐步向零截断及已说明的兼容差异，不代表对当前游戏服务器的完整模拟。全部选项和旧指令见[使用手册](docs/usage.md#完整指令)。
 
-## 从 0.2 升级
+## 升级说明
+
+### 从 0.3.0 升级
+
+更新到 0.3.1 后，源码和 `npm pack` 安装包都带有默认 PNG 图标，无需单独复制图标目录。保持 `iconPath: ''` 即可；原先配置的自定义路径仍可使用。若旧配置显式指向一个并不存在的图标目录，请清空该字段以启用自动加载。本次图标更新不要求重新导入已有的 0.3 数值资料。
+
+### 从 0.2 升级
 
 0.2 的词典、图标、原有 `catalog.json(.gz)` 结构仍可读取，原有 `wiz.item/spell/mob`、`pick/next`、API 查询等继续保留。**旧版简化 `wiz.calc` 改名为 `wiz.estimate`**，旧 `wiz.mobcalc` 保留；不要把旧 `-c 1.8` 手动倍率传给新的 `wiz.calc`。
 
 已有数值资料包不会自动增加法术效果、完整怪物装备汇总和新展示字段。需要这些功能时，用 0.3 导入器重新导出 `items.db`，并提供 `--locale` / 可用的 `--decks`。`base_only` 的旧怪物资料不能用于需要完整目标抗性的计算。
 
-升级后的整包许可为 GPL-3.0-only。早期原创代码的 MIT 通知保留在 [LICENSES/MIT-legacy.txt](LICENSES/MIT-legacy.txt)，不代表 0.3 整包仍按 MIT 授权。
+升级后的程序代码许可为 GPL-3.0-only，随包图标保留原素材权属。早期原创代码的 MIT 通知保留在 [LICENSES/MIT-legacy.txt](LICENSES/MIT-legacy.txt)，不代表 0.3 整包仍按 MIT 授权。
 
 ## Wizard404 在线扩展
 
@@ -157,7 +160,7 @@ Discord 原生命令须把官方适配器设为 **`slash: false`**，再开启�
 
 ```sh
 export W404_API_KEY='REPLACE_LOCALLY_WITH_YOUR_PRIVATE_KEY'
-export W404_USER_AGENT='MyWizardWiki/0.3.0 (replace-with-your-contact@example.com)'
+export W404_USER_AGENT='MyWizardWiki/0.3.1 (replace-with-your-contact@example.com)'
 node tools/probe-api.cjs --type mob --id 1749326 --out ./probe-detail.json
 node tools/probe-api.cjs --type spell --query "Fire Cat" --search-param q --out ./probe-search.json
 ```

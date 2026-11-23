@@ -1,6 +1,6 @@
 # 参与开发
 
-欢迎提交可复现的问题、中文文档修正和代码 Pull Request。0.3 整包采用 **GPL-3.0-only**，参考 [Kimerith-WindHammer 固定提交 `3c24847d`](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f)。请保留已有作者、来源、许可与修改说明，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。早期原创代码的 MIT 通知保留在 `LICENSES/MIT-legacy.txt`，不能用它代表当前整包许可。
+欢迎提交可复现的问题、中文文档修正和代码 Pull Request。0.3 系列程序代码采用 **GPL-3.0-only**，参考 [Kimerith-WindHammer 固定提交 `3c24847d`](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f)。请保留已有作者、来源、许可与修改说明，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。早期原创代码的 MIT 通知保留在 `LICENSES/MIT-legacy.txt`，不能用它代表当前整包许可。
 
 ## 本地开发
 
@@ -14,7 +14,7 @@ npm test
 npm run check:public
 ```
 
-可通过 `WIZARD101_TEST_PYTHON` 指定 Python 可执行文件。正常机器人运行不需要 Python；数据库和图标工具属于一次性离线准备。
+可通过 `WIZARD101_TEST_PYTHON` 指定 Python 可执行文件。正常机器人运行不需要 Python；数据库与自定义图标工具属于一次性离线准备。0.3.1 的默认小图标随包提供，正常安装无需再次转换。
 
 测试采用合成词典、临时 SQLite、本地 HTTP 服务与内存传输替身，不需要真实 API Key、Bot Token 或 AppSecret。QQ / Discord 兼容测试使用安装的真实官方适配器代码，但拦截外部发送；不要把测试改成自动往真实群聊或服务器发消息。
 
@@ -31,7 +31,8 @@ npm run check:public
 | `lib/api.cjs` | 只读 API、鉴权、限流、缓存及无损大整数 ID |
 | `lib/cards.cjs` / `lib/platform.cjs` / `lib/portraits.cjs` | PNG、发送降级与本地原图 |
 | `tools/catalog/` | 只读 SQLite、中文效果、135 属性、装备汇总与展示字段 |
-| `tools/locale/` / `tools/icons/` | 用户自有文本和图标导入 |
+| `tools/locale/` / `tools/icons/` | 用户自有文本和自定义图标导入 |
+| `assets/icons/` | 已随包提供的 PNG 小图标、清单及素材说明 |
 
 旧 `wiz.estimate` 继续使用简化模型；新 `wiz.calc` / `wiz.mob.calc` 使用固定参考模型。变更时不要复用同名参数却改变评级 / 百分比 / 倍率含义。
 
@@ -51,7 +52,9 @@ npm run check:public
 
 ## 数据、图片与示例
 
-提交通用工具和最小合成样例，不上传完整 WAD、LANG、汉化词典、SQLite、原版图标 / 画像、字体或未经授权的第三方资料。自有运行数据放在 Koishi 应用的 `data/wizard101`，不加入公开包。
+本仓库已收录项目提供的 PNG 小图标，公开范围以 `assets/icons/manifest.json` 和该目录的来源说明为准。维护这套资源时同步清单路径、尺寸、SHA-256 和第三方声明，确认源码与安装包都包含全部引用图片；不要让清单指向开发机的数据目录。图标素材保留原权属，程序代码许可不重新授权这些图片。
+
+完整 WAD、LANG、汉化词典、SQLite、原始 DDS / TGA、完整画像库、字体及未经确认可公开的其他资料不加入公开包。自有运行数据放在 Koishi 应用的 `data/wizard101`。
 
 翻译可通过获得授权的词典维护，再由部署者导入。未知原文和歧义应保留，不为让界面看起来全中文而生成无法校对的法术效果或 Boss 机制。
 

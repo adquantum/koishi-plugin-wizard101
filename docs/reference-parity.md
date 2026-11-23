@@ -1,6 +1,6 @@
 # 与 Kimerith-WindHammer 的功能对照
 
-本插件 **0.3.0** 以 [MajorPain1/Kimerith-WindHammer](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f) 的提交 **`3c24847d111387fc0b34772b548f74e80089599f`** 为固定参考。该提交的 15 条公开命令路由均已在 Koishi 文字指令和 Discord 原生命令中实现，原有词典、Wizard404 与 QQ 官方机器人支持继续保留。
+本插件 **0.3 系列** 以 [MajorPain1/Kimerith-WindHammer](https://github.com/MajorPain1/Kimerith-WindHammer/tree/3c24847d111387fc0b34772b548f74e80089599f) 的提交 **`3c24847d111387fc0b34772b548f74e80089599f`** 为固定参考。该提交的 15 条公开命令路由均已在 Koishi 文字指令和 Discord 原生命令中实现，原有词典、Wizard404 与 QQ 官方机器人支持继续保留。
 
 本版直接移植、翻译并适配上游的部分算法与数据映射，整包使用 **GPL-3.0-only**；不是此前 0.2 版“仅独立实现相似能力”的许可和实现范围。原作者、移植文件与修改说明见 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)。
 
